@@ -13,4 +13,29 @@ export const colors = {
 
 export const parameters = {
     headerHeight : 40,
+    styledButton :{     //button 스타일 지정
+        backgroundColor : "#ff8c52",
+        alignContent : "center",
+        justifyContent : "center",
+        borderRadius : 12,
+        borderWidth :1,
+        borderColor:"#ff8c52",
+        height:50,
+        paddingHorizontal:20,
+        width:"100%"
+    },
+    buttonTitle:{   //button 안에 있는 Text 스타일 지정 
+        color:"white",
+        fontSize:20,
+        fontWeight:"bold",
+        alignItems:"center",
+        justifyContent:"center",
+        marginTop:3
+    }
+}
+
+export const title = {
+    color:"#ff8C52",
+    fontSize:20,
+    fontWeight:"bold"
 }
