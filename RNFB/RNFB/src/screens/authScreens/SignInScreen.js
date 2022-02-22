@@ -1,3 +1,5 @@
+// 로그인 화면, 회원가입 가능
+
 import React,{useState,useRef} from 'react';
 
 import {View, Text, StyleSheet, Dimensions, TextInput} from 'react-native'
