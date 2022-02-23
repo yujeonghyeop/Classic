@@ -6,7 +6,7 @@ import {View, Text, StyleSheet, Dimensions, Image} from 'react-native'
 import {colors, parameters, title} from '../../global/styles'
 import {Icon,Button,SocialIcon} from 'react-native-elements'
 
-export default function SignInWelcomeScreen(){
+export default function SignInWelcomeScreen({navigation}){  //props는 navigation을 위함 
     return(
 
         // flex를 활용하여 화면 구성을 할 수 있다. 
@@ -23,7 +23,14 @@ export default function SignInWelcomeScreen(){
                         title = "SIGN IN"
                             buttonStyle =  {parameters.styledButton}
                             titleStyle = {parameters.buttonTitle}
+
                             //button에 스타일 입히기
+
+                                onPress = {() => {
+                                    navigation.navigate("SignInScreen")
+                                }}
+                                //이 버튼을 누를 때 SignInScreen으로 가라는 navigation 등록
+                            
                     />
             </View>
             <View style = {{marginHorizontal:20, marginTop : 10}}>
@@ -31,6 +38,7 @@ export default function SignInWelcomeScreen(){
                         title = "Create your account"
                         buttonStyle = {styles.createButton}
                         titleStyle = {styles.createButtonTitle}
+                        
                     />
 
                 </View>

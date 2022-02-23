@@ -11,7 +11,7 @@ import * as Animatable from 'react-native-animatable'   //animate한 요소를 �
 
 
 
-export default function SignInScreen(){
+export default function SignInScreen({navigation}){
 
     const[textInput2Fossued, setTextInput2Fossued] = useState(false)
     //pw border가 focus를 받는지 안받는지를 확인하기 위해 useState로 상태를 기록
@@ -21,7 +21,7 @@ export default function SignInScreen(){
     
     return(
         <View style ={styles.container}>
-            <Header title = " My ACCOUNT" type = "arrow-left"/>
+            <Header title = " My ACCOUNT" type = "arrow-left" navigation ={navigation}/>
 
             <View>
                 <Text style = {title}>Sign-In</Text> 
@@ -87,6 +87,7 @@ export default function SignInScreen(){
                         title = "SIGN IN"
                             buttonStyle =  {parameters.styledButton}
                             titleStyle = {parameters.buttonTitle}
+                                onPress = {()=>{navigation.navigate('HomeScreen')}}
                             //button에 스타일 입히기
                     />
                 </View>
