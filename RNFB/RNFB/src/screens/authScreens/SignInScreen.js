@@ -1,13 +1,13 @@
 // 로그인 화면, 회원가입 가능
 
 import React,{useState,useRef} from 'react';
-
-import {View, Text, StyleSheet, Dimensions, TextInput} from 'react-native'
+import {View, Text, StyleSheet, Dimensions, TextInput, Alert} from 'react-native'
 import {colors, parameters, title} from '../../global/styles'
 import {Icon,Button,SocialIcon} from 'react-native-elements'
 import Header from '../../components/Header';
 import * as Animatable from 'react-native-animatable'   //animate한 요소를 더하기 위한 import
-
+import { Formik } from 'formik'; //user Authetication
+import auth from '@react-native-firebase/auth'
 
 
 
@@ -19,6 +19,25 @@ export default function SignInScreen({navigation}){
     const textInput2 = useRef(2)
     //각각의 데이터를 받기 위해 변수로 설정
     
+
+async function signIn(data){
+    try{
+    const {password,email} = data
+    const user = await auth().signInWithEmailAndPassword(email, password)
+    if(user){
+        console.log("USER SIGNED-IN")
+    }
+}
+    catch(error){
+        Alert.alert(
+            error.name,
+            error.message
+        )
+    }
+}
+
+
+
     return(
         <View style ={styles.container}>
             <Header title = " My ACCOUNT" type = "arrow-left" navigation ={navigation}/>
@@ -31,13 +50,27 @@ export default function SignInScreen({navigation}){
                 <Text style = {styles.text1}>Please enter the email and password</Text>
                 <Text style = {styles.text1}>registered with your account</Text>
             </View>
+            
 
+            <Formik
+                initialValues = {{email:'',password:''}}
+                onSubmit = {(values)=>{
+                    signIn(values)
+                }}
+            
+            >
+            {(props)=>
+
+            <View>
             <View>
                 <View style = {{marginTop:20}}> 
                     <TextInput 
                         style = {styles.TextInput1}
                         placeholder = "Email"
                         ref = {textInput1}  //email 데이터 받는 부분
+
+                        onChangeText = {props.handleChange('email')}
+                        value = {props.values.email}
                     />
                 </View>
                 
@@ -63,6 +96,10 @@ export default function SignInScreen({navigation}){
                             onBlur = {() => {
                                 setTextInput2Fossued(true)
                             }}
+
+                            onChangeText = {props.handleChange('password')}
+                            value = {props.values.password}
+
                             // pw 데이터를 받는 ref가 focus를 받으면(클릭이 되면) Fossued를 false로 세팅하고 
                             // focus에서 벗어나면 Fossued를 True로 세팅한다.
                         />
@@ -87,10 +124,15 @@ export default function SignInScreen({navigation}){
                         title = "SIGN IN"
                             buttonStyle =  {parameters.styledButton}
                             titleStyle = {parameters.buttonTitle}
-                                onPress = {()=>{navigation.navigate('HomeScreen')}}
+                                onPress = {props.handleSubmit}
                             //button에 스타일 입히기
                     />
                 </View>
+                </View>
+                }
+            </Formik>
+
+            
                 <View style = {{alignItems: "center", marginTop:15}}> 
                 {/* pw 잊어버렸을 때의 항목 만들기 */}
                     <Text style = {{...styles.text1, textDecorationLine: "underline"}}> Forgot Password ?</Text>

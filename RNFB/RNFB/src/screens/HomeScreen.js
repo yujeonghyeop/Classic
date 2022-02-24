@@ -1,3 +1,4 @@
+//로그인이 완료되면 메인화면, HomeScreen으로 오게된다. 
 import React from 'react'
 
 import{View, Text, StyleSheet} from 'react-native'

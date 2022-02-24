@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "332816198744",
+    "project_id": "rnfb-123ee",
+    "storage_bucket": "rnfb-123ee.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:332816198744:android:a914a6c9bf585ed9c16e2d",
+        "android_client_info": {
+          "package_name": "com.rnfb"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "332816198744-asbvvh5td05ft394kmlbqraq58v7fvre.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBMgpJY5Jv-hki6Wen6d2k75gpLOGz_PLk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "332816198744-asbvvh5td05ft394kmlbqraq58v7fvre.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
