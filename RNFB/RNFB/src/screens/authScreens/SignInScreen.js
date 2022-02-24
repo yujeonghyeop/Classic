@@ -51,7 +51,7 @@ async function signIn(data){
                 <Text style = {styles.text1}>registered with your account</Text>
             </View>
             
-
+            {/* user의 데이터를 받는 부분을 Formik으로 감싸준다 */}
             <Formik
                 initialValues = {{email:'',password:''}}
                 onSubmit = {(values)=>{
@@ -59,6 +59,7 @@ async function signIn(data){
                 }}
             
             >
+            {/* 데이터를 다루기 위해 props라는 변수 설정 */}
             {(props)=>
 
             <View>
@@ -68,7 +69,7 @@ async function signIn(data){
                         style = {styles.TextInput1}
                         placeholder = "Email"
                         ref = {textInput1}  //email 데이터 받는 부분
-
+                        //Text가 바뀌었을때 그 값을 value에 저장해준다.
                         onChangeText = {props.handleChange('email')}
                         value = {props.values.email}
                     />
@@ -96,7 +97,8 @@ async function signIn(data){
                             onBlur = {() => {
                                 setTextInput2Fossued(true)
                             }}
-
+                            
+                            //Text가 바뀌었을 때 그 값을 value에 저장해준다.
                             onChangeText = {props.handleChange('password')}
                             value = {props.values.password}
 
@@ -124,8 +126,10 @@ async function signIn(data){
                         title = "SIGN IN"
                             buttonStyle =  {parameters.styledButton}
                             titleStyle = {parameters.buttonTitle}
-                                onPress = {props.handleSubmit}
-                            //button에 스타일 입히기
+                            
+                            //SIGN IN 버튼을 누르면 저장되어 있던 value들이 Submit된다.
+                            onPress = {props.handleSubmit}
+                            
                     />
                 </View>
                 </View>
@@ -170,6 +174,11 @@ async function signIn(data){
                         title = "Create an account"
                         buttonStyle = {styles.createButton}
                         titleStyle = {styles.createButtonTitle}
+
+                        onPress = {() => {
+                            navigation.navigate("SignUpScreen")
+                        }}
+                        
                     />
 
                 </View>

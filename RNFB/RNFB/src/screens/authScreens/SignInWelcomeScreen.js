@@ -38,6 +38,10 @@ export default function SignInWelcomeScreen({navigation}){  //props는 navigatio
                         title = "Create your account"
                         buttonStyle = {styles.createButton}
                         titleStyle = {styles.createButtonTitle}
+
+                        onPress = {() => {
+                            navigation.navigate("SignUpScreen")
+                        }}
                         
                     />
 
