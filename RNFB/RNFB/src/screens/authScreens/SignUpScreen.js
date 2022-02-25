@@ -1,16 +1,22 @@
 //creat acount 해주는 스크린
 
-import React from 'react'
-import { StyleSheet,Text,View, ScrollView } from 'react-native'
+import React,{useState} from 'react'
+import { StyleSheet,Text,View, ScrollView, TextInput } from 'react-native'
 import {colors} from '../../global/styles'
 import Header from '../../components/Header'
 import { Formik } from 'formik'; //user Authetication
+import {Icon, Button} from 'react-native-elements'
+import * as Animatable from 'react-native-animatable'   //animate한 요소를 더하기 위한 import
+
 
 const initialValues = {phone_number: '',name : "", family_name:"",password:"",email:'',username:''}
 
 
 
 const SignUpScreen = ({navigation}) => {
+
+const[passwordFocussed, setPasswordFocussed] = useState(false)
+const[passwordBlured,setPasswordBlured] = useState(false)
     return(
         <View style = {styles.container}>
         <Header title = " My ACCOUNT" type = "arrow-left" navigation ={navigation}/>
@@ -25,12 +31,119 @@ const SignUpScreen = ({navigation}) => {
                             <View>
                                 <Text style = {styles.text2}>New on YJH?</Text>
                             </View>
-                            <View style = {styles.view4}>
-
+                            {/* 폰  번호 받는 칸 */}
+                                <View style = {styles.view6}>   
+                                  <TextInput
+                                    placeholder = "Mobile Number"
+                                    style = {styles.input1}
+                                    keyboardType = "number-pad"
+                                    autoFocus = {true}
+                                    onChangeText = {props.handleChange('phone_number')}
+                                    value = {props.values.phone_number}
+                                  />
                             </View>
+                            {/* 이름 받는 칸 */}
+                            <View style = {styles.view6}>
+                                  <TextInput
+                                    placeholder = "Name"
+                                    style = {styles.input1}
+                                    autoFocus = {false}
+                                    onChangeText = {props.handleChange('name')}
+                                    value = {props.values.name}
+                                  />
+                            </View>
+                            {/* 성  받는 칸 */}
+                            <View style = {styles.view6}>
+                                  <TextInput
+                                    placeholder = "Family name"
+                                    style = {styles.input1}
+                                    autoFocus = {false}
+                                    onChangeText = {props.handleChange('family_name')}
+                                    value = {props.values.family_name}
+                                  />
+                            </View>
+                            {/* email 받는 칸 */}
+                            <View style = {styles.view10}>
+                              <View>
+                                {/* icon 추가 */}
+                                <Icon 
+                                  name = 'email'
+                                  style = {styles.email}
+                                  color = {colors.grey3}
+                                  type = "material"
+                                />
+                              </View>
+                              <View style = {styles.view11}>
+                                  <TextInput
+                                    placeholder = "Email"
+                                    style = {styles.input4}
+                                    autoFocus = {false}
+                                    onChangeText = {props.handleChange('email')}
+                                    value = {props.values.email}
+                                  />
+                              </View>
+                              </View>
+                            {/* password 받는 칸 */}
+                            <View style = {styles.view14}>
+
+                                <Animatable.View animation = {passwordFocussed?"fadeInRight" : "fadeInLeft"}>
+                                  <Icon name = "lock" color = {colors.grey3} type = "material" />
+                                </Animatable.View>
+                                <TextInput
+                                    placeholder = "Password"
+                                    style = {{flex:1}}
+                                    autoFocus = {false}
+                                    onChangeText = {props.handleChange('password')}
+                                    value = {props.values.password}
+                                    onFocus = {() => {setPasswordFocussed(true)}}
+                                    onBlur = {() => {setPasswordBlured(true)}}
+                                  />
+                                  <Animatable.View animation = {passwordBlured ? "fadeInLeft" : "fadeInRight"} duration = {400}>
+                                  <Icon name = "visibility-off" color = {colors.grey3} type = "material" style = {{marginRight:10}}/>
+                                </Animatable.View>
+                              </View>
+                              {/* Create account의 룰 설명 하는 view */}
+                              <View style = {styles.view15}>
+                                <Text style = {styles.text3}>By creating or logging into an account you are</Text>
+                                <View style = {styles.view16}>
+                                    <Text style = {styles.text3}>agreeing with our</Text>
+                                    <Text style = {styles.text4}>Terms & Conditions</Text>
+                                    <Text style = {styles.text3}>and</Text>
+                                  </View>
+                                  <Text style = {styles.text4}>Privacy Statement</Text>
+                                </View>
+                                <View style = {styles.view17}>
+                                  <Button 
+                                    title = "Create my account"
+                                    buttonStyle = {styles.button1}
+                                    titleStyle = {styles.title1}
+                                    onPress = {props.handleSubmit}
+                                  />
+                                  </View>
                         </View>
                     )}
                 </Formik>
+
+                  {/* 잘못 들어왔을 때 로그인 화면으로 돌려보내는 view */}
+                <View style = {styles.view18}>
+                      <Text style = {styles.text5}>OR</Text>
+                </View>
+
+                <View style = {styles.view19}>
+                  <View style = {styles.view20}>
+                    <Text style = {styles.text6}> Already have an account with yjh?</Text>
+                    </View>
+
+                    <View style = {styles.view21}>
+                        <Button
+                          title = "Sign-In"
+                          buttonStyle = {styles.button2}
+                          titleStyle = {styles.title2}
+                          onPress = {() => {navigation.navigate('SignInScreen')}}
+                        />
+                      </View>
+                </View>
+
             </ScrollView>
         </View>
     )
