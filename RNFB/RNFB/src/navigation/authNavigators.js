@@ -38,15 +38,6 @@ export default function AuthStack(){
                 }}
             />
 
-            <Auth.Screen 
-                name = "HomeScreen"
-                component = {HomeScreen}
-                options ={{
-                    headerShown : false,
-                    ...TransitionPresets.RevealFromBottomAndroid
-                }}
-            />  
-
         </Auth.Navigator>
     )
 }

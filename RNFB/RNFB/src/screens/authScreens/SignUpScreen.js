@@ -1,12 +1,13 @@
 //creat acount 해주는 스크린
 
 import React,{useState} from 'react'
-import { StyleSheet,Text,View, ScrollView, TextInput } from 'react-native'
+import { StyleSheet,Text,View, ScrollView, TextInput, Alert } from 'react-native'
 import {colors} from '../../global/styles'
 import Header from '../../components/Header'
 import { Formik } from 'formik'; //user Authetication
 import {Icon, Button} from 'react-native-elements'
 import * as Animatable from 'react-native-animatable'   //animate한 요소를 더하기 위한 import
+import auth from '@react-native-firebase/auth'
 
 
 const initialValues = {phone_number: '',name : "", family_name:"",password:"",email:'',username:''}
@@ -17,6 +18,29 @@ const SignUpScreen = ({navigation}) => {
 
 const[passwordFocussed, setPasswordFocussed] = useState(false)
 const[passwordBlured,setPasswordBlured] = useState(false)
+async function signUp(values){  // firebase에 email, password 넘겨주는 역할
+  const {email, password} = values
+  try{
+    await auth().createUserWithEmailAndPassword(email, password)  //email, password를 firebase에 넘김
+    console.log("USER ACCOUNT CREATED")
+  }catch(error){
+    if(error.code === 'auth/email-already-in-use'){ // 이미 있는 email이면 에러 출력
+      Alert.alert(
+        'That email address is already in use'
+      )
+    }
+    if(error.code === 'auth/invalie=email'){  //양식에 안맞으면 에러 출력
+      Alert.alert(
+        'That email address is invalid'
+      )
+    }
+    else{
+      Alert.alert(error.code)
+    }
+  }
+}
+
+
     return(
         <View style = {styles.container}>
         <Header title = " My ACCOUNT" type = "arrow-left" navigation ={navigation}/>
@@ -25,7 +49,7 @@ const[passwordBlured,setPasswordBlured] = useState(false)
                 <View style={styles.view1}>
                     <Text style = {styles.text1}>Sign-Up</Text>
                 </View>
-                <Formik initialValues = {initialValues} onSubmit = {(values) =>{SignUpScreen(values)}}>
+                <Formik initialValues = {initialValues} onSubmit = {(values) =>{signUp(values)}}>
                     {(props)=>(
                         <View style = {styles.view2}>
                             <View>

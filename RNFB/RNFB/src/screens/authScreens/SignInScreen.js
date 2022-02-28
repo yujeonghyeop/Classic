@@ -1,6 +1,6 @@
 // 로그인 화면, 회원가입 가능
 
-import React,{useState,useRef} from 'react';
+import React,{useState,useRef, useContext} from 'react';
 import {View, Text, StyleSheet, Dimensions, TextInput, Alert} from 'react-native'
 import {colors, parameters, title} from '../../global/styles'
 import {Icon,Button,SocialIcon} from 'react-native-elements'
@@ -8,10 +8,13 @@ import Header from '../../components/Header';
 import * as Animatable from 'react-native-animatable'   //animate한 요소를 더하기 위한 import
 import { Formik } from 'formik'; //user Authetication
 import auth from '@react-native-firebase/auth'
+import { SignInContext } from '../../contexts/authContext';
 
 
 
 export default function SignInScreen({navigation}){
+
+    const{dispatchSignedIn} = useContext(SignInContext)
 
     const[textInput2Fossued, setTextInput2Fossued] = useState(false)
     //pw border가 focus를 받는지 안받는지를 확인하기 위해 useState로 상태를 기록
@@ -25,7 +28,7 @@ async function signIn(data){
     const {password,email} = data
     const user = await auth().signInWithEmailAndPassword(email, password)
     if(user){
-        console.log("USER SIGNED-IN")
+        dispatchSignedIn({type :"UPDATE_SIGN_IN", payload :{userToken:"signed-in"}})
     }
 }
     catch(error){
