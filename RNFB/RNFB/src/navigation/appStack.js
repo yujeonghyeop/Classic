@@ -1,7 +1,7 @@
 import React from 'react'
 import {createStackNavigator} from '@react-navigation/stack';
 import { TransitionPresets } from '@react-navigation/stack';
-import HomeScreen from '../screens/HomeScreen';
+import RootClientTabs from './ClientTabs';
 
 const App = createStackNavigator();
 
@@ -9,8 +9,8 @@ export function AppStack(){
     return(
         <App.Navigator>
              <App.Screen 
-                name = "HomeScreen"
-                component = {HomeScreen}
+                name = "RootClientTabs"
+                component = {RootClientTabs}
                 options ={{
                     headerShown : false,
                     ...TransitionPresets.RevealFromBottomAndroid

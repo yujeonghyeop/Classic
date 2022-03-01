@@ -1,5 +1,4 @@
 // 로그인 화면, 회원가입 가능
-
 import React,{useState,useRef, useContext} from 'react';
 import {View, Text, StyleSheet, Dimensions, TextInput, Alert} from 'react-native'
 import {colors, parameters, title} from '../../global/styles'
@@ -30,7 +29,7 @@ async function signIn(data){
     if(user){
         dispatchSignedIn({type :"UPDATE_SIGN_IN", payload :{userToken:"signed-in"}})
     }
-}
+}   //user가 검증이 되면 dispatchSignedIn을 활용하여 상태를 바꿔준다. 
     catch(error){
         Alert.alert(
             error.name,
