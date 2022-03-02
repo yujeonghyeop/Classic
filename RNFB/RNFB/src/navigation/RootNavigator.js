@@ -7,7 +7,7 @@ import { SignInContext } from '../contexts/authContext';
 
 export default function RootNavigator(){
 
-const {signedIn, } = useContext(SignInContext)
+const {signedIn} = useContext(SignInContext)
     return(
         <NavigationContainer>
             {
