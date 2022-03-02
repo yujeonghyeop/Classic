@@ -10,7 +10,7 @@ export function AppStack(){
         <App.Navigator>
              <App.Screen 
                 name = "RootClientTabs"
-                component = {RootClientTabs}
+                component = {RootClientTabs}    //로그인 인증이 되었을 때 HomeScreen 대신에 ClientTab을 띄우게 한다.
                 options ={{
                     headerShown : false,
                     ...TransitionPresets.RevealFromBottomAndroid
