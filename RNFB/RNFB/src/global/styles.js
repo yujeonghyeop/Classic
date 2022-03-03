@@ -14,12 +14,12 @@ export const colors = {
 export const parameters = {
     headerHeight : 40,
     styledButton :{     //button 스타일 지정
-        backgroundColor : "#ff8c52",
+        backgroundColor : '#6667ab',
         alignContent : "center",
         justifyContent : "center",
         borderRadius : 12,
         borderWidth :1,
-        borderColor:"#ff8c52",
+        borderColor:'#6667ab',
         height:50,
         paddingHorizontal:20,
         width:"100%"

@@ -11,7 +11,7 @@ export default function App(){
     <View style = {styles.container}>
       <StatusBar 
         barStyle = "light-content"
-        backgroundColor = {colors.statusbar}
+        backgroundColor = '#6667ab' //팬톤
       />
       <RootNavigator />
     </View>

@@ -12,7 +12,7 @@ export default function Header({title,type,navigation}){
                 <Icon 
                     type = "material-community"
                     name = {type}
-                    color = {colors.headerText}
+                    color = '#6667ab'
                     size = {28}
                     onPress = {() =>{
                         navigation.goBack()
@@ -30,7 +30,7 @@ export default function Header({title,type,navigation}){
 const styles = StyleSheet.create({
     header :{
         flexDirection : "row",
-        backgroundColor : colors.buttons,
+        backgroundColor : '#6667ab',
         height : parameters.headerHeight
     },
     headerText : {

@@ -12,15 +12,14 @@ export default function SignInWelcomeScreen({navigation}){  //props는 navigatio
         // flex를 활용하여 화면 구성을 할 수 있다. 
         <View style = {{flex:1}}>
             <View style = {{flex:3, justifyContent:'flex-start',alignItems:'center', paddingTop:20}}>
-                <Text style = {{fontSize:26, color:colors.buttons, fontWeight:'bold'}}> DISCOVER RESTAURANTS</Text>
-                <Text style = {{fontSize:26, color:colors.buttons, fontWeight:'bold'}}> IN YOUR AREA</Text>
+                <Text style = {{fontSize:40, color:'#6667ab', fontWeight:'bold'}}> CLASSIC</Text>
             </View>
 
         <View style = {{flex:4}}>
             <View style = {{marginHorizontal:20, marginVertical : 20}}> 
                 {/* button에 여백 두기 */}
                     <Button 
-                        title = "SIGN IN"
+                        title = "로그인 하기"
                             buttonStyle =  {parameters.styledButton}
                             titleStyle = {parameters.buttonTitle}
 
@@ -35,7 +34,7 @@ export default function SignInWelcomeScreen({navigation}){  //props는 navigatio
             </View>
             <View style = {{marginHorizontal:20, marginTop : 10}}>
                     <Button 
-                        title = "Create your account"
+                        title = "검사 하러 가기"
                         buttonStyle = {styles.createButton}
                         titleStyle = {styles.createButtonTitle}
 
@@ -54,18 +53,18 @@ export default function SignInWelcomeScreen({navigation}){  //props는 navigatio
 
 const styles = StyleSheet.create({
     createButton: {
-        backgroundColor:"white",
+        backgroundColor:'#6667ab',
         alignContent:"center",
         justifyContent :"center",
         borderRadius:12,
         borderWidth:1,
-        borderColor:"#ff8c52",
+        borderColor:'#6667ab',
         height:50,
         paddingHorizontal:20,
-        borderColor : colors.buttons
+        borderColor : '#6667ab'
     },
     createButtonTitle:{
-        color:"black",
+        color:"white",
         fontSize:20,
         fontWeight:"bold",
         alignItems:"center",
