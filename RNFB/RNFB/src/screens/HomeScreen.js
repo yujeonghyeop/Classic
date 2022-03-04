@@ -5,10 +5,10 @@ import{View, Text, StyleSheet} from 'react-native'
 import {Icon} from 'react-native-elements'
 import HomeHeader from '../components/HomeHeader'
 
-export default function HomeScreen(){
+export default function HomeScreen({navigation}){
     return(
     <View style = {styles.container}>
-        <HomeHeader />
+        <HomeHeader navigation = {navigation}/>
     </View>)
 }
 

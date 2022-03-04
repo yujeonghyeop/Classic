@@ -1,11 +1,12 @@
 //HomeScreen을 구성하는 header 꾸미는 js
+import { NavigationContainer } from '@react-navigation/native'
 import React from 'react'
 
 import{View, Text, StyleSheet} from 'react-native'
 import {Icon,withBadge} from 'react-native-elements'
 import {colors,parameters} from '../global/styles'
 
-export default function HomeHeader(){
+export default function HomeHeader({navigation}){
 
     const BadgeIcon = withBadge(0)(Icon)    //마켓 아이콘 왼쪽위에 작은 동그라미가 뜨게 해준다.
     return(
@@ -18,11 +19,14 @@ export default function HomeHeader(){
                     name = "menu"
                     color = "white"
                     size = {32}
+                    onPress = {()=>{
+                        navigation.toggleDrawer()
+                    }}
                 />
             </View>
             {/* name */}
             <View style = {{alignItems:"center", justifyContent:"center"}}>
-                <Text style = {{color:colors.cardbackground, fontSize:25, fontWeight:'bold'}}> YJH</Text>
+                <Text style = {{color:colors.cardbackground, fontSize:25, fontWeight:'bold'}}> CLASSIC</Text>
             </View>
 
             {/* cart Icon */}
