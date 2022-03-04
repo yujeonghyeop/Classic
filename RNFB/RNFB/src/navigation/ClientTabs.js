@@ -24,6 +24,43 @@ export default function RootClientTabs(){   //App Stack과 연동하기 위한 �
             }}  //맨 위에 header를 가려주는 역할
         >
             <ClientTabs.Screen 
+                name = "SearchScreen"
+                component = {SearchScreen}
+                options = {
+                    {
+                        tabBarLabel : "Alarm",
+                        tabBarIcon : ({color,size}) =>(
+                            <Icon 
+                                name = 'notifications'
+                                type = 'material'
+                                color = {color}
+                                size = {size}
+                            />
+                        )
+                    }
+                }
+            
+            />
+
+            <ClientTabs.Screen 
+                name = "Community"
+                component = {SearchScreen}
+                options = {
+                    {
+                        tabBarLabel : "Community",
+                        tabBarIcon : ({color,size}) =>(
+                            <Icon 
+                                name = 'people-outline'
+                                type = 'material'
+                                color = {color}
+                                size = {size}
+                            />
+                        )
+                    }
+                }
+        
+        />
+            <ClientTabs.Screen 
                 name = "HomeScreen"
                 component = {HomeScreen}
                 options = {
@@ -41,34 +78,17 @@ export default function RootClientTabs(){   //App Stack과 연동하기 위한 �
                 }
             
             />
-
-            <ClientTabs.Screen 
-                name = "SearchScreen"
-                component = {SearchScreen}
-                options = {
-                    {
-                        tabBarLabel : "Search",
-                        tabBarIcon : ({color,size}) =>(
-                            <Icon 
-                                name = 'search'
-                                type = 'material'
-                                color = {color}
-                                size = {size}
-                            />
-                        )
-                    }
-                }
             
-            />
+
             <ClientTabs.Screen 
                 name = "MyOrderScreen"
                 component = {MyOrdersScreen}
                 options = {
                     {
-                        tabBarLabel : "My Order",
+                        tabBarLabel : "Scrap",
                         tabBarIcon : ({color,size}) =>(
                             <Icon 
-                                name = 'view-list'
+                                name = 'bookmark-outline'
                                 type = 'material'
                                 color = {color}
                                 size = {size}
