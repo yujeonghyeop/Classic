@@ -1,4 +1,4 @@
-//사용자 바 나타내는 스크린
+//Client Tab 나타내는 스크린
 import React from "react";
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
