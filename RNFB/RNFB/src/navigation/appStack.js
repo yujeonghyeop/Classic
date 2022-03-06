@@ -1,3 +1,4 @@
+//로그인 인증이 완료되면 이 화면을 띄워준다.
 import React from 'react'
 import {createStackNavigator} from '@react-navigation/stack';
 import { TransitionPresets } from '@react-navigation/stack';
