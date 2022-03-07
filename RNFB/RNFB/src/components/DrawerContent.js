@@ -1,11 +1,30 @@
-import React from 'react';
-import{View, Text, StyleSheet, Switch} from 'react-native'
+import React, { useContext } from 'react';
+import{View, Text, StyleSheet, Switch,Alert,TouchableOpacity} from 'react-native'
 import { DrawerContentScrollView, DrawerItem, DrawerItemList } from '@react-navigation/drawer';
 import { Avatar } from 'react-native-elements/dist/avatar/Avatar';
 import { colors } from 'react-native-elements';
 import { Icon } from 'react-native-elements/dist/icons/Icon';
-
+import auth from '@react-native-firebase/auth';
+import { SignInContext } from '../contexts/authContext';
 export default function DrawerContent(props){
+
+    const{dispatchSignedIn} = useContext(SignInContext)
+
+async function signOut(){   //로그아웃을 하기 위한 function
+    
+    try{
+        auth()
+        .signOut()
+        .then(
+            ()=>{
+                console.log("USER SUCCESFULLY SIGNED OUT")
+            dispatchSignedIn({type:"UPDATE_SIGN_IN",payload:{userToken:null}})
+            })
+    }catch(err){
+        Alert.alert(err.code)
+    }
+}
+
     return(
         <View style = {styles.container}>
             <DrawerContentScrollView {...props}> 
@@ -88,10 +107,11 @@ export default function DrawerContent(props){
                         type = "material-community"
                         name = "logout-variant"
                         size = {size}
+                        onPress = {()=>{signOut()}}
                     />
                 )}
             />
-        </View>
+        </View> //sign Out버튼을 누르면 로그아웃이 된다.
     )
 }
 
