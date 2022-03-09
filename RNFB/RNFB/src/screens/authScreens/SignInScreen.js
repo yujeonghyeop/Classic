@@ -32,7 +32,7 @@ async function signIn(data){
 }   //user가 검증이 되면 dispatchSignedIn을 활용하여 상태를 바꿔준다. 
     catch(error){
         Alert.alert(
-            error.name,
+            error.name, //error name과 message를 출력해준다.
             error.message
         )
     }
