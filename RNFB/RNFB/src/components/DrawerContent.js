@@ -1,3 +1,4 @@
+//페이지를 열어주는 창
 import React, { useContext } from 'react';
 import{View, Text, StyleSheet, Switch,Alert,TouchableOpacity} from 'react-native'
 import { DrawerContentScrollView, DrawerItem, DrawerItemList } from '@react-navigation/drawer';

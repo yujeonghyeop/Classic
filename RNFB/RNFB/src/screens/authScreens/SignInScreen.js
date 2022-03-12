@@ -14,7 +14,6 @@ import { SignInContext } from '../../contexts/authContext';
 export default function SignInScreen({navigation}){
 
     const{dispatchSignedIn} = useContext(SignInContext)
-
     const[textInput2Fossued, setTextInput2Fossued] = useState(false)
     //pw border가 focus를 받는지 안받는지를 확인하기 위해 useState로 상태를 기록
     const textInput1 = useRef(1)
