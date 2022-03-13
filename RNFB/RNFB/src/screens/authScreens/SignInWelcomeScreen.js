@@ -10,7 +10,7 @@ import auth from '@react-native-firebase/auth'
 
 export default function SignInWelcomeScreen({navigation}){  //props는 navigation을 위함 
     const {dispatchSignedIn} = useContext(SignInContext)
-useEffect(()=>{
+useEffect(()=>{ //파이어베이스 이용하여 로그인하는 부분
     auth().onAuthStateChanged((user)=>{
         if(user){
             dispatchSignedIn({type :"UPDATE_SIGN_IN", payload :{userToken:"signed-in"}})
