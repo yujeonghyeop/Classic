@@ -4,7 +4,7 @@ import React,{useState,useRef,useEffect, useContext} from 'react';
 
 import {View, Text, StyleSheet, Dimensions, Image} from 'react-native'
 import {colors, parameters, title} from '../../global/styles'
-import {Icon,Button,SocialIcon} from 'react-native-elements'
+import {Button} from 'react-native-elements'
 import { SignInContext } from '../../contexts/authContext';
 import auth from '@react-native-firebase/auth'
 

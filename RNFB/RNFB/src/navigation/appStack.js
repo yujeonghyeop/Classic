@@ -3,6 +3,8 @@ import React from 'react'
 import {createStackNavigator} from '@react-navigation/stack';
 import { TransitionPresets } from '@react-navigation/stack';
 import DrawerNavigator from './DrawerNavigator';
+import Test1 from '../screens/TestPage/Test1'
+import Test2 from '../screens/TestPage/Test2'
 
 const App = createStackNavigator();
 
@@ -17,6 +19,20 @@ export function AppStack(){
                     ...TransitionPresets.RevealFromBottomAndroid
                 }}
             />     
+            <App.Screen
+                name = "Test1"
+                component = {Test1}
+                options = {{
+                    headerShown : false
+                }}
+            />
+            <App.Screen
+                name = "Test2"
+                component = {Test2}
+                options = {{
+                    headerShown : false
+                }}
+            />
         </App.Navigator>
     )
 }
