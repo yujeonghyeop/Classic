@@ -2,10 +2,14 @@ import React from 'react'
 import{View, Text, StyleSheet} from 'react-native'
 import {Icon,Button} from 'react-native-elements'
 import { parameters } from '../../global/styles'
+import * as Progress from 'react-native-progress'
 
 export default function Test1({navigation}){
     return(
+        
         <View style = {styles.container}>
+            <Progress.Bar progress={0.3} width={200} color={'#6667ab'} height={20} borderRadius={20} marginBottom={100} marginTop ={50} />
+            <Text>Q1</Text>
             <Text>Tv를 틀고 뭘 볼지 정하는</Text>
             <Text>나의 모습은?</Text>
             <Button
@@ -29,10 +33,8 @@ export default function Test1({navigation}){
         </View>
     )
 }
-
 const styles = StyleSheet.create({
     container:{
-        flex:1,
         alignItems:'center',
         justifyContent:'center'
     },
