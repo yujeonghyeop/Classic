@@ -5,6 +5,15 @@ import { TransitionPresets } from '@react-navigation/stack';
 import DrawerNavigator from './DrawerNavigator';
 import Test1 from '../screens/TestPage/Test1'
 import Test2 from '../screens/TestPage/Test2'
+import Test3 from '../screens/TestPage/Test3'
+import Test4 from '../screens/TestPage/Test4';
+import Result from '../screens/TestPage/Result';
+import Test5 from '../screens/TestPage/Test5';
+import Test6 from '../screens/TestPage/Test6';
+import Test7 from '../screens/TestPage/Test7';
+import Test8 from '../screens/TestPage/Test8';
+import Test9 from '../screens/TestPage/Test9';
+
 
 const App = createStackNavigator();
 
@@ -29,6 +38,62 @@ export function AppStack(){
             <App.Screen
                 name = "Test2"
                 component = {Test2}
+                options = {{
+                    headerShown : false
+                }}
+            />
+            <App.Screen
+                name = "Test3"
+                component = {Test3}
+                options = {{
+                    headerShown : false
+                }}
+            />
+            <App.Screen
+                name = "Test4"
+                component = {Test4}
+                options = {{
+                    headerShown : false
+                }}
+            />
+            <App.Screen
+                name = "Test5"
+                component = {Test5}
+                options = {{
+                    headerShown : false
+                }}
+            />
+            <App.Screen
+                name = "Test6"
+                component = {Test6}
+                options = {{
+                    headerShown : false
+                }}
+            />
+            <App.Screen
+                name = "Test7"
+                component = {Test7}
+                options = {{
+                    headerShown : false
+                }}
+            />
+            <App.Screen
+                name = "Test8"
+                component = {Test8}
+                options = {{
+                    headerShown : false
+                }}
+            />
+            <App.Screen
+                name = "Test9"
+                component = {Test9}
+                options = {{
+                    headerShown : false
+                }}
+            />
+            <App.Screen
+                name = "Result"
+                component = {Result}
                 options = {{
                     headerShown : false
                 }}

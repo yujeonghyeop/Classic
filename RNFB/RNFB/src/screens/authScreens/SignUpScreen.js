@@ -8,6 +8,7 @@ import { Formik } from 'formik'; //user Authetication
 import {Icon, Button} from 'react-native-elements'
 import * as Animatable from 'react-native-animatable'   //animate한 요소를 더하기 위한 import
 import auth from '@react-native-firebase/auth'
+import firestore, { firebase } from '@react-native-firebase/firestore'
 
 
 const initialValues = {phone_number: '',name : "", family_name:"",password:"",email:'',username:''}
@@ -22,6 +23,9 @@ async function signUp(values){  // firebase에 email, password 넘겨주는 역�
   const {email, password} = values
   try{
     await auth().createUserWithEmailAndPassword(email, password)  //email, password를 firebase에 넘김
+    firestore().collection(email).add('사고유형')
+    firestore().collection(email).add('학습성격')
+    firestore().collection(email).add('행동조절')
     console.log("USER ACCOUNT CREATED")
   }catch(error){
     if(error.code === 'auth/email-already-in-use'){ // 이미 있는 email이면 에러 출력

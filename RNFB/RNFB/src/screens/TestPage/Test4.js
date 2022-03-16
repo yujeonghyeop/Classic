@@ -6,7 +6,7 @@ import * as Progress from 'react-native-progress'
 import firestore, { firebase } from '@react-native-firebase/firestore'
 
 
-export default function Test2({navigation}){
+export default function Test4({navigation}){
     const increment = firebase.firestore.FieldValue.increment(4)
     getPer = async () =>{
         const userDocument = firestore().collection("users2").
@@ -24,28 +24,28 @@ export default function Test2({navigation}){
     }
     return(
         <View style = {styles.container}>
-            <Progress.Bar progress={0.2} width={200} color={'#6667ab'} height={20} borderRadius={20} marginBottom={100} marginTop ={50} />
-            <Text style={styles.styledQ}>Q2</Text>
-            <Text style={styles.styledFont}>친구와의 약속이 깨졌다</Text>
-            <Text style={styles.styledFont}>나의 행동은?</Text>
+            <Progress.Bar progress={0.4} width={200} color={'#6667ab'} height={20} borderRadius={20} marginBottom={100} marginTop ={50} />
+            <Text style={styles.styledQ}>Q4</Text>
+            <Text style={styles.styledFont}>팀 프로젝트를 해야 한다.</Text>
+            <Text style={styles.styledFont}>팀원을 고르는 방식 중 선호하는 방식은?</Text>
             <Button
-            title = "다른 친구와의 약속을 잡아보려 한다"
+            title = "친한 친구들 끼리 했으면 좋겠다"
                 buttonStyle =  {styles.styledButton}
                 titleStyle = {parameters.buttonTitle}
                             //button에 스타일 입히기
                 onPress = {() => {
                     getSoc()
-                    navigation.navigate("Test3")
+                    navigation.navigate("Test5")
                 }}
                 />
             <Button
-            title = "그날은 쉰다"
+            title = "교수님이 정해줬으면 좋겠다"
                 buttonStyle =  {styles.styledButton}
                 titleStyle = {parameters.buttonTitle}
                             //button에 스타일 입히기
                 onPress = {() => {
                     getPer()
-                    navigation.navigate("Test3")
+                    navigation.navigate("Test5")
                 }}
                 />
         </View>

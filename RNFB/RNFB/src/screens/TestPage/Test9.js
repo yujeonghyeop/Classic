@@ -6,52 +6,52 @@ import * as Progress from 'react-native-progress'
 import firestore, { firebase } from '@react-native-firebase/firestore'
 
 
-export default function Test2({navigation}){
+export default function Test9({navigation}){
     const increment = firebase.firestore.FieldValue.increment(4)
-    getPer = async () =>{
+    getPlan = async () =>{
         const userDocument = firestore().collection("users2").
-        doc('학습성격')
+        doc('사고유형')
         .update({
-            '개인형' : increment
+            '계획형' : increment
         })
     }
-    getSoc = async () =>{
+    getCnt = async () =>{
         const userDocument = firestore().collection("users2").
-        doc('학습성격')
+        doc('사고유형')
         .update({
-            '사회형' : increment
+            '즉흥형' : increment
         })
     }
     return(
+
         <View style = {styles.container}>
-            <Progress.Bar progress={0.2} width={200} color={'#6667ab'} height={20} borderRadius={20} marginBottom={100} marginTop ={50} />
-            <Text style={styles.styledQ}>Q2</Text>
-            <Text style={styles.styledFont}>친구와의 약속이 깨졌다</Text>
-            <Text style={styles.styledFont}>나의 행동은?</Text>
+            <Progress.Bar progress={0.9} width={200} color={'#6667ab'} height={20} borderRadius={20} marginBottom={100} marginTop ={50} />
+            <Text style={styles.styledQ}>Q9</Text>
+            <Text style={styles.styledFont}>친구들이 집들이를 온다고 한다.</Text>
+            <Text style={styles.styledFont}>치킨을 시키려는데 어떻게 할까?</Text>
             <Button
-            title = "다른 친구와의 약속을 잡아보려 한다"
+            title = "인원수를 파악하여 미리 시켜 놓는다"
                 buttonStyle =  {styles.styledButton}
                 titleStyle = {parameters.buttonTitle}
                             //button에 스타일 입히기
                 onPress = {() => {
-                    getSoc()
-                    navigation.navigate("Test3")
+                    getPlan()
+                    navigation.navigate("Result")
                 }}
                 />
             <Button
-            title = "그날은 쉰다"
+            title = "일단 시키고 모자라면 또 시킨다"
                 buttonStyle =  {styles.styledButton}
                 titleStyle = {parameters.buttonTitle}
                             //button에 스타일 입히기
                 onPress = {() => {
-                    getPer()
-                    navigation.navigate("Test3")
+                    getCnt()
+                    navigation.navigate("Result")
                 }}
                 />
         </View>
     )
 }
-
 const styles = StyleSheet.create({
     container:{
         alignItems:'center',

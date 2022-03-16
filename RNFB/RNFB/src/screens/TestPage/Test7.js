@@ -6,46 +6,45 @@ import * as Progress from 'react-native-progress'
 import firestore, { firebase } from '@react-native-firebase/firestore'
 
 
-export default function Test2({navigation}){
+export default function Test7({navigation}){
     const increment = firebase.firestore.FieldValue.increment(4)
-    getPer = async () =>{
+    getAct = async () =>{
         const userDocument = firestore().collection("users2").
-        doc('학습성격')
+        doc('행동조절')
         .update({
-            '개인형' : increment
+            '활발형' : increment
         })
     }
-    getSoc = async () =>{
+    getDif = async () =>{
         const userDocument = firestore().collection("users2").
-        doc('학습성격')
+        doc('행동조절')
         .update({
-            '사회형' : increment
+            '차분형' : increment
         })
     }
     return(
         <View style = {styles.container}>
-            <Progress.Bar progress={0.2} width={200} color={'#6667ab'} height={20} borderRadius={20} marginBottom={100} marginTop ={50} />
-            <Text style={styles.styledQ}>Q2</Text>
-            <Text style={styles.styledFont}>친구와의 약속이 깨졌다</Text>
-            <Text style={styles.styledFont}>나의 행동은?</Text>
+            <Progress.Bar progress={0.7} width={200} color={'#6667ab'} height={20} borderRadius={20} marginBottom={100} marginTop ={50} />
+            <Text style={styles.styledQ}>Q7</Text>
+            <Text style={styles.styledFont}>좋아하는 음악 장르는?</Text>
             <Button
-            title = "다른 친구와의 약속을 잡아보려 한다"
+            title = "EDM, 댄스"
                 buttonStyle =  {styles.styledButton}
                 titleStyle = {parameters.buttonTitle}
                             //button에 스타일 입히기
                 onPress = {() => {
-                    getSoc()
-                    navigation.navigate("Test3")
+                    getAct()
+                    navigation.navigate("Test8")
                 }}
                 />
             <Button
-            title = "그날은 쉰다"
+            title = "발라드, 클래식"
                 buttonStyle =  {styles.styledButton}
                 titleStyle = {parameters.buttonTitle}
                             //button에 스타일 입히기
                 onPress = {() => {
-                    getPer()
-                    navigation.navigate("Test3")
+                    getDif()
+                    navigation.navigate("Test8")
                 }}
                 />
         </View>

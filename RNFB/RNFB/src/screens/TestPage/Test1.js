@@ -3,21 +3,39 @@ import{View, Text, StyleSheet} from 'react-native'
 import {Icon,Button} from 'react-native-elements'
 import { parameters } from '../../global/styles'
 import * as Progress from 'react-native-progress'
+import firestore, { firebase } from '@react-native-firebase/firestore'
+
 
 export default function Test1({navigation}){
+    const increment = firebase.firestore.FieldValue.increment(4)
+    getPlan = async () =>{
+        const userDocument = firestore().collection("users2").
+        doc('사고유형')
+        .update({
+            '계획형' : increment
+        })
+    }
+    getCnt = async () =>{
+        const userDocument = firestore().collection("users2").
+        doc('사고유형')
+        .update({
+            '즉흥형' : increment
+        })
+    }
     return(
-        
+
         <View style = {styles.container}>
-            <Progress.Bar progress={0.3} width={200} color={'#6667ab'} height={20} borderRadius={20} marginBottom={100} marginTop ={50} />
-            <Text>Q1</Text>
-            <Text>Tv를 틀고 뭘 볼지 정하는</Text>
-            <Text>나의 모습은?</Text>
+            <Progress.Bar progress={0.1} width={200} color={'#6667ab'} height={20} borderRadius={20} marginBottom={100} marginTop ={50} />
+            <Text style={styles.styledQ}>Q1</Text>
+            <Text style={styles.styledFont}>Tv를 틀고 뭘 볼지 정하는</Text>
+            <Text style={styles.styledFont}>나의 모습은?</Text>
             <Button
             title = "편성표를 켜서 프로그램을 확인한다"
                 buttonStyle =  {styles.styledButton}
                 titleStyle = {parameters.buttonTitle}
                             //button에 스타일 입히기
                 onPress = {() => {
+                    getPlan()
                     navigation.navigate("Test2")
                 }}
                 />
@@ -27,6 +45,7 @@ export default function Test1({navigation}){
                 titleStyle = {parameters.buttonTitle}
                             //button에 스타일 입히기
                 onPress = {() => {
+                    getCnt()
                     navigation.navigate("Test2")
                 }}
                 />
@@ -47,7 +66,18 @@ const styles = StyleSheet.create({
         borderColor:'#6667ab',
         height:50,
         paddingHorizontal:20,
-        width:"100%",
+        width:350,
         marginTop : 50
     },
+    styledQ :{
+        fontSize : 30,
+        color:'#6667ab',
+        fontWeight:'bold',
+        marginBottom:10
+    },
+    styledFont:{
+        fontSize : 19,
+        color:'black',
+        fontWeight:'bold',
+    }
 })

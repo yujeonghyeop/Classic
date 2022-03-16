@@ -136,8 +136,7 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
-
-        multiDexEnabled true
+        multiDexEnabled true    //firestore연동
         vectorDrawables.useSupportLibrary = true
     }
     splits {
@@ -200,7 +199,7 @@ dependencies {
 
 
 
-
+    implementation 'androidx.multidex:multidex:2.0.1'   //firestore 연동
 
     implementation fileTree(dir: "libs", include: ["*.jar"])
     //noinspection GradleDynamicVersion
