@@ -54,7 +54,7 @@ useEffect(()=>{ //파이어베이스 이용하여 로그인하는 부분
                         titleStyle = {styles.createButtonTitle}
 
                         onPress = {() => {
-                            navigation.navigate("SignUpScreen")
+                            navigation.navigate("Test1")
                         }}
                         
                     />
