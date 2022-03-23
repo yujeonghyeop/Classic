@@ -23,9 +23,18 @@ async function signUp(values){  // firebase에 email, password 넘겨주는 역�
   const {email, password} = values
   try{
     await auth().createUserWithEmailAndPassword(email, password)  //email, password를 firebase에 넘김
-    firestore().collection(email).add('사고유형')
-    firestore().collection(email).add('학습성격')
-    firestore().collection(email).add('행동조절')
+    firestore().collection(email).doc("사고유형").set({
+      계획형 : 0,
+      즉흥형 : 0,
+    })
+    firestore().collection(email).doc("학습성격").set({
+      개인형 : 0,
+      사회형 : 0,
+    })
+    firestore().collection(email).doc("행동조절").set({
+      차분형 : 0,
+      활발형 : 0,
+    })    //creat account를 하자마자 user의 데이터를 firestore에 올려준다.
     console.log("USER ACCOUNT CREATED")
   }catch(error){
     if(error.code === 'auth/email-already-in-use'){ // 이미 있는 email이면 에러 출력

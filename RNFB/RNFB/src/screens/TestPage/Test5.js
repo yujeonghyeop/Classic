@@ -8,15 +8,17 @@ import firestore, { firebase } from '@react-native-firebase/firestore'
 
 export default function Test5({navigation}){
     const increment = firebase.firestore.FieldValue.increment(4)
+    const user = firebase.auth().currentUser;
+    const email = user.email;
     getAct = async () =>{
-        const userDocument = firestore().collection("users2").
+        const userDocument = firestore().collection(email).
         doc('행동조절')
         .update({
             '활발형' : increment
         })
     }
     getDif = async () =>{
-        const userDocument = firestore().collection("users2").
+        const userDocument = firestore().collection(email).
         doc('행동조절')
         .update({
             '차분형' : increment
