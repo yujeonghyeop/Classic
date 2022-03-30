@@ -3,84 +3,43 @@ import{View, Text, StyleSheet} from 'react-native'
 import {Icon,Button} from 'react-native-elements'
 import { parameters } from '../../global/styles'
 import firestore, { firebase } from '@react-native-firebase/firestore'
+import storage from '@react-native-firebase/storage'
+
 export default function Result({navigation}){
-    const[loading, setLoading] = useState(false);
-    const[cnt, setcnt] = useState(1);
+    const getImage = async key => {
+        let url = '';
+        try {
+          const imageRef = storage().ref('모차르트.png');
+          url = await imageRef.getDownloadURL();
+          setUrl(url);
+          console.log('1')
+          console.log('imageUrl:', url);
+          return url;
+        } catch (e) {
+          console.log(e);
+        }
+      };
+      getImage()
+    const [score, setScore] = useState(1);
     const user = firebase.auth().currentUser;
-    const email = user.email; 
-    let result = 1;
-    async function cal1(){
-        const first = firestore().collection(email).doc("사고유형");
+    const email = user.email;
+    const first = firestore().collection(email).doc("결과");
+    async function Read(){
         await first.get().then((doc)=>{
             if (doc.exists){
                 const pandi = doc.data();
-                const plan = pandi["계획형"];
-                const imp = pandi["즉흥형"];
-                if(plan > imp){
-                    result *= 1;
-                }
-                else{
-                    result *= 2;
-                }
-            }
-            else{
-                console.log("no data")
+                const plan = pandi["result"];
+                console.log(plan)
+                setScore(plan);
             }
         })
-        console.log("cal1 complete!",result)
-    }
-    async function cal2(){
-        const second = firestore().collection(email).doc("학습성격");
-        await second.get().then((doc)=>{
-            if (doc.exists){
-                const pands = doc.data();
-                const per = pands["개인형"];
-                const soc = pands["사회형"];
-                if(per > soc){
-                    result *= 3;
-                }
-                else{
-                    result *= 4;
-                }
-            }
-            else{
-                console.log("no data")
-            }
-        })
-        console.log("cal2 complete!",result)
-
-    }
-    async function cal3(){
-        const third = firestore().collection(email).doc("행동조절");
-        await third.get().then((doc)=>{
-            if (doc.exists){
-                const aandd = doc.data();
-                const act = aandd["활발형"];
-                const dif = aandd["차분형"];
-                if(act > dif){
-                    result *= 5;
-                }
-                else{
-                    result *= 6;
-                }
-            }
-            else{
-                console.log("no data")
-            }
-        })
-        console.log("cal3 complete!", result)
-        setcnt(result);
-        setLoading(true);
-        
     }
     useEffect(()=>{
-        cal1();
-        cal2();
-        cal3();
-    },[])
+        Read();
+    })
     return(
         <View style = {styles.container}>
-            <Text style={styles.styledFont}>{loading == true ? cnt : "waiting"}</Text>
+            <Text style={styles.styledFont}>your score : {score}!</Text>
             <Button 
             title = "검사 다시하기"
                 buttonStyle =  {styles.styledButton}

@@ -34,6 +34,9 @@ async function signUp(values){  // firebase에 email, password 넘겨주는 역�
     firestore().collection(email).doc("행동조절").set({
       차분형 : 0,
       활발형 : 0,
+    })
+    firestore().collection(email).doc("결과").set({
+      result : 0,
     })    //creat account를 하자마자 user의 데이터를 firestore에 올려준다.
     console.log("USER ACCOUNT CREATED")
   }catch(error){

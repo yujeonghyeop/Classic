@@ -38,7 +38,7 @@ export default function Test9({navigation}){
                             //button에 스타일 입히기
                 onPress = {() => {
                     getPlan()
-                    navigation.navigate("Result")
+                    navigation.navigate("cal")
                 }}
                 />
             <Button
@@ -48,7 +48,7 @@ export default function Test9({navigation}){
                             //button에 스타일 입히기
                 onPress = {() => {
                     getCnt()
-                    navigation.navigate("Result")
+                    navigation.navigate("cal")
                 }}
                 />
         </View>

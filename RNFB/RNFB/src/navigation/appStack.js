@@ -13,6 +13,8 @@ import Test6 from '../screens/TestPage/Test6';
 import Test7 from '../screens/TestPage/Test7';
 import Test8 from '../screens/TestPage/Test8';
 import Test9 from '../screens/TestPage/Test9';
+import cal from '../screens/TestPage/cal';
+
 
 
 const App = createStackNavigator();
@@ -87,6 +89,13 @@ export function AppStack(){
             <App.Screen
                 name = "Test9"
                 component = {Test9}
+                options = {{
+                    headerShown : false
+                }}
+            />
+            <App.Screen
+                name = "cal"
+                component = {cal}
                 options = {{
                     headerShown : false
                 }}
