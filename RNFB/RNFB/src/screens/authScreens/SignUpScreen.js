@@ -59,7 +59,7 @@ async function signUp(values){  // firebase에 email, password 넘겨주는 역�
 
     return(
         <View style = {styles.container}>
-        <Header title = " My ACCOUNT" type = "arrow-left" navigation ={navigation}/>
+        {/* <Header title = " My ACCOUNT" type = "arrow-left" navigation ={navigation}/> */}
 
             <ScrollView keyboardShouldPersistTaps = "always">
                 <View style={styles.view1}>

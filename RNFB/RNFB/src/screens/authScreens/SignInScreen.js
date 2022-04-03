@@ -41,15 +41,10 @@ async function signIn(data){
 
     return(
         <View style ={styles.container}>
-            <Header title = " My ACCOUNT" type = "arrow-left" navigation ={navigation}/>
-
-            <View>
-                <Text style = {title}>Sign-In</Text> 
-            </View>
-
+            {/* <Header title = " My ACCOUNT" type = "arrow-left" navigation ={navigation}/> */}
             <View style = {{alignItems:"center",marginTop:10}}>
-                <Text style = {styles.text1}>Please enter the email and password</Text>
-                <Text style = {styles.text1}>registered with your account</Text>
+                <Text style = {styles.text2}>Classic</Text>
+                <Text style = {styles.text1}>나의 학습 유형을 제대로 알고 공부하자</Text>
             </View>
             
             {/* user의 데이터를 받는 부분을 Formik으로 감싸준다 */}
@@ -124,7 +119,7 @@ async function signIn(data){
                 <View style = {{marginHorizontal:20, marginVertical : 20}}> 
                 {/* button에 여백 두기 */}
                     <Button 
-                        title = "SIGN IN"
+                        title = "로그인 하기"
                             buttonStyle =  {parameters.styledButton}
                             titleStyle = {parameters.buttonTitle}
                             
@@ -140,17 +135,14 @@ async function signIn(data){
             
                 <View style = {{alignItems: "center", marginTop:15}}> 
                 {/* pw 잊어버렸을 때의 항목 만들기 */}
-                    <Text style = {{...styles.text1, textDecorationLine: "underline"}}> Forgot Password ?</Text>
+                    <Text style = {{...styles.text1, textDecorationLine: "underline"}}> 비밀번호를 잊어버리셨나요?</Text>
                 </View>
 
-                <View style = {{alignItems : "center", marginTop:20, marginBottom:20}}>
-                    <Text style = {{fontSize:20, fontWeight:"bold"}}> OR</Text>
-                </View>
                 {/* facebook으로 로그인 할 수 있는 버튼 생성 */}
                 <View style = {{marginHorizontal:10, marginTop:10}}>
                     <SocialIcon
                     //SocialIcon이라는 친구를 사용해 SocialIcon을 불러올 수 있다.
-                        title = "Sign In With Facebook"
+                        title = "페이스북으로 로그인하기"
                         button
                         type = "facebook"
                         style = {styles.SocialIcon}
@@ -161,7 +153,7 @@ async function signIn(data){
 
                 <View style = {{marginHorizontal:10, marginTop:10}}>
                     <SocialIcon
-                        title = "Sign In With Google"
+                        title = "구글로 로그인하기"
                         button
                         type = "google"
                         style = {styles.SocialIcon}
@@ -172,7 +164,7 @@ async function signIn(data){
 
                 <View style = {{alignItems:"flex-end",marginHorizontal:20, marginTop:10}}>
                     <Button 
-                        title = "Create an account"
+                        title = "회원가입"
                         buttonStyle = {styles.createButton}
                         titleStyle = {styles.createButtonTitle}
 
@@ -193,7 +185,13 @@ const styles = StyleSheet.create({
     },
     text1: {
         color:colors.grey3,
-        fontSize:16
+        fontSize:16,
+        fontWeight : "bold"
+    },
+    text2:{
+        color:'#6667ab',
+        fontSize:50,
+        fontWeight : "bold"
     },
 
     TextInput1:{
@@ -225,12 +223,12 @@ const styles = StyleSheet.create({
         justifyContent :"center",
         borderRadius:12,
         borderWidth:1,
-        borderColor:"#ff8c52",
+        borderColor:'#6667ab',
         height:40,
         paddingHorizontal:20,
     },
     createButtonTitle:{
-        color:"#ff8c52",
+        color:'#6667ab',
         fontSize:16,
         fontWeight:"bold",
         alignItems:"center",
