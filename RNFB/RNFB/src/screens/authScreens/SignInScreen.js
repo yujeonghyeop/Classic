@@ -12,7 +12,7 @@ import { SignInContext } from '../../contexts/authContext';
 
 
 export default function SignInScreen({navigation}){
-
+    const [secure, setSecure] = useState(true)
     const{dispatchSignedIn} = useContext(SignInContext)
     const[textInput2Fossued, setTextInput2Fossued] = useState(false)
     //pw border가 focus를 받는지 안받는지를 확인하기 위해 useState로 상태를 기록
@@ -42,7 +42,7 @@ async function signIn(data){
     return(
         <View style ={styles.container}>
             {/* <Header title = " My ACCOUNT" type = "arrow-left" navigation ={navigation}/> */}
-            <View style = {{alignItems:"center",marginTop:10}}>
+            <View style = {{alignItems:"center",marginTop:100}}>
                 <Text style = {styles.text2}>Classic</Text>
                 <Text style = {styles.text1}>나의 학습 유형을 제대로 알고 공부하자</Text>
             </View>
@@ -73,7 +73,7 @@ async function signIn(data){
                 
                 <View style = {styles.TextInput2}>      
                     {/* password 부분에 animate 요소도 더해서 나타낸다 */}
-                    <Animatable.View animation = {textInput2Fossued ? "" :"fadeInLeft" } duration={400}>
+                    <Animatable.View animation = {textInput2Fossued ? "" :"fadeInLeft" } duration={200}>
                         {/* Fossued가 false일때 에니메이션 동작 */}
                         <Icon 
                             name = "lock"
@@ -86,6 +86,7 @@ async function signIn(data){
                         <TextInput
                             style = {{width :"80%"}}
                             placeholder = "password"
+                            secureTextEntry = {secure}
                             ref = {textInput2}  //pw 데이터 받는 부분
                             onFocus = {() =>{
                                 setTextInput2Fossued(false)
@@ -101,16 +102,26 @@ async function signIn(data){
                             // pw 데이터를 받는 ref가 focus를 받으면(클릭이 되면) Fossued를 false로 세팅하고 
                             // focus에서 벗어나면 Fossued를 True로 세팅한다.
                         />
-                    <Animatable.View animation = {textInput2Fossued ? "" :"fadeInLeft" } duration={400}>
+                    <Animatable.View animation = {textInput2Fossued ? "" :"fadeInLeft" } duration={200}>
                         {/* Fossued가 false일때 에니메이션 동작 */}
+                        {secure ?
+                        <Icon 
+                            name = "visibility"
+                            iconStyle = {{color:colors.grey3}}
+                            type = "material"
+                            // style = {{marginRight : 200}}
+                            onPress={()=>setSecure(!secure)}
+                        />
+                        :
                         <Icon 
                             name = "visibility-off"
                             iconStyle = {{color:colors.grey3}}
                             type = "material"
-                            style = {{marginRight : 10}}
-                            
+                            // style = {{marginRight : 200}}
+                            onPress={()=>setSecure(!secure)}
                         />
-                        {/* //visibility Icon */}
+                        }   
+                        {/* 삼항연산자로 비밀번호를 보이게 하기랑 보이지 않게 하기 따로 설정 */}
                     </Animatable.View>
                     
                     </View>
@@ -211,7 +222,8 @@ const styles = StyleSheet.create({
             justifyContent:"space-between",
             alignItems:"center",
             alignContent:"center",
-            paddingLeft:15  //글자 왼쪽 공백
+            paddingLeft:10,  //글자 왼쪽 공백
+            paddingRight:10
         },
     SocialIcon:{
         borderRadius:12,

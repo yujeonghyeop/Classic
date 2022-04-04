@@ -26,12 +26,13 @@ useEffect(()=>{ //파이어베이스 이용하여 로그인하는 부분
     return(
         // flex를 활용하여 화면 구성을 할 수 있다. 
         <View style = {{flex:1}}>
-            <View style = {{flex:3, justifyContent:'flex-start',alignItems:'center', paddingTop:20}}>
-                <Text style = {{fontSize:40, color:'#6667ab', fontWeight:'bold'}}> CLASSIC</Text>
+            <View style = {{flex:3, justifyContent:'flex-start',alignItems:'center', paddingTop:200}}>
+                <Text style = {styles.text2}>Classic</Text>
+                <Text style = {styles.text1}>나의 학습 유형을 제대로 알고 공부하자</Text>
             </View>
 
         <View style = {{flex:4}}>
-            <View style = {{marginHorizontal:20, marginVertical : 20}}> 
+            <View style = {{marginHorizontal:20, marginVertical : 20,marginTop:-80}}> 
                 {/* button에 여백 두기 */}
                     <Button 
                         title = "로그인 하기"
@@ -67,6 +68,16 @@ useEffect(()=>{ //파이어베이스 이용하여 로그인하는 부분
 }
 
 const styles = StyleSheet.create({
+    text1: {
+        color:colors.grey3,
+        fontSize:16,
+        fontWeight : "bold"
+    },
+    text2:{
+        color:'#6667ab',
+        fontSize:50,
+        fontWeight : "bold"
+    },
     createButton: {
         backgroundColor:'#6667ab',
         alignContent:"center",

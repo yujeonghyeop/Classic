@@ -62,19 +62,19 @@ async function signUp(values){  // firebase에 email, password 넘겨주는 역�
         {/* <Header title = " My ACCOUNT" type = "arrow-left" navigation ={navigation}/> */}
 
             <ScrollView keyboardShouldPersistTaps = "always">
-                <View style={styles.view1}>
-                    <Text style = {styles.text1}>Sign-Up</Text>
-                </View>
+            <View style = {{alignItems:"center",marginTop:10}}>
+                <Text style = {styles.headtext2}>Classic</Text>
+                <Text style = {styles.headtext1}>나의 학습 유형을 제대로 알고 공부하자</Text>
+            </View>
+            
                 <Formik initialValues = {initialValues} onSubmit = {(values) =>{signUp(values)}}>
                     {(props)=>(
                         <View style = {styles.view2}>
-                            <View>
-                                <Text style = {styles.text2}>New on YJH?</Text>
-                            </View>
+                            
                             {/* 폰  번호 받는 칸 */}
                                 <View style = {styles.view6}>   
                                   <TextInput
-                                    placeholder = "Mobile Number"
+                                    placeholder = "전화번호"
                                     style = {styles.input1}
                                     keyboardType = "number-pad"
                                     autoFocus = {true}
@@ -154,7 +154,7 @@ async function signUp(values){  // firebase에 email, password 넘겨주는 역�
                                 </View>
                                 <View style = {styles.view17}>
                                   <Button 
-                                    title = "Create my account"
+                                    title = "계정 만들기"
                                     buttonStyle = {styles.button1}
                                     titleStyle = {styles.title1}
                                     onPress = {props.handleSubmit}
@@ -196,6 +196,16 @@ const styles = StyleSheet.create({
     container:{flex:1,
         backgroundColor:'white'
       },
+    headtext1: {
+        color:colors.grey3,
+        fontSize:16,
+        fontWeight : "bold"
+    },
+    headtext2:{
+        color:'#6667ab',
+        fontSize:50,
+        fontWeight : "bold"
+    },
 
       view1:{justifyContent:'center',
              alignItems:'flex-start',
@@ -204,7 +214,8 @@ const styles = StyleSheet.create({
              paddingHorizontal:15
             },
 
-      text1:{fontSize:22,
+      text1:{
+        fontSize:22,
         color:colors.buttons,
         fontWeight:'bold'
       },
@@ -218,7 +229,8 @@ const styles = StyleSheet.create({
             marginBottom:10
           },
 
-      text2:{fontSize:15,
+      text2:{
+            fontSize:15,
             color:colors.grey2
           },
 
