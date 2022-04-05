@@ -83,7 +83,6 @@ export default function Result({navigation}){
                 'result' : cnt
             })
             console.log("setting completed");
-            // navigation.navigate("Result");
         }
     useEffect(()=>{
         cal1();
