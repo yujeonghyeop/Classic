@@ -5,6 +5,8 @@ import { parameters } from '../../global/styles'
 import firestore, { firebase } from '@react-native-firebase/firestore'
 import storage from '@react-native-firebase/storage'
 import * as Progress from 'react-native-progress'
+import Swiper from 'react-native-swiper';
+
 
 export default function Result({navigation}){
     // useEffect(() => {
@@ -17,13 +19,16 @@ export default function Result({navigation}){
     //       console.warn(e);
     //     }
     //   });
-      
+    
+
+
     const [url, setUrl] = useState('');
     const [musician, setMusician] = useState('');
     const [sentence, setSentence] = useState('');
     const [cnt, setCnt] = useState(false);
     const user = firebase.auth().currentUser;
     const email = user.email; 
+    
     const getImage15 = async key =>{
         const imageRef = storage().refFromURL('gs://rnfb-123ee.appspot.com/헨델.png');
         const inf = firestore().collection("15").doc("정보");
@@ -281,12 +286,15 @@ export default function Result({navigation}){
                 style = {{width:300, height:400}}
                 source = {{uri : url}} 
                 />
-            <Progress.Bar progress={0.1} width={200} color={'#6667ab'} height={20} borderRadius={20} marginTop ={20} />
+            <Progress.Bar progress={1.0} width={300} color={'#6667ab'} height={20} borderRadius={20} marginTop ={20} />
             <Progress.Bar progress={0.1} width={200} color={'#6667ab'} height={20} borderRadius={20} marginTop ={20} />
             <Progress.Bar progress={0.1} width={200} color={'#6667ab'} height={20} borderRadius={20} marginTop ={20} />
             <View style = {{alignItems:"center"}}>
                 <Text style = {styles.text1}>{sentence}</Text>
             </View>
+            
+        
+
             <Button 
             title = "검사 다시하기"
                 buttonStyle =  {styles.styledButton}
@@ -324,6 +332,12 @@ const styles = StyleSheet.create({
         color:'#6667ab',
         fontSize:40,
         fontWeight : "bold"
+    },
+    
+    text: {
+        color: '#fff',
+        fontSize: 30,
+        fontWeight: 'bold',
     },
 
     styledButton :{     //button 스타일 지정
