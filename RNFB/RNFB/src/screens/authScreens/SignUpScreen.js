@@ -166,17 +166,17 @@ async function signUp(values){  // firebase에 email, password 넘겨주는 역�
 
                   {/* 잘못 들어왔을 때 로그인 화면으로 돌려보내는 view */}
                 <View style = {styles.view18}>
-                      <Text style = {styles.text5}>OR</Text>
+                      <Text style = {styles.text5}></Text>
                 </View>
 
                 <View style = {styles.view19}>
                   <View style = {styles.view20}>
-                    <Text style = {styles.text6}> Already have an account with yjh?</Text>
+                    <Text style = {styles.text6}> </Text>
                     </View>
 
                     <View style = {styles.view21}>
                         <Button
-                          title = "Sign-In"
+                          title = "로그인 하러 가기"
                           buttonStyle = {styles.button2}
                           titleStyle = {styles.title2}
                           onPress = {() => {navigation.navigate('SignInScreen')}}
