@@ -10,7 +10,7 @@ import {colors, parameters, title} from '../global/styles';
 export default function HomeScreen({navigation}) {
   return (
     <View style={styles.container}>
-      <HomeHeader navigation={navigation} />
+      {/* <HomeHeader navigation={navigation} /> */}
       <Image source={logo} style={styles.logo} />
       <Profile/>
       <Button
@@ -30,7 +30,6 @@ export default function HomeScreen({navigation}) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    margin: 10,
     backgroundColor:'#FFFFFF'
   },
   logo:{
