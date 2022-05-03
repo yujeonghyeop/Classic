@@ -19,7 +19,7 @@ export default function Profile(){
             setExp(explain);
         }
     })
-
+//profile에 닉네임, 종류, 설명을 위한 data 다운
     return(
         <View style={styles.styledBox}>
             <View style={{flexDirection:'row'}}>
