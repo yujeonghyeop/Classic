@@ -8,7 +8,7 @@ import * as Animatable from 'react-native-animatable'   //animate한 요소를 �
 import { Formik } from 'formik'; //user Authetication
 import auth from '@react-native-firebase/auth'
 import { SignInContext } from '../../contexts/authContext';
-
+import Logo from '../../images/logo.png'
 
 
 export default function SignInScreen({navigation}){
