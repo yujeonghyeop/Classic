@@ -1,9 +1,10 @@
 import React from 'react'
-import{View, Text, StyleSheet} from 'react-native'
+import{View, Text, StyleSheet,Image} from 'react-native'
 import {Icon,Button} from 'react-native-elements'
 import { parameters } from '../../global/styles'
 import * as Progress from 'react-native-progress'
 import firestore, { firebase } from '@react-native-firebase/firestore'
+import logo from '../../images/logo.png';
 
 
 export default function Test1({navigation}){
@@ -27,10 +28,12 @@ export default function Test1({navigation}){
     return(
 
         <View style = {styles.container}>
-            <Progress.Bar progress={0.1} width={200} color={'#6667ab'} height={20} borderRadius={20} marginBottom={100} marginTop ={50} />
-            <Text style={styles.styledQ}>Q1</Text>
+            <Image source={logo} style={styles.logo} />
+            <Text style={styles.styledQ}>Q 1.</Text>
+            <View style ={styles.styledBox}>
             <Text style={styles.styledFont}>Tv를 틀고 뭘 볼지 정하는</Text>
             <Text style={styles.styledFont}>나의 모습은?</Text>
+            </View>
             <Button
             title = "편성표를 켜서 프로그램을 확인한다"
                 buttonStyle =  {styles.styledButton}
@@ -51,6 +54,7 @@ export default function Test1({navigation}){
                     navigation.navigate("Test2")
                 }}
                 />
+            <Progress.Bar progress={0.1} width={200} color={'#6667ab'} height={20} borderRadius={20} marginBottom={100} marginTop ={50} />
         </View>
     )
 }
@@ -72,7 +76,7 @@ const styles = StyleSheet.create({
         marginTop : 50
     },
     styledQ :{
-        fontSize : 30,
+        fontSize : 60,
         color:'#6667ab',
         fontWeight:'bold',
         marginBottom:10
@@ -81,5 +85,20 @@ const styles = StyleSheet.create({
         fontSize : 19,
         color:'black',
         fontWeight:'bold',
-    }
+        
+        justifyContent : 'center'
+    },
+    styledBox : {
+        backgroundColor : '#6667ab',
+        opacity : 0.4,
+        alignItems : 'center',
+    },
+    logo:{
+        width: 250,
+        height: 42,
+        alignSelf: 'center',
+        margin: 10,
+        marginTop: 40,
+        marginBottom :50
+      }
 })

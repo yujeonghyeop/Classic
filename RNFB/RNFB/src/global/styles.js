@@ -33,7 +33,13 @@ export const parameters = {
         marginTop:3
     }
 }
-
+export const logo = {
+    width: 250,
+    height: 42,
+    alignSelf: 'center',
+    margin: 10,
+    marginTop: 40
+  }
 export const title = {
     color:"#ff8C52",
     fontSize:20,
