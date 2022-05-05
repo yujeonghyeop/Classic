@@ -30,6 +30,13 @@
 		AB58F9125B2343F88C9C4019 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 30E0A47F98914857BEEA07F2 /* Octicons.ttf */; };
 		3325A25153CB49DA965E1A44 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2E31D2615AC34F308A19F81E /* SimpleLineIcons.ttf */; };
 		32E0C722C4AF4D48B7FE23F9 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F7E064659EC6403582E02867 /* Zocial.ttf */; };
+		AABAF2A1BF4B4F768067E96D /* FrankRuhlLibre-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 46420285B1D14F2A8223BB3E /* FrankRuhlLibre-Black.ttf */; };
+		BD8C0F15B44D4382BEF34A90 /* FrankRuhlLibre-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 28670D9D989740839DEDF993 /* FrankRuhlLibre-Bold.ttf */; };
+		94B6452DC6984AF0BF48DFDE /* FrankRuhlLibre-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D6A8CCA81BE5414592459974 /* FrankRuhlLibre-Light.ttf */; };
+		F065368B633B42DAAC36F1F7 /* FrankRuhlLibre-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E46E82AED494677929E0BD6 /* FrankRuhlLibre-Medium.ttf */; };
+		CB6174EF3E0942F99FD6F484 /* FrankRuhlLibre-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FC365868BED04EC2A1E6FC55 /* FrankRuhlLibre-Regular.ttf */; };
+		2E7CE0627DAC4E598BAC2D4D /* GowunBatang-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 70DEBCFE9AAF41E48539E7BB /* GowunBatang-Bold.ttf */; };
+		2428C6BEFBE84C5DBB9D18D1 /* GowunBatang-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 05061908E63E46C1B32972B9 /* GowunBatang-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +83,13 @@
 		30E0A47F98914857BEEA07F2 /* Octicons.ttf */ = {isa = PBXFileReference; name = "Octicons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		2E31D2615AC34F308A19F81E /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; name = "SimpleLineIcons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		F7E064659EC6403582E02867 /* Zocial.ttf */ = {isa = PBXFileReference; name = "Zocial.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		46420285B1D14F2A8223BB3E /* FrankRuhlLibre-Black.ttf */ = {isa = PBXFileReference; name = "FrankRuhlLibre-Black.ttf"; path = "../src/assets/fonts/FrankRuhlLibre-Black.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		28670D9D989740839DEDF993 /* FrankRuhlLibre-Bold.ttf */ = {isa = PBXFileReference; name = "FrankRuhlLibre-Bold.ttf"; path = "../src/assets/fonts/FrankRuhlLibre-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		D6A8CCA81BE5414592459974 /* FrankRuhlLibre-Light.ttf */ = {isa = PBXFileReference; name = "FrankRuhlLibre-Light.ttf"; path = "../src/assets/fonts/FrankRuhlLibre-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		7E46E82AED494677929E0BD6 /* FrankRuhlLibre-Medium.ttf */ = {isa = PBXFileReference; name = "FrankRuhlLibre-Medium.ttf"; path = "../src/assets/fonts/FrankRuhlLibre-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		FC365868BED04EC2A1E6FC55 /* FrankRuhlLibre-Regular.ttf */ = {isa = PBXFileReference; name = "FrankRuhlLibre-Regular.ttf"; path = "../src/assets/fonts/FrankRuhlLibre-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		70DEBCFE9AAF41E48539E7BB /* GowunBatang-Bold.ttf */ = {isa = PBXFileReference; name = "GowunBatang-Bold.ttf"; path = "../src/assets/fonts/GowunBatang-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		05061908E63E46C1B32972B9 /* GowunBatang-Regular.ttf */ = {isa = PBXFileReference; name = "GowunBatang-Regular.ttf"; path = "../src/assets/fonts/GowunBatang-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +215,13 @@
 				30E0A47F98914857BEEA07F2 /* Octicons.ttf */,
 				2E31D2615AC34F308A19F81E /* SimpleLineIcons.ttf */,
 				F7E064659EC6403582E02867 /* Zocial.ttf */,
+				46420285B1D14F2A8223BB3E /* FrankRuhlLibre-Black.ttf */,
+				28670D9D989740839DEDF993 /* FrankRuhlLibre-Bold.ttf */,
+				D6A8CCA81BE5414592459974 /* FrankRuhlLibre-Light.ttf */,
+				7E46E82AED494677929E0BD6 /* FrankRuhlLibre-Medium.ttf */,
+				FC365868BED04EC2A1E6FC55 /* FrankRuhlLibre-Regular.ttf */,
+				70DEBCFE9AAF41E48539E7BB /* GowunBatang-Bold.ttf */,
+				05061908E63E46C1B32972B9 /* GowunBatang-Regular.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -318,6 +339,13 @@
 				AB58F9125B2343F88C9C4019 /* Octicons.ttf in Resources */,
 				3325A25153CB49DA965E1A44 /* SimpleLineIcons.ttf in Resources */,
 				32E0C722C4AF4D48B7FE23F9 /* Zocial.ttf in Resources */,
+				AABAF2A1BF4B4F768067E96D /* FrankRuhlLibre-Black.ttf in Resources */,
+				BD8C0F15B44D4382BEF34A90 /* FrankRuhlLibre-Bold.ttf in Resources */,
+				94B6452DC6984AF0BF48DFDE /* FrankRuhlLibre-Light.ttf in Resources */,
+				F065368B633B42DAAC36F1F7 /* FrankRuhlLibre-Medium.ttf in Resources */,
+				CB6174EF3E0942F99FD6F484 /* FrankRuhlLibre-Regular.ttf in Resources */,
+				2E7CE0627DAC4E598BAC2D4D /* GowunBatang-Bold.ttf in Resources */,
+				2428C6BEFBE84C5DBB9D18D1 /* GowunBatang-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
