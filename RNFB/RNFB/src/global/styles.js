@@ -56,7 +56,8 @@ export const testpageStyle = { //testpage에 들어가는 친구들 집합 Resul
         fontSize : 60,
         color:'#6667ab',
         fontWeight:'bold',
-        marginBottom:10
+        marginBottom:10,
+        fontFamily: 'FrankRuhlLibre-Light'
     },
     styledFont:{
         fontSize : 19,

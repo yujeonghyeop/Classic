@@ -75,5 +75,6 @@ const styles = StyleSheet.create({
     buttonTitle:{
         color:'black',
         fontSize: 15,
+        fontFamily: 'GowunBatang-Bold'
     },
   });
