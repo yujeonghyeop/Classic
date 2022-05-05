@@ -1,10 +1,10 @@
 import React from 'react'
-import{View, Text, StyleSheet} from 'react-native'
-import {Icon,Button} from 'react-native-elements'
-import { parameters } from '../../global/styles'
+import{View, Text,Image} from 'react-native'
+import {Button} from 'react-native-elements'
+import { parameters,testpageStyle } from '../../global/styles'
 import * as Progress from 'react-native-progress'
 import firestore, { firebase } from '@react-native-firebase/firestore'
-
+import logo from '../../images/logo.png';
 
 export default function Test3({navigation}){
     const increment = firebase.firestore.FieldValue.increment(4)
@@ -26,14 +26,16 @@ export default function Test3({navigation}){
         })
     }
     return(
-        <View style = {styles.container}>
-            <Progress.Bar progress={0.3} width={200} color={'#6667ab'} height={20} borderRadius={20} marginBottom={100} marginTop ={50} />
-            <Text style={styles.styledQ}>Q3</Text>
-            <Text style={styles.styledFont}>재밌는 유튜브 영상을 봤을 때 </Text>
-            <Text style={styles.styledFont}>하는 행동은?</Text>
+        <View style = {testpageStyle.container}>
+            <Image source={logo} style={testpageStyle.logo} />
+            <Text style={testpageStyle.styledQ}>Q 3</Text>
+            <View style ={testpageStyle.styledBox}>
+            <Text style={testpageStyle.styledFont}>재밌는 유튜브 영상을 봤을 때 </Text>
+            <Text style={testpageStyle.styledFont}>하는 행동은?</Text>
+            </View>
             <Button
             title = "댓글을 단다"
-                buttonStyle =  {styles.styledButton}
+                buttonStyle =  {testpageStyle.styledButton}
                 titleStyle = {parameters.buttonTitle}
                             //button에 스타일 입히기
                 onPress = {() => {
@@ -43,7 +45,7 @@ export default function Test3({navigation}){
                 />
             <Button
             title = "조용히 떠난다"
-                buttonStyle =  {styles.styledButton}
+                buttonStyle =  {testpageStyle.styledButton}
                 titleStyle = {parameters.buttonTitle}
                             //button에 스타일 입히기
                 onPress = {() => {
@@ -51,36 +53,7 @@ export default function Test3({navigation}){
                     navigation.navigate("Test4")
                 }}
                 />
+            <Progress.Bar progress={0.3} width={300} color={'#6667ab'} height={10} borderRadius={5} marginBottom={100} marginTop ={30} backgroundColor = {'#E8E8F2'} />
         </View>
     )
 }
-
-const styles = StyleSheet.create({
-    container:{
-        alignItems:'center',
-        justifyContent:'center'
-    },
-    styledButton :{     //button 스타일 지정
-        backgroundColor : '#6667ab',
-        alignContent : "center",
-        justifyContent : "center",
-        borderRadius : 12,
-        borderWidth :1,
-        borderColor:'#6667ab',
-        height:50,
-        paddingHorizontal:20,
-        width:350,
-        marginTop : 50
-    },
-    styledQ :{
-        fontSize : 30,
-        color:'#6667ab',
-        fontWeight:'bold',
-        marginBottom:10
-    },
-    styledFont:{
-        fontSize : 19,
-        color:'black',
-        fontWeight:'bold',
-    }
-})

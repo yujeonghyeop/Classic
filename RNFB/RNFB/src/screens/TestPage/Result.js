@@ -1,7 +1,7 @@
 import React, {useState,useEffect} from 'react'
 import{View, Text, StyleSheet, Image,ScrollView} from 'react-native'
 import {Icon,Button} from 'react-native-elements'
-import { parameters } from '../../global/styles'
+import { parameters,testpageStyle } from '../../global/styles'
 import firestore, { firebase } from '@react-native-firebase/firestore'
 import storage from '@react-native-firebase/storage'
 import * as Progress from 'react-native-progress'
@@ -276,11 +276,11 @@ export default function Result({navigation}){
     })
     return cnt ? (
         <ScrollView keyboardShouldPersistTaps = "always">
-        <View style = {styles.container}>
+        <View style = {testpageStyle.container}>
             
             <View style = {{alignItems:"center"}}>
-                <Text style = {styles.text1}>당신의 유형은</Text>
-                <Text style = {styles.text2}>{musician}</Text>
+                <Text style = {testpageStyle.text1}>당신의 유형은</Text>
+                <Text style = {testpageStyle.text2}>{musician}</Text>
             </View>
             <Image 
                 style = {{width:300, height:400}}
@@ -290,14 +290,14 @@ export default function Result({navigation}){
             <Progress.Bar progress={0.1} width={200} color={'#6667ab'} height={20} borderRadius={20} marginTop ={20} />
             <Progress.Bar progress={0.1} width={200} color={'#6667ab'} height={20} borderRadius={20} marginTop ={20} />
             <View style = {{alignItems:"center"}}>
-                <Text style = {styles.text1}>{sentence}</Text>
+                <Text style = {testpageStyle.text1}>{sentence}</Text>
             </View>
             
         
 
             <Button 
             title = "검사 다시하기"
-                buttonStyle =  {styles.styledButton}
+                buttonStyle =  {testpageStyle.styledButton}
                 titleStyle = {parameters.buttonTitle}
                         //button에 스타일 입히기
                 onPress = {() => {
@@ -306,7 +306,7 @@ export default function Result({navigation}){
             />
             <Button 
             title = "Main Page로 가기"
-                buttonStyle =  {styles.styledButton}
+                buttonStyle =  {testpageStyle.styledButton}
                 titleStyle = {parameters.buttonTitle}
                         //button에 스타일 입히기
                 onPress = {() => {
@@ -318,49 +318,3 @@ export default function Result({navigation}){
 
     ) : null
 }
-const styles = StyleSheet.create({
-    container:{
-        alignItems:'center',
-        justifyContent:'center',
-    },
-    text1: {
-        color:'#6667ab',
-        fontSize:20,
-        fontWeight : "bold"
-    },
-    text2:{
-        color:'#6667ab',
-        fontSize:40,
-        fontWeight : "bold"
-    },
-    
-    text: {
-        color: '#fff',
-        fontSize: 30,
-        fontWeight: 'bold',
-    },
-
-    styledButton :{     //button 스타일 지정
-        backgroundColor : '#6667ab',
-        alignContent : "center",
-        justifyContent : "center",
-        borderRadius : 12,
-        borderWidth :1,
-        borderColor:'#6667ab',
-        height:50,
-        paddingHorizontal:20,
-        width:350,
-        marginTop : 50
-    },
-    styledQ :{
-        fontSize : 30,
-        color:'#6667ab',
-        fontWeight:'bold',
-        marginBottom:10
-    },
-    styledFont:{
-        fontSize : 19,
-        color:'black',
-        fontWeight:'bold',
-    }
-})
