@@ -1,14 +1,14 @@
 // 로그인 화면, 회원가입 가능
 import React,{useState,useRef, useContext} from 'react';
-import {View, Text, StyleSheet, Dimensions, TextInput, Alert} from 'react-native'
-import {colors, parameters, title} from '../../global/styles'
+import {View, Text, StyleSheet, Dimensions, TextInput, Alert,Image} from 'react-native'
+import {colors, parameters, title,testpageStyle} from '../../global/styles'
 import {Icon,Button,SocialIcon} from 'react-native-elements'
 import Header from '../../components/Header';
 import * as Animatable from 'react-native-animatable'   //animate한 요소를 더하기 위한 import
 import { Formik } from 'formik'; //user Authetication
 import auth from '@react-native-firebase/auth'
 import { SignInContext } from '../../contexts/authContext';
-import Logo from '../../images/logo.png'
+import logo from '../../images/logo.png'
 
 
 export default function SignInScreen({navigation}){
@@ -41,12 +41,8 @@ async function signIn(data){
 
     return(
         <View style ={styles.container}>
-            {/* <Header title = " My ACCOUNT" type = "arrow-left" navigation ={navigation}/> */}
-            <View style = {{alignItems:"center",marginTop:100}}>
-                <Text style = {styles.text2}>Classic</Text>
-                <Text style = {styles.text1}>나의 학습 유형을 제대로 알고 공부하자</Text>
-            </View>
-            
+            <Image source={logo} style={testpageStyle.logo} />
+
             {/* user의 데이터를 받는 부분을 Formik으로 감싸준다 */}
             <Formik
                 initialValues = {{email:'',password:''}}
