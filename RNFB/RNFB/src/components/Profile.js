@@ -24,16 +24,15 @@ export default function Profile(){
     return(
         <View style={styles.styledBox}>
             <View style={{flexDirection:'row'}}>
-                
-                <View style={styles.styledPicture}>
+                <View style={{flexDirection: 'column'}}>
+                    <View style={styles.styledPicture}/>
                     <Text>{email}</Text>
                 </View>
-                <View style={{margin: 20}}>
+                <View style={{flex: 1, margin: 20, flexDirection:'column'}}>
                     <Text>{nickname}</Text>
-                    <Text>{exp}</Text>
+                    <Text >{exp}</Text>
                     <Button title='상세보기' buttonStyle={styles.styledButton} titleStyle={styles.buttonTitle}/>
                 </View>
-                
             </View> 
         </View>
     );

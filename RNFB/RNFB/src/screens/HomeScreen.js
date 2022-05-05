@@ -41,6 +41,7 @@ export default function HomeScreen({navigation}) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    flexDirection: 'column',
     backgroundColor:'#FFFFFF'
   },
   logo:{
