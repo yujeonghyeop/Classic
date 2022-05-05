@@ -4,7 +4,7 @@ import{View, Text, StyleSheet} from 'react-native'
 import {Button} from 'react-native-elements'
 import firestore, { firebase } from '@react-native-firebase/firestore'
 
-export default function Profile(){
+export default function Profile({navigation}){
 
     const [nickname, setNickname] = useState(null)
     const [exp, setExp] = useState(null)
@@ -32,10 +32,16 @@ export default function Profile(){
                     }}>{email}</Text>
                 </View>
                 <View style={{flex: 1, margin: 20, flexDirection:'column'}}>
-                    <Text
-                    style={{
-                        fontFamily: 'GowunBatang-Bold',
-                    }}>{nickname}</Text>
+                    <Button
+                    title = {nickname}
+                    backgroundColor = 'white'
+                    onPress={() => {
+                        navigation.navigate('MyAccountScreen');
+                      }}
+                    // style={{
+                    //     fontFamily: 'GowunBatang-Bold',
+                    // }}
+                    />
                     <Text
                     style={{
                         fontFamily: 'GowunBatang-Bold',
