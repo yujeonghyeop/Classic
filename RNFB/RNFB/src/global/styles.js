@@ -55,14 +55,12 @@ export const testpageStyle = { //testpage에 들어가는 친구들 집합 Resul
     styledQ :{
         fontSize : 60,
         color:'#6667ab',
-        fontWeight:'bold',
         marginBottom:10,
         fontFamily: 'FrankRuhlLibre-Light'
     },
     styledFont:{
         fontSize : 19,
         color:'black',
-        fontWeight:'bold',
         justifyContent : 'center',
         fontFamily: 'GowunBatang-Regular'
     },
@@ -86,13 +84,11 @@ export const testpageStyle = { //testpage에 들어가는 친구들 집합 Resul
     text1: {
         color:'#6667ab',
         fontSize:20,
-        fontWeight : "bold",
         fontFamily: 'GowunBatang-Regular'
     },
     text2:{
         color:'#6667ab',
         fontSize:40,
-        fontWeight : "bold",
         fontFamily: 'GowunBatang-Regular'
     },
 }
@@ -106,6 +102,5 @@ export const logo = {
 export const title = {
     color:"#ff8C52",
     fontSize:20,
-    fontWeight:"bold",
     fontFamily: 'GowunBatang-Regular'
 }

@@ -26,11 +26,20 @@ export default function Profile(){
             <View style={{flexDirection:'row'}}>
                 <View style={{flexDirection: 'column'}}>
                     <View style={styles.styledPicture}/>
-                    <Text>{email}</Text>
+                    <Text
+                    style={{
+                        fontFamily: 'FrankRuhlLibre-Light',
+                    }}>{email}</Text>
                 </View>
                 <View style={{flex: 1, margin: 20, flexDirection:'column'}}>
-                    <Text>{nickname}</Text>
-                    <Text >{exp}</Text>
+                    <Text
+                    style={{
+                        fontFamily: 'GowunBatang-Bold',
+                    }}>{nickname}</Text>
+                    <Text
+                    style={{
+                        fontFamily: 'GowunBatang-Bold',
+                    }}>{exp}</Text>
                     <Button title='상세보기' buttonStyle={styles.styledButton} titleStyle={styles.buttonTitle}/>
                 </View>
             </View> 
