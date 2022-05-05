@@ -12,7 +12,7 @@ export default function HomeScreen({navigation}) {
     <View style={styles.container}>
       <HomeHeader navigation={navigation} />
       <Image source={logo} style={styles.logo} />
-      <Profile/>
+      <Profile style={{flex:1}}/>
       <Button
         title="검사하러 가기"
         buttonStyle={styles.styledButton}

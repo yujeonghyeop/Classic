@@ -4,6 +4,7 @@ import{View, Text, StyleSheet} from 'react-native'
 import {Button} from 'react-native-elements'
 
 export default function Profile(){
+
     return(
         <View style={styles.styledBox}>
             <View style={{flexDirection:'row'}}> 
@@ -13,8 +14,7 @@ export default function Profile(){
                     <Button title='상세보기' buttonStyle={styles.styledButton} titleStyle={styles.buttonTitle}/>
                 </View>
                 
-            </View>
-               
+            </View> 
         </View>
     );
 
@@ -23,6 +23,7 @@ export default function Profile(){
 const styles = StyleSheet.create({
     container: {
       flex: 1,
+      margin:10
     },
     styledPicture:{
         //사진 넣는 곳
