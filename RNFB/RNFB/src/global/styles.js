@@ -27,8 +27,7 @@ export const parameters = {
     buttonTitle:{   //button 안에 있는 Text 스타일 지정 
         color:"white",
         fontSize:20,
-        fontFamily: 'GowunBatang-Regular',
-        fontWeight:"bold",
+        fontFamily: 'GowunBatang-Bold',
         alignItems:"center",
         justifyContent:"center",
         marginTop:3,
@@ -62,7 +61,7 @@ export const testpageStyle = { //testpage에 들어가는 친구들 집합 Resul
         fontSize : 19,
         color:'black',
         justifyContent : 'center',
-        fontFamily: 'GowunBatang-Regular'
+        fontFamily: 'GowunBatang-Bold'
     },
     styledBox : {
         width : 300,
