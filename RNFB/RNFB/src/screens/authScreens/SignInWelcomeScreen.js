@@ -3,10 +3,12 @@
 import React,{useState,useRef,useEffect, useContext} from 'react';
 
 import {View, Text, StyleSheet, Dimensions, Image} from 'react-native'
-import {colors, parameters, title} from '../../global/styles'
+import {colors, parameters, title,testpageStyle} from '../../global/styles'
 import {Button} from 'react-native-elements'
 import { SignInContext } from '../../contexts/authContext';
 import auth from '@react-native-firebase/auth'
+import logo from '../../images/logo.png'
+
 
 export default function SignInWelcomeScreen({navigation}){  //props는 navigation을 위함 
     const {dispatchSignedIn} = useContext(SignInContext)
@@ -27,9 +29,9 @@ useEffect(()=>{ //파이어베이스 이용하여 로그인하는 부분
         // flex를 활용하여 화면 구성을 할 수 있다. 
         <View style = {{flex:1}}>
             <View style = {{flex:3, justifyContent:'flex-start',alignItems:'center', paddingTop:200}}>
-                <Text style = {styles.text2}>Classic</Text>
-                <Text style = {styles.text1}>나의 학습 유형을 제대로 알고 공부하자</Text>
+                <Image source={logo} style={testpageStyle.logo} />
             </View>
+            
 
         <View style = {{flex:4}}>
             <View style = {{marginHorizontal:20, marginVertical : 20,marginTop:-80}}> 
