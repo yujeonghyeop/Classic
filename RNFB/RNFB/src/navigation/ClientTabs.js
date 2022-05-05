@@ -16,7 +16,7 @@ export default function RootClientTabs(){   //App Stack과 연동하기 위한 �
 
     return(
         <ClientTabs.Navigator
-            tabBarOptions = {{
+            screenOptions = {{
                 activeTintColor : colors.buttons
             }}
             screenOptions = {{
