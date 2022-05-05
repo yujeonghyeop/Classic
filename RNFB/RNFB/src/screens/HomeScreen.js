@@ -42,14 +42,15 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'column',
-    backgroundColor:'#FFFFFF'
+    backgroundColor:'#FFFFFF',
   },
   logo:{
     width: 250,
     height: 42,
     alignSelf: 'center',
     margin: 10,
-    marginTop: 40
+    marginTop: 40,
+    alignItems: 'center'
   },
   styledButton: {
     //button 스타일 지정
