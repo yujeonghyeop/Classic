@@ -1,9 +1,9 @@
-import React,{useState,useEffect} from 'react'
-import{View, Text, StyleSheet} from 'react-native'
+import React, {useState, useEffect} from 'react';
+import{View, Text, StyleSheet} from 'react-native';
 import {Icon,Button} from 'react-native-elements'
 import { parameters } from '../../global/styles'
 import firestore, { firebase } from '@react-native-firebase/firestore'
-import SplashScreen from 'react-native-splash-screen';
+import SplashScreen from 'react-native-splash-screen'
 
 export default function Result({navigation}){
     const[loading, setLoading] = useState(false);
