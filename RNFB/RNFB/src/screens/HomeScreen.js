@@ -33,14 +33,14 @@ export default function HomeScreen({navigation}) {
       <View style = {{flex:1}}> 
       <View style={styles.styledBox}>
             <View style={{flexDirection:'row'}}>
-                <View style={{flexDirection: 'column'}}>
+                <View style={{flexDirection: 'column', padding: 15}}> 
                     <View style={styles.styledPicture}/>
                     <Text
                     style={{
                         fontFamily: 'FrankRuhlLibre-Light',
                     }}>{email}</Text>
                 </View>
-                <View style={{flex: 1, margin: 20, flexDirection:'column'}}>
+                <View style={{flex: 1, padding: 20, flexDirection:'column'}}>
                     <Button
                     title = {nickname}
                     buttonStyle = {styles.nicknamebutton}
@@ -51,6 +51,7 @@ export default function HomeScreen({navigation}) {
                     />
                     <Text
                     style={{
+                        marginLeft:10,
                         fontFamily: 'GowunBatang-Bold',
                     }}>{exp}</Text>
                     <Button title='상세보기' buttonStyle={styles.styledButton} titleStyle={styles.buttonTitle}/>
@@ -135,6 +136,7 @@ const styles = StyleSheet.create({
   },
   styledBox: {  //box style
   //box
+    flex:1,
     backgroundColor: '#E8E8F2',
     alignContent: 'center',
     justifyContent: 'center',
