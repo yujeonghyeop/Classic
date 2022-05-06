@@ -1,5 +1,4 @@
 import React,{useState} from 'react'
-
 import{View, Text, StyleSheet} from 'react-native'
 import {Button} from 'react-native-elements'
 import firestore, { firebase } from '@react-native-firebase/firestore'
@@ -34,13 +33,9 @@ export default function Profile({navigation}){
                 <View style={{flex: 1, margin: 20, flexDirection:'column'}}>
                     <Button
                     title = {nickname}
-                    backgroundColor = 'white'
-                    onPress={() => {
-                        navigation.navigate('MyAccountScreen');
-                      }}
-                    // style={{
-                    //     fontFamily: 'GowunBatang-Bold',
-                    // }}
+                        onPress = {() => {
+                            navigation.navigate("Test2")
+                        }}
                     />
                     <Text
                     style={{

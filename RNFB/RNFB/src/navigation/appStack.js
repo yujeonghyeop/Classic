@@ -14,7 +14,7 @@ import Test7 from '../screens/TestPage/Test7';
 import Test8 from '../screens/TestPage/Test8';
 import Test9 from '../screens/TestPage/Test9';
 import cal from '../screens/TestPage/cal';
-
+import MyAccountScreen from '../screens/MyAccountScreen';
 
 
 const App = createStackNavigator();
@@ -30,6 +30,16 @@ export function AppStack(){
                     ...TransitionPresets.RevealFromBottomAndroid
                 }}
             />     
+            
+            <App.Screen
+                 name = "MyAccountScreen"
+                 component = {MyAccountScreen}
+                 options ={{
+                     headerShown : false,
+                     ...TransitionPresets.RevealFromBottomAndroid
+                 }}
+            />
+
             <App.Screen
                 name = "Test1"
                 component = {Test1}
