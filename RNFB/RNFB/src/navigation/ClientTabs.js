@@ -15,7 +15,7 @@ const ClientTabs = createBottomTabNavigator();
 export default function RootClientTabs(){   //App Stack과 연동하기 위한 함수 export
 
     return(
-        <ClientTabs.Navigator
+        <ClientTabs.Navigator initialRouteName = 'HomeScreen'
             screenOptions = {{
                 activeTintColor : colors.buttons
             }}
@@ -23,24 +23,7 @@ export default function RootClientTabs(){   //App Stack과 연동하기 위한 �
                 headerShown :false
             }}  //맨 위에 header를 가려주는 역할
         >
-            <ClientTabs.Screen 
-                name = "HomeScreen"
-                component = {HomeScreen}
-                options = {
-                    {
-                        tabBarLabel : "Home",
-                        tabBarIcon : ({color,size}) =>(
-                            <Icon 
-                                name = 'home'
-                                type = 'material'
-                                color = {color}
-                                size = {size}
-                            />
-                        )
-                    }
-                }
             
-            />
             <ClientTabs.Screen 
                 name = "SearchScreen"
                 component = {SearchScreen}
@@ -78,7 +61,24 @@ export default function RootClientTabs(){   //App Stack과 연동하기 위한 �
                 }
         
         />
+            <ClientTabs.Screen 
+                name = "HomeScreen"
+                component = {HomeScreen}
+                options = {
+                    {
+                        tabBarLabel : "Home",
+                        tabBarIcon : ({color,size}) =>(
+                            <Icon 
+                                name = 'home'
+                                type = 'material'
+                                color = {color}
+                                size = {size}
+                            />
+                        )
+                    }
+                }
             
+            />
             
 
             <ClientTabs.Screen 
