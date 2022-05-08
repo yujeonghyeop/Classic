@@ -27,7 +27,7 @@ export default function Profile({navigation}){
                     <View style={styles.styledPicture}/>
                     <Text
                     style={{
-                        fontFamily: 'FrankRuhlLibre-Light',
+                        fontFamily: 'IBMPlexSansKR-Regular',
                     }}>{email}</Text>
                 </View>
                 <View style={{flex: 1, margin: 20, flexDirection:'column'}}>
@@ -39,7 +39,7 @@ export default function Profile({navigation}){
                     />
                     <Text
                     style={{
-                        fontFamily: 'GowunBatang-Bold',
+                        fontFamily: 'IBMPlexSansKR-Bold',
                     }}>{exp}</Text>
                     <Button title='상세보기' buttonStyle={styles.styledButton} titleStyle={styles.buttonTitle}/>
                 </View>
@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
     buttonTitle:{
         color:'black',
         fontSize: 15,
-        fontFamily: 'GowunBatang-Bold',
+        fontFamily: 'IBMPlexSansKR-Bold',
 
  
     },

@@ -27,7 +27,7 @@ export const parameters = {
     buttonTitle:{   //button 안에 있는 Text 스타일 지정 
         color:"white",
         fontSize:20,
-        fontFamily: 'GowunBatang-Bold',
+        fontFamily: 'IBMPlexSansKR-Bold',
         alignItems:"center",
         justifyContent:"center",
         marginTop:3,
@@ -55,13 +55,13 @@ export const testpageStyle = { //testpage에 들어가는 친구들 집합 Resul
         fontSize : 60,
         color:'#6667ab',
         marginBottom:10,
-        fontFamily: 'FrankRuhlLibre-Light'
+        fontFamily: 'IBMPlexSansKR-Light'
     },
     styledFont:{
         fontSize : 19,
         color:'black',
         justifyContent : 'center',
-        fontFamily: 'GowunBatang-Bold'
+        fontFamily: 'IBMPlexSansKR-Bold'
     },
     styledBox : {
         width : 300,
@@ -83,12 +83,12 @@ export const testpageStyle = { //testpage에 들어가는 친구들 집합 Resul
     text1: {
         color:'#6667ab',
         fontSize:20,
-        fontFamily: 'GowunBatang-Regular'
+        fontFamily: 'IBMPlexSansKR-Regular'
     },
     text2:{
         color:'#6667ab',
         fontSize:40,
-        fontFamily: 'GowunBatang-Regular'
+        fontFamily: 'IBMPlexSansKR-Regular'
     },
 }
 export const logo = {
@@ -101,5 +101,5 @@ export const logo = {
 export const title = {
     color:"#ff8C52",
     fontSize:20,
-    fontFamily: 'GowunBatang-Regular'
+    fontFamily: 'IBMPlexSansKR-Regular'
 }

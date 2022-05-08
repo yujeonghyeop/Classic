@@ -31,7 +31,7 @@ export default function Test1({navigation}){
             <Image source={logo} style={testpageStyle.logo} />
             <Text style={testpageStyle.styledQ}>Q 1</Text>
             <View style ={testpageStyle.styledBox}>
-            <Text style={testpageStyle.styledFont}>Tv를 틀고 뭘 볼지 정하는</Text>
+            <Text style={testpageStyle.styledFont}>TV를 틀고 뭘 볼지 정하는</Text>
             <Text style={testpageStyle.styledFont}>나의 모습은?</Text>
             </View>
             <Button
