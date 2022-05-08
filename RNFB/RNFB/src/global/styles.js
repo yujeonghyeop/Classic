@@ -87,7 +87,7 @@ export const testpageStyle = { //testpage에 들어가는 친구들 집합 Resul
     text2:{
         color:'#6667ab',
         fontSize:40,
-        fontFamily: 'IBMPlexSansKR-Regular'
+        fontFamily: 'IBMPlexSansKR-Bold'
     },
 }
 export const logo = {
@@ -155,8 +155,6 @@ export const mainPageStyle = {
       styledButton1: { //검사하러가기 버튼 스타일
         //button 스타일 지정 
         backgroundColor: '#6667ab',
-        alignContent: 'center',
-        justifyContent: 'center',
         borderRadius: 12,
         borderWidth: 1,
         borderColor: '#6667ab',
