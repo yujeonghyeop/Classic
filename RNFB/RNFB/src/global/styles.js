@@ -49,7 +49,7 @@ export const testpageStyle = { //testpage에 들어가는 친구들 집합 Resul
         height:50,
         paddingHorizontal:20,
         width:350,
-        margin:10
+        margin:15
     },
     styledQ :{
         fontSize : 60,

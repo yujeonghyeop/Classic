@@ -34,7 +34,7 @@ export default function Test1({navigation}){
                 <Text style={testpageStyle.styledFont}>TV를 틀고 뭘 볼지 정하는</Text>
                 <Text style={testpageStyle.styledFont}>나의 모습은?</Text>
             </View>
-            <View style={{flexDirection: 'column', alignItems:'space-between', padding:10}}>
+            <View style={{flexDirection: 'column', alignItems:'space-between', padding:40}}>
                 <Button
             title = "편성표를 켜서 프로그램을 확인한다"
                 buttonStyle =  {testpageStyle.styledButton}
