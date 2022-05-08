@@ -13,10 +13,10 @@ export default function MyAccountScreen(){
                 <View style={{flexDirection: 'row'}}>
                     <View style={{flexDirection: 'column', padding: 15}}> 
                         <View style={styles.styledPicture}/>
-                        <Text style={{fontFamily: 'FrankRuhlLibre-Light',}}>브람스</Text>
+                        <Text style={{fontFamily: 'IBMPlexSansKR-Light',}}>브람스</Text>
                     </View>
                     <View style={{flexDirection: 'column', alignItems:'center'}}>
-                        <Text style={{fontFamily: 'FrankRuhlLibre-Light',}}>name</Text>
+                        <Text style={{fontFamily: 'IBMPlexSansKR-Light',}}>name</Text>
                         <Button title='상세 보기' buttonStyle={styles.styledButton1} titleStyle={styles.buttonTitle} />
                         <Button title='검사하러 가기' buttonStyle={styles.styledButton1} titleStyle={styles.buttonTitle} />
                     </View>
