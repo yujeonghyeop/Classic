@@ -43,18 +43,6 @@ export default function HomeScreen({navigation}) {
                 </View>
             </View> 
       </View>
-      <View style = {{flex:1, alignItems:'center', margin:5}}>
-         <Button
-        title="검사하러 가기"
-        buttonStyle={mainPageStyle.styledButton1}
-        titleStyle={buttonTitleB}
-        //button에 스타일 입히기
-        onPress={() => {
-          navigation.navigate('Test1');
-        }}
-        //이 버튼을 누를 때 SignInScreen으로 가라는 navigation 등록
-      />
-      </View>
       <View style={{flex:5, padding:5, marginBottom:5}}>
         <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
           <View style={mainPageStyle.viewStyle}></View>
