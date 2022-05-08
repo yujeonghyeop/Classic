@@ -49,7 +49,7 @@ export const testpageStyle = { //testpage에 들어가는 친구들 집합 Resul
         height:50,
         paddingHorizontal:20,
         width:350,
-        marginTop : 50
+        margin:10
     },
     styledQ :{
         fontSize : 60,
@@ -101,4 +101,100 @@ export const title = {
     color:"#ff8C52",
     fontSize:20,
     fontFamily: 'IBMPlexSansKR-Regular'
+}
+
+
+export const myPageStyle ={
+    styledBox:{
+        flex:3,
+        backgroundColor: '#E8E8F2',
+        alignContent: 'center',
+        justifyContent: 'center',
+        borderRadius: 20,
+        alignItems: 'stretch',
+        padding:20,
+        height: 150,
+        margin:10
+    },
+    styledButton:{
+        flex:1,
+        backgroundColor: '#E8E8F2',
+    }, 
+    styledButton1:{
+        backgroundColor:'#FFFFFF',
+        opacity:0.3,
+        alignItems: 'stretch',
+        width: 180,
+        borderRadius: 10,
+        marginTop:10,
+    },
+    styledList:{
+        flex:8,
+        backgroundColor: '#E8E8F2', 
+        paddingHorizontal: 250,     
+    },
+    styledPicture:{ 
+        backgroundColor:'#6767A6',
+        borderRadius: 75,
+        width: 100,
+        height: 100,
+    }
+}
+
+export const mainPageStyle = {
+    container: {
+      flex: 1,
+      flexDirection: 'column',
+      backgroundColor:'#FFFFFF',
+      alignContent: 'center',
+      justifyContent: 'center',
+      },
+      nicknamebutton : {
+        backgroundColor : '#E8E8F2'
+      },
+      styledButton1: { //검사하러가기 버튼 스타일
+        //button 스타일 지정 
+        backgroundColor: '#6667ab',
+        alignContent: 'center',
+        justifyContent: 'center',
+        borderRadius: 12,
+        borderWidth: 1,
+        borderColor: '#6667ab',
+        height: 50,
+        width: 200,
+      },
+      viewStyle: { //Swipe 스타일
+        backgroundColor : "#6667ab",
+        flex: 1,
+        width : 200,
+        height : 250,
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop:10,
+        marginLeft:10
+      },
+      styledPicture:{ 
+        //사진 넣는 곳
+        backgroundColor:'#6767A6',
+        borderRadius: 75,
+        width: 100,
+        height: 100,
+    },
+    styledBox: {  //box style
+    //box
+      flex:3,
+      backgroundColor: '#E8E8F2',
+      alignContent: 'center',
+      justifyContent: 'center',
+      borderRadius: 20,
+      alignItems: 'stretch',
+      padding:20,
+      margin:10
+    },
+    styledButton:{  //상세보기 버튼 디자인
+        backgroundColor: '#FFFFFF',
+        opacity:0.3,
+        borderRadius: 10,
+        width:180
+    },
 }
