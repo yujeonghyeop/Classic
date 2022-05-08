@@ -123,10 +123,9 @@ export const myPageStyle ={
     styledButton1:{
         backgroundColor:'#FFFFFF',
         opacity:0.3,
-        alignItems: 'stretch',
-        width: 180,
+        width: 150,
         borderRadius: 10,
-        marginTop:10,
+        marginTop:5,
     },
     styledList:{
         flex:8,
@@ -151,15 +150,6 @@ export const mainPageStyle = {
       },
       nicknamebutton : {
         backgroundColor : '#E8E8F2'
-      },
-      styledButton1: { //검사하러가기 버튼 스타일
-        //button 스타일 지정 
-        backgroundColor: '#6667ab',
-        borderRadius: 12,
-        borderWidth: 1,
-        borderColor: '#6667ab',
-        height: 50,
-        width: 200,
       },
       viewStyle: { //Swipe 스타일
         backgroundColor : "#6667ab",
