@@ -31,7 +31,7 @@ export default function HomeScreen({navigation}) {
       <Image source={Logo} style={logo} />
       <View style={mainPageStyle.styledBox}>
             <View style={{flexDirection:'row'}}>
-                <View style={{flexDirection: 'column', margin: 10}}> 
+                <View style={{flexDirection: 'column', margin: 10,}}> 
                     <View style={mainPageStyle.styledPicture}/>
                     <Text style={styledtext}>{email}</Text>
                 </View>

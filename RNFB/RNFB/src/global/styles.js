@@ -113,7 +113,8 @@ export const myPageStyle ={
         borderRadius: 20,
         alignItems: 'stretch',
         padding:20,
-        height: 150,
+        width: '95%',
+        height: '20%',
         margin:10
     },
     styledButton:{
@@ -123,7 +124,7 @@ export const myPageStyle ={
     styledButton1:{
         backgroundColor:'#FFFFFF',
         opacity:0.3,
-        width: 150,
+        width: 180,
         borderRadius: 10,
         marginTop:5,
     },
@@ -175,9 +176,10 @@ export const mainPageStyle = {
       alignContent: 'center',
       justifyContent: 'center',
       borderRadius: 20,
-      alignItems: 'stretch',
       padding:20,
-      margin:10
+      margin:10,
+      width: '95%',
+      height: '20%',
     },
     styledButton:{  //상세보기 버튼 디자인
         backgroundColor: '#FFFFFF',
