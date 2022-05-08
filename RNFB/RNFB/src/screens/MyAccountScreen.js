@@ -1,21 +1,24 @@
 import React from 'react'
-
+import firestore, { firebase } from '@react-native-firebase/firestore'
 import {View, Text, StyleSheet, Image} from 'react-native'
 import {Button} from 'react-native-elements';
 import {logo} from '../global/styles';
 import Logo from '../images/logo.png';
 
 export default function MyAccountScreen(){
+    const user = firebase.auth().currentUser;
+    const email = user.email; 
+
     return(
-        <View style = {{flex:1, alignItems:'center', justifyContent:'center', flexDirection: 'column'}}>
+        <View style = {{flex:1, alignItems:'space-between', justifyContent:'center', flexDirection: 'column'}}>
             <Image source={Logo} style={logo} />
-            <View style={styles.background}>
+            <View style={styles.styledBox}>
                 <View style={{flexDirection: 'row'}}>
-                    <View style={{flexDirection: 'column', padding: 15}}> 
+                    <View style={{flexDirection: 'column', alignItems:'center', margin:10}}> 
                         <View style={styles.styledPicture}/>
-                        <Text style={{fontFamily: 'IBMPlexSansKR-Light',}}>브람스</Text>
+                        <Text style={{fontFamily: 'IBMPlexSansKR-Light',}}>{email}</Text>
                     </View>
-                    <View style={{flexDirection: 'column', alignItems:'center'}}>
+                    <View style={{flexDirection: 'column', alignItems:'flex-start', margin: 15}}>
                         <Text style={{fontFamily: 'IBMPlexSansKR-Light',}}>name</Text>
                         <Button title='상세 보기' buttonStyle={styles.styledButton1} titleStyle={styles.buttonTitle} />
                         <Button title='검사하러 가기' buttonStyle={styles.styledButton1} titleStyle={styles.buttonTitle} />
@@ -34,14 +37,14 @@ export default function MyAccountScreen(){
 }
 
 const styles = StyleSheet.create({
-    background:{
+    styledBox:{
         flex:3,
         backgroundColor: '#E8E8F2',
         alignContent: 'center',
         justifyContent: 'center',
         borderRadius: 20,
         alignItems: 'stretch',
-        paddingHorizontal: 150,
+        padding:20,
         height: 150,
         margin:10
     },
@@ -58,8 +61,9 @@ const styles = StyleSheet.create({
         backgroundColor:'#FFFFFF',
         opacity:0.3,
         alignItems: 'stretch',
+        width: 180,
         borderRadius: 10,
-        margin: 5,
+        marginTop:10,
     },
     styledList:{
         flex:8,
