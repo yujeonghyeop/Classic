@@ -31,10 +31,11 @@ export default function Test1({navigation}){
             <Image source={logo} style={testpageStyle.logo} />
             <Text style={testpageStyle.styledQ}>Q 1</Text>
             <View style ={testpageStyle.styledBox}>
-            <Text style={testpageStyle.styledFont}>TV를 틀고 뭘 볼지 정하는</Text>
-            <Text style={testpageStyle.styledFont}>나의 모습은?</Text>
+                <Text style={testpageStyle.styledFont}>TV를 틀고 뭘 볼지 정하는</Text>
+                <Text style={testpageStyle.styledFont}>나의 모습은?</Text>
             </View>
-            <Button
+            <View style={{flexDirection: 'column', alignItems:'space-between', padding:10}}>
+                <Button
             title = "편성표를 켜서 프로그램을 확인한다"
                 buttonStyle =  {testpageStyle.styledButton}
                 titleStyle = {parameters.buttonTitle}
@@ -54,6 +55,8 @@ export default function Test1({navigation}){
                     navigation.navigate("Test2")
                 }}
                 />
+            </View>
+            
             <Progress.Bar progress={0.1} width={300} color={'#6667ab'} height={10} borderRadius={5} marginBottom={100} marginTop ={30} backgroundColor = {'#E8E8F2'} />
         </View>
     )

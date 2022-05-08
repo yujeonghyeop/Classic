@@ -3,9 +3,9 @@
 import React,{useState} from 'react';
 import {View, Text, StyleSheet,Image, ScrollView} from 'react-native';
 import {Icon, Button} from 'react-native-elements';
+import {buttonTitleW,buttonTitleB, styledtext} from '../global/fontStyles';
 import HomeHeader from '../components/HomeHeader';
-import Profile from '../components/Profile';
-import {logo} from '../global/styles';
+import {logo, mainPageStyle} from '../global/styles';
 import Logo from '../images/logo.png';
 import {colors, parameters, title} from '../global/styles';
 import firestore, { firebase } from '@react-native-firebase/firestore'
@@ -26,28 +26,28 @@ export default function HomeScreen({navigation}) {
       }
   })
   return (
-    <View style={styles.container}>
+    <View style={mainPageStyle.container}>
       {/* <HomeHeader navigation={navigation} /> */}
       <Image source={Logo} style={logo} />
-      <View style={styles.styledBox}>
+      <View style={mainPageStyle.styledBox}>
             <View style={{flexDirection:'row'}}>
                 <View style={{flexDirection: 'column', margin: 10}}> 
-                    <View style={styles.styledPicture}/>
-                    <Text style={{fontFamily: 'FrankRuhlLibre-Light',}}>{email}</Text>
+                    <View style={mainPageStyle.styledPicture}/>
+                    <Text style={styledtext}>{email}</Text>
                 </View>
                 <View style={{flex: 1,flexDirection:'column',alignItems:'center', margin:10}}>
-                    <Button title = {nickname} buttonStyle = {styles.nicknamebutton} titleStyle = {styles.nicknametitle}
+                    <Button title = {nickname} buttonStyle = {mainPageStyle.nicknamebutton} titleStyle = {styledtext}
                         onPress = {() => { navigation.navigate("MyAccountScreen")}}/>
-                    <Text style={{fontFamily: 'GowunBatang-Bold'}}>{exp}</Text>
-                    <Button title='상세보기' buttonStyle={styles.styledButton} titleStyle={styles.buttonTitle}/>
+                    <Text style={styledtext}>{exp}</Text>
+                    <Button title='상세보기' buttonStyle={mainPageStyle.styledButton} titleStyle={buttonTitleW}/>
                 </View>
             </View> 
       </View>
       <View style = {{flex:1, alignItems:'center', margin:5}}>
          <Button
         title="검사하러 가기"
-        buttonStyle={styles.styledButton1}
-        titleStyle={parameters.buttonTitle}
+        buttonStyle={mainPageStyle.styledButton1}
+        titleStyle={buttonTitleB}
         //button에 스타일 입히기
         onPress={() => {
           navigation.navigate('Test1');
@@ -57,83 +57,14 @@ export default function HomeScreen({navigation}) {
       </View>
       <View style={{flex:5, padding:5, marginBottom:5}}>
         <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-          <View style={styles.viewStyle}></View>
-          <View style={styles.viewStyle}></View>
-          <View style={styles.viewStyle}></View>
-          <View style={styles.viewStyle}></View>
-          <View style={styles.viewStyle}></View>
+          <View style={mainPageStyle.viewStyle}></View>
+          <View style={mainPageStyle.viewStyle}></View>
+          <View style={mainPageStyle.viewStyle}></View>
+          <View style={mainPageStyle.viewStyle}></View>
+          <View style={mainPageStyle.viewStyle}></View>
         </ScrollView>
       </View>
     </View>
     
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: 'column',
-    backgroundColor:'#FFFFFF',
-    alignContent: 'center',
-    justifyContent: 'center',
-    },
-    nicknamebutton : {
-      backgroundColor : '#E8E8F2'
-    },
-    nicknametitle:{
-      color:'black',
-      fontSize: 15,
-      fontFamily: 'GowunBatang-Bold'
-    },
-    styledButton1: { //검사하러가기 버튼 스타일
-      //button 스타일 지정 
-      backgroundColor: '#6667ab',
-      alignContent: 'center',
-      justifyContent: 'center',
-      borderRadius: 12,
-      borderWidth: 1,
-      borderColor: '#6667ab',
-      height: 50,
-      width: 200,
-
-    },
-    viewStyle: { //Swipe 스타일
-      backgroundColor : "#6667ab",
-      flex: 1,
-      width : 200,
-      height : 250,
-      justifyContent: 'center',
-      alignItems: 'center',
-      marginTop:10,
-      marginLeft:10
-    },
-    styledPicture:{ 
-      //사진 넣는 곳
-      backgroundColor:'#6767A6',
-      borderRadius: 75,
-      width: 100,
-      height: 100,
-  },
-  styledBox: {  //box style
-  //box
-    flex:3,
-    backgroundColor: '#E8E8F2',
-    alignContent: 'center',
-    justifyContent: 'center',
-    borderRadius: 20,
-    alignItems: 'stretch',
-    padding:20,
-    margin:10
-  },
-  styledButton:{  //상세보기 버튼 디자인
-      backgroundColor: '#FFFFFF',
-      opacity:0.3,
-      borderRadius: 10,
-      width:180
-  },
-  buttonTitle:{
-      color:'black',
-      fontSize: 15,
-      fontFamily: 'GowunBatang-Bold'
-  },
-  });
