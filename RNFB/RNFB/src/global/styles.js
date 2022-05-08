@@ -27,7 +27,7 @@ export const parameters = {
     buttonTitle:{   //button 안에 있는 Text 스타일 지정 
         color:"white",
         fontSize:20,
-        fontFamily: 'IBMPlexSansKR-Bold',
+        fontFamily: 'IBMPlexSansKR-Regular',
         alignItems:"center",
         justifyContent:"center",
         marginTop:3,
@@ -55,19 +55,18 @@ export const testpageStyle = { //testpage에 들어가는 친구들 집합 Resul
         fontSize : 60,
         color:'#6667ab',
         marginBottom:10,
-        fontFamily: 'IBMPlexSansKR-Light'
+        fontFamily: 'IBMPlexSansKR-Regular'
     },
     styledFont:{
-        fontSize : 19,
+        fontSize : 25,
         color:'black',
         justifyContent : 'center',
-        fontFamily: 'IBMPlexSansKR-Bold'
+        fontFamily: 'IBMPlexSansKR-SemiBold'
     },
     styledBox : {
-        width : 300,
-        height : 100,
-        backgroundColor : '#6667ab',
-        opacity : 0.3,
+        width : 350,
+        height : 150,
+        backgroundColor : '#dedef5',
         alignItems : 'center',
         justifyContent : 'center',
         borderRadius : 10,

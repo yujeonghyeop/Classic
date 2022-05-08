@@ -40,7 +40,8 @@ export default function Profile({navigation}){
                     <Text
                     style={{
                         fontFamily: 'IBMPlexSansKR-Bold',
-                    }}>{exp}</Text>
+                    }}
+                    >{exp}</Text>
                     <Button title='상세보기' buttonStyle={styles.styledButton} titleStyle={styles.buttonTitle}/>
                 </View>
             </View> 

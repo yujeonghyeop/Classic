@@ -76,6 +76,13 @@
 		<string>FrankRuhlLibre-Regular.ttf</string>
 		<string>GowunBatang-Bold.ttf</string>
 		<string>GowunBatang-Regular.ttf</string>
+		<string>IBMPlexSansKR-Bold.ttf</string>
+		<string>IBMPlexSansKR-ExtraLight.ttf</string>
+		<string>IBMPlexSansKR-Light.ttf</string>
+		<string>IBMPlexSansKR-Medium.ttf</string>
+		<string>IBMPlexSansKR-Regular.ttf</string>
+		<string>IBMPlexSansKR-SemiBold.ttf</string>
+		<string>IBMPlexSansKR-Thin.ttf</string>
 	</array>
 </dict>
 </plist>
