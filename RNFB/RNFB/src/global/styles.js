@@ -31,7 +31,6 @@ export const parameters = {
         alignItems:"center",
         justifyContent:"center",
         marginTop:3,
-       
     }
 }
 export const testpageStyle = { //testpage에 들어가는 친구들 집합 Result page도 여기
@@ -50,6 +49,34 @@ export const testpageStyle = { //testpage에 들어가는 친구들 집합 Resul
         paddingHorizontal:20,
         width:350,
         margin:15
+    },
+    styledExplain : {
+        width:350,
+        alignItems:"center",
+        borderWidth:1,
+        borderColor: '#6767A6',
+        borderRadius: 12,
+        paddingTop: 15,
+        paddingBottom: 15,
+        margin: 20
+    },
+    styledRecommend : {
+        flex:1,
+        alignItems:"center",
+        borderWidth:1,
+        borderColor: '#6767A6',
+        borderRadius: 12,
+        margin:5
+    },
+    styledRecommendText1:{
+        color :'#0B1D5F',
+        fontSize : 20,
+        fontFamily : 'IBMPlexSansKR-Bold'
+    },
+    styledRecommendText2:{
+        color :'#0B1D5F',
+        fontSize : 18,
+        fontFamily : 'IBMPlexSansKR-Regular'
     },
     styledQ :{
         fontSize : 60,
@@ -78,14 +105,14 @@ export const testpageStyle = { //testpage에 들어가는 친구들 집합 Resul
         margin: 10,
         marginTop: 40,
         marginBottom :50
-      },
+    },
     text1: {
-        color:'#6667ab',
+        color:'#0B1D5F',
         fontSize:20,
         fontFamily: 'IBMPlexSansKR-Regular'
     },
     text2:{
-        color:'#6667ab',
+        color:'#0B1D5F',
         fontSize:40,
         fontFamily: 'IBMPlexSansKR-Bold'
     },

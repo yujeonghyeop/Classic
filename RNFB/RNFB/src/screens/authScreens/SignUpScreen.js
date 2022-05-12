@@ -1,17 +1,27 @@
+
+
 //creat acount 해주는 스크린
 
 import React,{useState} from 'react'
-import { StyleSheet,Text,View, ScrollView, TextInput, Alert } from 'react-native'
-import {colors} from '../../global/styles'
+import { StyleSheet,Text,View, ScrollView, Image, TextInput, Alert } from 'react-native'
+import {colors, logo} from '../../global/styles'
 import Header from '../../components/Header'
 import { Formik } from 'formik'; //user Authetication
-import {Icon, Button} from 'react-native-elements'
+import {Icon, Button, CheckBox} from 'react-native-elements'
 import * as Animatable from 'react-native-animatable'   //animate한 요소를 더하기 위한 import
 import auth from '@react-native-firebase/auth'
+import Logo from '../../images/logo.png'
 import firestore, { firebase } from '@react-native-firebase/firestore'
 
 
-const initialValues = {phone_number: '',name : "", family_name:"",password:"",email:'',username:''}
+const initialValues = {
+  phone_number: '',
+  name : "", 
+  family_name:"",
+  password:"",
+  email:'',
+  username:''
+}
 
 
 
@@ -63,45 +73,13 @@ async function signUp(values){  // firebase에 email, password 넘겨주는 역�
 
             <ScrollView keyboardShouldPersistTaps = "always">
             <View style = {{alignItems:"center",marginTop:10}}>
-                <Text style = {styles.headtext2}>Classic</Text>
+                <Image source={Logo} style={logo} />
                 <Text style = {styles.headtext1}>나의 학습 유형을 제대로 알고 공부하자</Text>
             </View>
             
                 <Formik initialValues = {initialValues} onSubmit = {(values) =>{signUp(values)}}>
                     {(props)=>(
                         <View style = {styles.view2}>
-                            
-                            {/* 폰  번호 받는 칸 */}
-                                <View style = {styles.view6}>   
-                                  <TextInput
-                                    placeholder = "전화번호"
-                                    style = {styles.input1}
-                                    keyboardType = "number-pad"
-                                    autoFocus = {true}
-                                    onChangeText = {props.handleChange('phone_number')}
-                                    value = {props.values.phone_number}
-                                  />
-                            </View>
-                            {/* 이름 받는 칸 */}
-                            <View style = {styles.view6}>
-                                  <TextInput
-                                    placeholder = "Name"
-                                    style = {styles.input1}
-                                    autoFocus = {false}
-                                    onChangeText = {props.handleChange('name')}
-                                    value = {props.values.name}
-                                  />
-                            </View>
-                            {/* 성  받는 칸 */}
-                            <View style = {styles.view6}>
-                                  <TextInput
-                                    placeholder = "Family name"
-                                    style = {styles.input1}
-                                    autoFocus = {false}
-                                    onChangeText = {props.handleChange('family_name')}
-                                    value = {props.values.family_name}
-                                  />
-                            </View>
                             {/* email 받는 칸 */}
                             <View style = {styles.view10}>
                               <View>
@@ -115,22 +93,21 @@ async function signUp(values){  // firebase에 email, password 넘겨주는 역�
                               </View>
                               <View style = {styles.view11}>
                                   <TextInput
-                                    placeholder = "Email"
+                                    placeholder = "이메일 주소(필수)"
                                     style = {styles.input4}
                                     autoFocus = {false}
                                     onChangeText = {props.handleChange('email')}
                                     value = {props.values.email}
                                   />
                               </View>
-                              </View>
+                            </View>
                             {/* password 받는 칸 */}
                             <View style = {styles.view14}>
-
                                 <Animatable.View animation = {passwordFocussed?"fadeInRight" : "fadeInLeft"}>
-                                  <Icon name = "lock" color = {colors.grey3} type = "material" />
+                                <Icon name = "lock" color = {colors.grey3} type = "material" />
                                 </Animatable.View>
                                 <TextInput
-                                    placeholder = "Password"
+                                    placeholder = "비밀번호(필수)"
                                     style = {{flex:1}}
                                     autoFocus = {false}
                                     onChangeText = {props.handleChange('password')}
@@ -142,19 +119,50 @@ async function signUp(values){  // firebase에 email, password 넘겨주는 역�
                                   <Icon name = "visibility-off" color = {colors.grey3} type = "material" style = {{marginRight:10}}/>
                                 </Animatable.View>
                               </View>
+                            {/* 이름 받는 칸 */}
+                            <View style = {styles.view6}>
+                                  <TextInput
+                                    placeholder = "이름(필수)"
+                                    style = {styles.input1}
+                                    autoFocus = {false}
+                                    onChangeText = {props.handleChange('name')}
+                                    value = {props.values.name}
+                                  />
+                            </View>
+                            {/* 폰  번호 받는 칸 */}
+                                <View style = {styles.view6}>   
+                                  <TextInput
+                                    placeholder = "전화번호(필수)"
+                                    style = {styles.input1}
+                                    keyboardType = "number-pad"
+                                    autoFocus = {true}
+                                    onChangeText = {props.handleChange('phone_number')}
+                                    value = {props.values.phone_number}
+                                  />
+                            </View>
+                            {/*개인정보 활용 동의를 위한 View */}
+                            <View>
+                              <CheckBox
+                                title = '개인정보 제3자 제공 동의(선택)'
+                              />
+                              <CheckBox
+                                title = '만 14세 미만의 어린이/학생 이용자는 체크해주세요'
+                              />
+                            
+                            </View>
                               {/* Create account의 룰 설명 하는 view */}
                               <View style = {styles.view15}>
-                                <Text style = {styles.text3}>By creating or logging into an account you are</Text>
                                 <View style = {styles.view16}>
-                                    <Text style = {styles.text3}>agreeing with our</Text>
-                                    <Text style = {styles.text4}>Terms & Conditions</Text>
-                                    <Text style = {styles.text3}>and</Text>
+                                    <Text style = {styles.text3}>만 14세 이상이며 </Text>
+                                    {/* <Text style = {styles.text4}>CLASSIC 이용약관</Text관 */}
+                                    {/* <Text style = {styles.text3}>, </Text> */}
+                                    <Text style = {styles.text4}>개인정보 수집 안내</Text> 
+                                    <Text style = {styles.text3}>를 확인하고, 동의합니다.</Text>
                                   </View>
-                                  <Text style = {styles.text4}>Privacy Statement</Text>
                                 </View>
                                 <View style = {styles.view17}>
                                   <Button 
-                                    title = "계정 만들기"
+                                    title = "동의하고 가입하기"
                                     buttonStyle = {styles.button1}
                                     titleStyle = {styles.title1}
                                     onPress = {props.handleSubmit}
@@ -164,7 +172,7 @@ async function signUp(values){  // firebase에 email, password 넘겨주는 역�
                     )}
                 </Formik>
 
-                  {/* 잘못 들어왔을 때 로그인 화면으로 돌려보내는 view */}
+                {/* 잘못 들어왔을 때 로그인 화면으로 돌려보내는 view */}
                 <View style = {styles.view18}>
                       <Text style = {styles.text5}></Text>
                 </View>
@@ -368,7 +376,7 @@ const styles = StyleSheet.create({
     view18:{flex:1,
             justifyContent:'flex-start',
             alignItems:'center',
-            paddingTop:15,
+            //paddingTop:5,
           },
 
     text5:   {fontSize:15,

@@ -1,12 +1,11 @@
-import React, {useState,useEffect} from 'react'
-import{View, Text, StyleSheet, Image,ScrollView} from 'react-native'
-import {Icon,Button} from 'react-native-elements'
+import React, { useState,useEffect } from 'react'
+import{ View, Text, StyleSheet, Image,ScrollView } from 'react-native'
+import { Icon, Button } from 'react-native-elements'
 import { parameters,testpageStyle } from '../../global/styles'
 import firestore, { firebase } from '@react-native-firebase/firestore'
 import storage from '@react-native-firebase/storage'
 import * as Progress from 'react-native-progress'
 import Swiper from 'react-native-swiper';
-
 
 export default function Result({navigation}){
     // useEffect(() => {
@@ -274,46 +273,59 @@ export default function Result({navigation}){
     useEffect(()=>{
         Read();
     })
+
     return cnt ? (
         <ScrollView keyboardShouldPersistTaps = "always">
-        <View style = {testpageStyle.container}>
-            
-            <View style = {{alignItems:"center"}}>
-                <Text style = {testpageStyle.text1}>당신의 유형은</Text>
-                <Text style = {testpageStyle.text2}>{musician}</Text>
-            </View>
-            <Image 
-                style = {{width:300, height:400}}
-                source = {{uri : url}} 
+            <View style = {testpageStyle.container}>
+                
+                <View style = {{alignItems:"center", marginTop:25}}>
+                    <Text style = {testpageStyle.text1}>당신의 유형은</Text>
+                    <Text style = {testpageStyle.text2}>{musician}</Text>
+                </View>
+                <Image 
+                    style = {{width:300, height:400}}
+                    source = {{uri : url}} 
                 />
-            <Progress.Bar progress={1.0} width={300} color={'#6667ab'} height={20} borderRadius={20} marginTop ={20} />
-            <Progress.Bar progress={0.1} width={200} color={'#6667ab'} height={20} borderRadius={20} marginTop ={20} />
-            <Progress.Bar progress={0.1} width={200} color={'#6667ab'} height={20} borderRadius={20} marginTop ={20} />
-            <View style = {{alignItems:"center"}}>
-                <Text style = {testpageStyle.text1}>{sentence}</Text>
-            </View>
-            
-        
+                <Progress.Bar progress={0.7} width={350} color={'#FF9D9D'} height={35} borderRadius={12} marginTop={25} />
+                <Progress.Bar progress={0.5} width={350} color={'#FF9D9D'} height={35} borderRadius={12} margin={28} />
+                <Progress.Bar progress={0.8} width={350} color={'#FF9D9D'} height={35} borderRadius={12} marginBottom={10}/>
 
-            <Button 
-            title = "검사 다시하기"
-                buttonStyle =  {testpageStyle.styledButton}
-                titleStyle = {parameters.buttonTitle}
-                        //button에 스타일 입히기
-                onPress = {() => {
-                    navigation.navigate("Test1")
-            }}
-            />
-            <Button 
-            title = "Main Page로 가기"
-                buttonStyle =  {testpageStyle.styledButton}
-                titleStyle = {parameters.buttonTitle}
-                        //button에 스타일 입히기
-                onPress = {() => {
-                    navigation.navigate("HomeScreen")
-            }}
-            />
-        </View>
+                <View style = {testpageStyle.styledExplain}>
+                    <Text style = {testpageStyle.text1}>{sentence}</Text>
+                </View>
+
+                <View style = {{flex:1, flexDirection:'row', width:360, marginBottom:25}}>
+                    <View style = {testpageStyle.styledRecommend}>
+                        <Text style = {testpageStyle.styledRecommendText1}>최고의 공부장소</Text>
+                        <View style ={{height:130, width:130, backgroundColor:'red'}}></View>
+                        <Text style = {testpageStyle.styledRecommendText2}>어쩌구저쩌구카페</Text>
+                    </View>
+                    <View style = {testpageStyle.styledRecommend}>
+                        <Text style = {testpageStyle.styledRecommendText1}>최고의 교양과목</Text>
+                        <View style = {{height:130, width:130, backgroundColor:'blue'}}></View>
+                        <Text style = {testpageStyle.styledRecommendText2}>울랄라울랄라과목</Text>
+                    </View>
+                </View>
+
+                <Button 
+                    title = "검사 다시하기"
+                    buttonStyle =  {testpageStyle.styledButton}
+                    titleStyle = {parameters.buttonTitle}
+                            //button에 스타일 입히기
+                    onPress = {() => {
+                        navigation.navigate("Test1")
+                }}
+                />
+                <Button 
+                title = "Main Page로 가기"
+                    buttonStyle =  {testpageStyle.styledButton}
+                    titleStyle = {parameters.buttonTitle}
+                            //button에 스타일 입히기
+                    onPress = {() => {
+                        navigation.navigate("HomeScreen")
+                }}
+                />
+            </View>
         </ScrollView>
 
     ) : null
