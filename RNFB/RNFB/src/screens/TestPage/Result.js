@@ -278,7 +278,7 @@ export default function Result({navigation}){
         <ScrollView keyboardShouldPersistTaps = "always">
             <View style = {testpageStyle.container}>
                 
-                <View style = {{alignItems:"center"}}>
+                <View style = {{alignItems:"center", marginTop:25}}>
                     <Text style = {testpageStyle.text1}>당신의 유형은</Text>
                     <Text style = {testpageStyle.text2}>{musician}</Text>
                 </View>
@@ -286,12 +286,25 @@ export default function Result({navigation}){
                     style = {{width:300, height:400}}
                     source = {{uri : url}} 
                 />
-                <Progress.Bar progress={0.7} width={350} color={'#FF9D9D'} height={35} borderRadius={12} marginTop ={25} />
-                <Progress.Bar progress={0.5} width={350} color={'#FF9D9D'} height={35} borderRadius={12} marginTop ={25} />
-                <Progress.Bar progress={0.8} width={350} color={'#FF9D9D'} height={35} borderRadius={12} marginTop ={25} />
+                <Progress.Bar progress={0.7} width={350} color={'#FF9D9D'} height={35} borderRadius={12} marginTop={25} />
+                <Progress.Bar progress={0.5} width={350} color={'#FF9D9D'} height={35} borderRadius={12} margin={28} />
+                <Progress.Bar progress={0.8} width={350} color={'#FF9D9D'} height={35} borderRadius={12} marginBottom={10}/>
 
                 <View style = {testpageStyle.styledExplain}>
                     <Text style = {testpageStyle.text1}>{sentence}</Text>
+                </View>
+
+                <View style = {{flex:1, flexDirection:'row', width:360, marginBottom:25}}>
+                    <View style = {testpageStyle.styledRecommend}>
+                        <Text style = {testpageStyle.styledRecommendText1}>최고의 공부장소</Text>
+                        <View style ={{height:130, width:130, backgroundColor:'red'}}></View>
+                        <Text style = {testpageStyle.styledRecommendText2}>어쩌구저쩌구카페</Text>
+                    </View>
+                    <View style = {testpageStyle.styledRecommend}>
+                        <Text style = {testpageStyle.styledRecommendText1}>최고의 교양과목</Text>
+                        <View style = {{height:130, width:130, backgroundColor:'blue'}}></View>
+                        <Text style = {testpageStyle.styledRecommendText2}>울랄라울랄라과목</Text>
+                    </View>
                 </View>
 
                 <Button 
