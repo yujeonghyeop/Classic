@@ -51,6 +51,16 @@ export const testpageStyle = { //testpage에 들어가는 친구들 집합 Resul
         width:350,
         margin:15
     },
+    styledExplain : {
+        width:350,
+        alignItems:"center",
+        borderWidth:1,
+        borderColor: '#6767A6',
+        borderRadius: 6,
+        paddingTop: 15,
+        paddingBottom: 15,
+        margin: 25
+    },
     styledQ :{
         fontSize : 60,
         color:'#6667ab',
