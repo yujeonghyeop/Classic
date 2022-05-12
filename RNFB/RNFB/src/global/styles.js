@@ -114,11 +114,12 @@ export const myPageStyle ={
         alignItems: 'stretch',
         padding:20,
         width: '95%',
-        height: '20%',
+        height: '10%',
         margin:10
     },
     styledButton:{
         flex:1,
+        alignContent: 'stretch',
         backgroundColor: '#E8E8F2',
     }, 
     styledButton1:{
@@ -179,7 +180,7 @@ export const mainPageStyle = {
       padding:20,
       margin:10,
       width: '95%',
-      height: '20%',
+      height: '10%',
     },
     styledButton:{  //상세보기 버튼 디자인
         backgroundColor: '#FFFFFF',
