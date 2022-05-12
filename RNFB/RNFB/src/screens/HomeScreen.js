@@ -35,15 +35,24 @@ export default function HomeScreen({navigation}) {
                     <View style={mainPageStyle.styledPicture}/>
                     <Text style={styledtext}>{email}</Text>
                 </View>
-                <View style={{flex: 1,flexDirection:'column',alignItems:'center', margin:10}}>
+                <View style={{flex: 1,flexDirection:'column',justifyContent:'center', margin:10}}>
                     <Button title = {nickname} buttonStyle = {mainPageStyle.nicknamebutton} titleStyle = {styledtext}
                         onPress = {() => { navigation.navigate("MyAccountScreen")}}/>
                     <Text style={styledtext}>{exp}</Text>
-                    <Button title='상세보기' buttonStyle={mainPageStyle.styledButton} titleStyle={buttonTitleW}/>
+                    {/* <Button title='상세보기' buttonStyle={mainPageStyle.styledButton} titleStyle={buttonTitleW}/> */}
                 </View>
             </View> 
       </View>
-      <View style={{flex:5, padding:5, marginBottom:5}}>
+      <View style={{flex:3, padding:5, marginBottom:5}}ii>
+        <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+          <View style={mainPageStyle.viewStyle}></View>
+          <View style={mainPageStyle.viewStyle}></View>
+          <View style={mainPageStyle.viewStyle}></View>
+          <View style={mainPageStyle.viewStyle}></View>
+          <View style={mainPageStyle.viewStyle}></View>
+        </ScrollView>
+      </View>
+      <View style={{flex:3, padding:5, marginBottom:5}}ii>
         <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
           <View style={mainPageStyle.viewStyle}></View>
           <View style={mainPageStyle.viewStyle}></View>
