@@ -64,7 +64,8 @@ export const testpageStyle = { //testpage에 들어가는 친구들 집합 Resul
         borderRadius: 12,
         paddingTop: 15,
         paddingBottom: 15,
-        margin: 20
+        margin: 20,
+        marginBottom: 30
     },
     styledRecommend : {
         flex:1,
@@ -72,7 +73,8 @@ export const testpageStyle = { //testpage에 들어가는 친구들 집합 Resul
         borderWidth:1,
         borderColor: '#6767A6',
         borderRadius: 12,
-        margin:5
+        margin:5,
+        paddingTop:35
     },
     styledRecommendText1:{
         color :'#0B1D5F',

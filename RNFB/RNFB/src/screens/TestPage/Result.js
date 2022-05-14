@@ -310,12 +310,14 @@ export default function Result({navigation}){
                     <Text style = {testpageStyle.text1}>{sentence}</Text>
                 </View>
 
-                <View style = {{flex:1, flexDirection:'row', width:360, marginBottom:25}}>
+                <View style = {{flex:1, flexDirection:'row', width:360, marginBottom:25, position: 'relative'}}>
+                    <View style = {{position: 'absolute', left:70, top:-25, height:80, width:40, backgroundColor:'#6767A6', transform: [{rotate: '80deg'}]}}></View>
                     <View style = {testpageStyle.styledRecommend}>
                         <Text style = {testpageStyle.styledRecommendText1}>최고의 공부장소</Text>
                         <View style ={{height:130, width:130, backgroundColor:'red'}}></View>
                         <Text style = {testpageStyle.styledRecommendText2}>어쩌구저쩌구카페</Text>
                     </View>
+                    <View style = {{position: 'absolute', right:70, top:-25, height:80, width:40, backgroundColor:'#6767A6', transform: [{rotate: '80deg'}]}}></View>
                     <View style = {testpageStyle.styledRecommend}>
                         <Text style = {testpageStyle.styledRecommendText1}>최고의 교양과목</Text>
                         <View style = {{height:130, width:130, backgroundColor:'blue'}}></View>
@@ -333,13 +335,13 @@ export default function Result({navigation}){
                 }}
                 />
                 <Button 
-                title = "Main Page로 가기"
-                    buttonStyle =  {testpageStyle.styledButton}
-                    titleStyle = {parameters.buttonTitle}
-                            //button에 스타일 입히기
-                    onPress = {() => {
-                        navigation.navigate("HomeScreen")
-                }}
+                    title = "Main Page로 가기"
+                        buttonStyle =  {testpageStyle.styledButton}
+                        titleStyle = {parameters.buttonTitle}
+                                //button에 스타일 입히기
+                        onPress = {() => {
+                            navigation.navigate("HomeScreen")
+                    }}
                 />
             </View>
         </ScrollView>
