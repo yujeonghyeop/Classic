@@ -50,6 +50,12 @@ export const testpageStyle = { //testpage에 들어가는 친구들 집합 Resul
         width:350,
         margin:15
     },
+    styledMyType : {
+        margin:5,
+        color :'#0B1D5F',
+        fontSize : 16,
+        fontFamily : 'IBMPlexSansKR-Regular'
+    },
     styledExplain : {
         width:350,
         alignItems:"center",
