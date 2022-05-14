@@ -21,7 +21,7 @@ export default class App extends React.Component {
     <View>
         <Image source={Logo} style={logo} />
         <SearchBar
-        placeholder="Type here..."
+        placeholder="Type here.."
         onChangeText={this.updateSearch}
         value={search}
         />
