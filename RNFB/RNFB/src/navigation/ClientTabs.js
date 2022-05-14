@@ -9,6 +9,7 @@ import HomeScreen from '../screens/HomeScreen';
 import SearchScreen from '../screens/SearchScreen'
 import MyOrdersScreen from "../screens/MyOrdersScreen";
 import MyAccountScreen from "../screens/MyAccountScreen";
+import SettingScreen from "../screens/Setting";
 
 const ClientTabs = createBottomTabNavigator();
 
@@ -100,14 +101,14 @@ export default function RootClientTabs(){   //App Stack과 연동하기 위한 �
             
             />
             <ClientTabs.Screen 
-                name = "MyAccount"
-                component = {MyAccountScreen}
+                name = "Setting"
+                component = {SettingScreen}
                 options = {
                     {
-                        tabBarLabel : "My Account",
+                        tabBarLabel : "Setting",
                         tabBarIcon : ({color,size}) =>(
                             <Icon 
-                                name = 'person'
+                                name = 'setting'
                                 type = 'material'
                                 color = {color}
                                 size = {size}
