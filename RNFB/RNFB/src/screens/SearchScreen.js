@@ -18,13 +18,13 @@ export default class App extends React.Component {
     const { search } = this.state;
 
     return (
-    <View style = {{flex:1, alignItems:'space-between', justifyContent:'center', flexDirection: 'column'}}>
+    <View>
         <Image source={Logo} style={logo} />
         <SearchBar
         placeholder="Type here..."
         onChangeText={this.updateSearch}
         value={search}
-      />
+        />
       </View>
     );
   }
