@@ -21,7 +21,17 @@ export default class App extends React.Component {
     <View>
         <Image source={Logo} style={logo} />
         <SearchBar
-        placeholder="Type here.."
+        placeholder="Type here..."
+        placeholderTextColor={'#FF9D9D'}
+        inputContainerStyle={{backgroundColor: 'white'}}
+        leftIconContainerStyle={{backgroundColor: 'white'}}
+        inputStyle={{backgroundColor: 'white'}}
+        containerStyle={{
+            backgroundColor: 'white',
+            justifyContent: 'space-around',
+            borderTopWidth:0,
+            borderBottomWidth:0,
+        }}
         onChangeText={this.updateSearch}
         value={search}
         />
