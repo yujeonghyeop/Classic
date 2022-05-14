@@ -108,8 +108,8 @@ export default function RootClientTabs(){   //App Stack과 연동하기 위한 �
                         tabBarLabel : "Setting",
                         tabBarIcon : ({color,size}) =>(
                             <Icon 
-                                name = 'setting'
-                                type = 'material'
+                                name = 'settings'
+                                type = 'feather'
                                 color = {color}
                                 size = {size}
                             />
