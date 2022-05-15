@@ -12,9 +12,8 @@ export default function BusinessConsoleScreen({navigation}){
         <View style={setting.container}>
             <Image source={Logo} style={logo} />
             <View style = {setting.AccountView}>
-                <Button title="계정" buttonStyle ={setting.AccountButton} titleStyle={buttonTitleB} onPress = {() => { navigation.navigate("Account")}}/>
-                <Button title="문의하기" buttonStyle ={setting.AccountButton} titleStyle={buttonTitleB} onPress = {() => { navigation.navigate("Inquiry")}}/>
-                <Button title="피드백하기" buttonStyle={setting.AccountButton} titleStyle={buttonTitleB} onPress = {() => { navigation.navigate("Feedback")}}/>
+                <Button title="Logout" buttonStyle ={setting.AccountButton} titleStyle={buttonTitleB} onPress = {() => { navigation.navigate("Logout")}}/>
+                <Button title="Q&A" buttonStyle ={setting.AccountButton} titleStyle={buttonTitleB} onPress = {() => { navigation.navigate("Inquiry")}}/>
             </View>
         </View>
         
