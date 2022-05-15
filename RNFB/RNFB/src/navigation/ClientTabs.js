@@ -25,34 +25,17 @@ export default function RootClientTabs(){   //App Stack과 연동하기 위한 �
             }}  //맨 위에 header를 가려주는 역할
         >
             
-            <ClientTabs.Screen 
-                name = "SearchScreen"
-                component = {SearchScreen}
-                options = {
-                    {
-                        tabBarLabel : "Alarm",
-                        tabBarIcon : ({color,size}) =>(
-                            <Icon 
-                                name = 'notifications'
-                                type = 'material'
-                                color = {color}
-                                size = {size}
-                            />
-                        )
-                    }
-                }
-            
-            />
+           
 
             <ClientTabs.Screen 
-                name = "Community"
+                name = "Search"
                 component = {SearchScreen}
                 options = {
                     {
-                        tabBarLabel : "Community",
+                        tabBarLabel : "Search",
                         tabBarIcon : ({color,size}) =>(
                             <Icon 
-                                name = 'people-outline'
+                                name = 'search'
                                 type = 'material'
                                 color = {color}
                                 size = {size}
@@ -62,6 +45,24 @@ export default function RootClientTabs(){   //App Stack과 연동하기 위한 �
                 }
         
         />
+         <ClientTabs.Screen 
+                name = "MyAccountScreen"
+                component = {MyAccountScreen}
+                options = {
+                    {
+                        tabBarLabel : "Myaccount",
+                        tabBarIcon : ({color,size}) =>(
+                            <Icon 
+                                name = 'person-outline'
+                                type = 'material'
+                                color = {color}
+                                size = {size}
+                            />
+                        )
+                    }
+                }
+            
+            />
             <ClientTabs.Screen 
                 name = "HomeScreen"
                 component = {HomeScreen}
@@ -81,16 +82,15 @@ export default function RootClientTabs(){   //App Stack과 연동하기 위한 �
             
             />
             
-
             <ClientTabs.Screen 
-                name = "MyOrderScreen"
+                name = "All"
                 component = {MyOrdersScreen}
                 options = {
                     {
-                        tabBarLabel : "Scrap",
+                        tabBarLabel : "View-All",
                         tabBarIcon : ({color,size}) =>(
                             <Icon 
-                                name = 'bookmark-outline'
+                                name = 'menu'
                                 type = 'material'
                                 color = {color}
                                 size = {size}
@@ -100,6 +100,7 @@ export default function RootClientTabs(){   //App Stack과 연동하기 위한 �
                 }
             
             />
+           
             <ClientTabs.Screen 
                 name = "Setting"
                 component = {SettingScreen}
