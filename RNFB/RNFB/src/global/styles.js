@@ -208,7 +208,8 @@ export const mainPageStyle = {
     styledBox: {  //box style
     //box
       flex:3,
-      backgroundColor: '#E8E8F2',
+      borderColor:'#FF9D9D',
+      borderWidth: 1.5,
       alignContent: 'center',
       justifyContent: 'center',
       borderRadius: 20,
