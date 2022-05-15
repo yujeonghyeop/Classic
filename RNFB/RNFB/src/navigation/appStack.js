@@ -15,6 +15,7 @@ import Test8 from '../screens/TestPage/Test8';
 import Test9 from '../screens/TestPage/Test9';
 import cal from '../screens/TestPage/cal';
 import MyAccountScreen from '../screens/MyAccountScreen';
+import Account from '../screens/settingScreen/Account';
 
 
 const App = createStackNavigator();
@@ -113,6 +114,13 @@ export function AppStack(){
             <App.Screen
                 name = "Result"
                 component = {Result}
+                options = {{
+                    headerShown : false
+                }}
+            />
+             <App.Screen
+                name = "Account"
+                component = {Account}
                 options = {{
                     headerShown : false
                 }}

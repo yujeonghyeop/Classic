@@ -224,3 +224,25 @@ export const mainPageStyle = {
         width:180
     },
 }
+
+export const setting ={
+    container:{
+        flex:1,
+        alignItems:'center',
+        justifyContent:'center'
+    },
+    AccountView:{
+        borderColor:'#FF9D9D',
+        borderWidth:1,
+        borderRadius:10,
+        marginTop:30,
+        padding:30
+
+    },
+    AccountButton:{
+       width:200,
+       height:60,
+       margin:10,
+       backgroundColor:'#6767A6',
+    }
+}
