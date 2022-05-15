@@ -16,7 +16,8 @@ import Test9 from '../screens/TestPage/Test9';
 import cal from '../screens/TestPage/cal';
 import MyAccountScreen from '../screens/MyAccountScreen';
 import Account from '../screens/settingScreen/Account';
-
+import Passward from '../screens/settingScreen/Passward';
+import Logout from '../screens/settingScreen/Logout';
 
 const App = createStackNavigator();
 
@@ -121,6 +122,20 @@ export function AppStack(){
              <App.Screen
                 name = "Account"
                 component = {Account}
+                options = {{
+                    headerShown : false
+                }}
+            />
+            <App.Screen
+                name = "Passward"
+                component = {Passward}
+                options = {{
+                    headerShown : false
+                }}
+            />
+            <App.Screen
+                name = "Logout"
+                component = {Logout}
                 options = {{
                     headerShown : false
                 }}

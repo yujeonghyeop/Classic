@@ -11,8 +11,8 @@ export default function BusinessConsoleScreen({navigation}){
         <View style = {setting.container}>
             <Image source={Logo} style={logo} />
             <View style ={setting.AccountView}>
-                <Button title="passward 변경" buttonStyle={setting.AccountButton} titleStyle={buttonTitleB} />
-                <Button title="로그아웃" buttonStyle={setting.AccountButton} titleStyle={buttonTitleB } />
+                <Button title="passward 변경" buttonStyle={setting.AccountButton} titleStyle={buttonTitleB} onPress = {() => { navigation.navigate("Passward")}}/>
+                <Button title="로그아웃" buttonStyle={setting.AccountButton} titleStyle={buttonTitleB } onPress = {() => { navigation.navigate("Logout")}}/>
             </View>
         </View>
     )
