@@ -23,11 +23,11 @@ export default class App extends React.Component {
         <SearchBar
         placeholder="Type here..."
         placeholderTextColor={'#FF9D9D'}
-        inputContainerStyle={{backgroundColor: 'white'}}
-        leftIconContainerStyle={{backgroundColor: 'white'}}
-        inputStyle={{backgroundColor: 'white'}}
+        inputContainerStyle={{backgroundColor: '#F2F2F2'}}
+        leftIconContainerStyle={{backgroundColor: '#F2F2F2'}}
+        inputStyle={{backgroundColor: '#F2F2F2'}}
         containerStyle={{
-            backgroundColor: 'white',
+            backgroundColor: '#F2F2F2',
             justifyContent: 'space-around',
             borderTopWidth:0,
             borderBottomWidth:0,
