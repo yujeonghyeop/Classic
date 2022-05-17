@@ -154,8 +154,11 @@ export const myPageStyle ={
     },
     styledButton:{
         flex:1,
-        alignContent: 'stretch',
+        alignSelf: 'stretch',
         backgroundColor: '#E8E8F2',
+        padding:10,
+        marginTop:10,
+        alignItems:'center'
     }, 
     styledButton1:{
         backgroundColor:'#E8E8F2',
@@ -184,7 +187,7 @@ export const mainPageStyle = {
       justifyContent: 'center',
       },
       nicknamebutton : {
-        backgroundColor : '#E8E8F2'
+        backgroundColor : '#E8E8F2',
       },
       viewStyle: { //Swipe 스타일
         backgroundColor : "#6667ab",
