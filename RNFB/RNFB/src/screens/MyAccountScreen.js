@@ -1,14 +1,15 @@
 import React, { useState,useEffect } from 'react'
 import firestore, { firebase } from '@react-native-firebase/firestore'
-import {View, Text, ScrollView, Image} from 'react-native'
+import {View, Text, ScrollView, Image, Pressable, Alert} from 'react-native'
 import {Button} from 'react-native-elements';
 import {logo, myPageStyle} from '../global/styles';
 import { styledtext } from '../global/fontStyles';
 import Logo from '../images/logo.png';
 import Swiper from 'react-native-swiper';
 
-export default function MyAccountScreen({navigation}){
+export default function MyAccountScreen({navigation}, props){
     const user = firebase.auth().currentUser;
+    const {onPress, title="스크랩 한 교양"} = props;
     const email = user.email; 
     const [test, settest] = useState();
     const getname = async key=> {
@@ -35,6 +36,8 @@ export default function MyAccountScreen({navigation}){
     useEffect(()=>{
         getname();
     })
+
+    var isSelect = false;
     return(
         <View style = {{flex:1, alignItems:'space-between', justifyContent:'center', flexDirection: 'column'}}>
             <Image source={Logo} style={logo} />
@@ -59,18 +62,22 @@ export default function MyAccountScreen({navigation}){
                                     navigation.navigate("Test1")}
                                 }
                            />}
-                            
                         </View>
-                        
                     </View>
                 </View>
             </View>
             <View style={{flex: 8}}>
                 <View style={{flexDirection: 'row', justifyContent:'space-evenly'}}>
-                    <Text>스크랩 한 공간</Text>
-                    <Text>스크랩 한 교양과목</Text>
+                    {/* <Text>스크랩 한 공간</Text>
+                    <Text>스크랩 한 교양과목</Text> */}
                     {/* <Button title='스크랩 한 학습공간' buttonStyle={myPageStyle.styledButton} titleStyle={styledtext}/>
                     <Button title='스크랩 한 교양과목' buttonStyle={myPageStyle.styledButton} titleStyle={styledtext}/> */}
+                    <Pressable style={[myPageStyle.styledButton,{backgroundColor:isSelect?'black': 'white'}]} onPress={()=>{Alert.alert("Press"); isSelect = true;}}>
+                        <Text>{title}</Text>
+                    </Pressable>
+                    <Pressable style={myPageStyle.styledButton} onPress={onPress}>
+                        <Text>{title}</Text>
+                    </Pressable>
                 </View>
                 <Swiper showsPagination={false} loop={false}>
                     <View>
