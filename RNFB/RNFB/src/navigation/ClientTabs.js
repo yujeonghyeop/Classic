@@ -7,7 +7,7 @@ import {colors} from '../global/styles'
 import {Icon} from 'react-native-elements'
 import HomeScreen from '../screens/HomeScreen';
 import SearchScreen from '../screens/SearchScreen'
-import MyOrdersScreen from "../screens/MyOrdersScreen";
+import MyOrdersScreen from "../screens/View_all";
 import MyAccountScreen from "../screens/MyAccountScreen";
 import SettingScreen from "../screens/Setting";
 
