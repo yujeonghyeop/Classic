@@ -144,14 +144,13 @@ export const myPageStyle ={
         flex:3,
         borderColor:'#FF9D9D',
         borderWidth: 1.5,
-        alignContent: 'center',
+        alignSelf:'center',
         justifyContent: 'center',
         borderRadius: 20,
         alignItems: 'stretch',
         padding:20,
         width: '95%',
-        height: '10%',
-        margin:10
+        height: '20%',
     },
     styledButton:{
         flex:1,
