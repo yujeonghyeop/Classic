@@ -7,11 +7,12 @@ import { buttonTitleB  } from '../../global/fontStyles';
 import {setting} from '../../global/styles';
 
 export default function Inquiry(){
+
+
     return(
         <View style = {setting.container}>
             <Image source={Logo} style={logo} />
             <View style ={setting.AccountView}>
-                <Text>Inquiry</Text>
             </View>
         </View>
     )
