@@ -31,6 +31,7 @@ export default class App extends React.Component {
             justifyContent: 'space-around',
             borderTopWidth:0,
             borderBottomWidth:0,
+            height:70
         }}
         onChangeText={this.updateSearch}
         value={search}
