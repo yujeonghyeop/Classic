@@ -142,15 +142,15 @@ export const title = {
 export const myPageStyle ={
     styledBox:{
         flex:3,
-        backgroundColor: '#E8E8F2',
-        alignContent: 'center',
+        borderColor:'#FF9D9D',
+        borderWidth: 1.5,
+        alignSelf:'center',
         justifyContent: 'center',
         borderRadius: 20,
         alignItems: 'stretch',
         padding:20,
         width: '95%',
-        height: '10%',
-        margin:10
+        height: '20%',
     },
     styledButton:{
         flex:1,
@@ -158,8 +158,7 @@ export const myPageStyle ={
         backgroundColor: '#E8E8F2',
     }, 
     styledButton1:{
-        backgroundColor:'#FFFFFF',
-        opacity:0.3,
+        backgroundColor:'#E8E8F2',
         width: 180,
         borderRadius: 10,
         marginTop:5,
@@ -167,7 +166,6 @@ export const myPageStyle ={
     styledList:{
         flex:8,
         backgroundColor: '#E8E8F2', 
-        paddingHorizontal: 250,     
     },
     styledPicture:{ 
         backgroundColor:'#6767A6',

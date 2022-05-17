@@ -1,10 +1,11 @@
 import React, { useState,useEffect } from 'react'
 import firestore, { firebase } from '@react-native-firebase/firestore'
-import {View, Text, StyleSheet, Image} from 'react-native'
+import {View, Text, ScrollView, Image} from 'react-native'
 import {Button} from 'react-native-elements';
 import {logo, myPageStyle} from '../global/styles';
 import { styledtext } from '../global/fontStyles';
 import Logo from '../images/logo.png';
+import Swiper from 'react-native-swiper';
 
 export default function MyAccountScreen({navigation}){
     const user = firebase.auth().currentUser;
@@ -41,7 +42,7 @@ export default function MyAccountScreen({navigation}){
                 <View style={{flexDirection: 'row', justifyContent: 'space-evenly', padding:10}}>
                     <View style={{flexDirection: 'column', margin:10,justifyContent: 'center'}}> 
                         <View style={myPageStyle.styledPicture}/>
-                        <Text style={{fontFamily: 'IBMPlexSansKR-Light', alignItems: 'center'}}>name</Text>
+                        <Text style={{fontFamily: 'IBMPlexSansKR-Light', alignItems: 'center', marginLeft:30}}>name</Text>
                     </View>
                     <View style={{flexDirection: 'column', justifyContent:'flex-start', margin: 10, padding:15}}>
                         {console.log(test)}
@@ -64,11 +65,29 @@ export default function MyAccountScreen({navigation}){
                     </View>
                 </View>
             </View>
-            <View style={{flexDirection: 'row', flex:1,justifyContent:'space-evenly'}}>
-                <Button title='스크랩 한 학습공간' buttonStyle={myPageStyle.styledButton} titleStyle={styledtext}/>
-                <Button title='스크랩 한 교양과목' buttonStyle={myPageStyle.styledButton} titleStyle={styledtext}/>
+            <View style={{flex: 8}}>
+                <View style={{flexDirection: 'row', justifyContent:'space-evenly'}}>
+                    <Text>스크랩 한 공간</Text>
+                    <Text>스크랩 한 교양과목</Text>
+                    {/* <Button title='스크랩 한 학습공간' buttonStyle={myPageStyle.styledButton} titleStyle={styledtext}/>
+                    <Button title='스크랩 한 교양과목' buttonStyle={myPageStyle.styledButton} titleStyle={styledtext}/> */}
+                </View>
+                <Swiper showsPagination={false} loop={false}>
+                    <View>
+                        <ScrollView showsVerticalScrollIndicator={false}>
+                            <View style={{width:300,height:300, backgroundColor:'gray'}}></View>
+                            <View style={{width:300,height:300, backgroundColor:'gray'}}></View>
+                        </ScrollView>
+                    </View>
+                    <View>
+                        <ScrollView >
+                            <View style={{width:300,height:300, backgroundColor:'gray'}}></View>
+                            <View style={{width:300,height:300, backgroundColor:'gray'}}></View>
+                        </ScrollView>
+                    </View>
+                </Swiper>
             </View>
-            <View style={myPageStyle.styledList}></View>
+                
         </View>
     )
 }
