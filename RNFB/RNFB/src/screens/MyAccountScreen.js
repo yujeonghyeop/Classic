@@ -9,14 +9,13 @@ import Logo from '../images/logo.png';
 export default function MyAccountScreen({navigation}){
     const user = firebase.auth().currentUser;
     const email = user.email; 
-    const [test, settest] = useState('no');
+    const [test, settest] = useState();
     const getname = async key=> {
         const inf = firestore().collection("회원").doc(email)
         await inf.get().then((doc)=>{
             if (doc.exists){
                 const ininf = doc.data();
-                const name = ininf["이름"];
-                console.log(name)
+                const name = ininf["result"];
                 settest(name)
                 }
             })
@@ -49,7 +48,7 @@ export default function MyAccountScreen({navigation}){
                         <View style={{flexDirection: 'column', alignItems:'center'}}>
                             <Button title='상세 보기' buttonStyle={myPageStyle.styledButton1} titleStyle={styledtext} />
                             {
-                            test==='no' ? 
+                            test===0 ? 
                             <Button title='검사하러 가기' buttonStyle={myPageStyle.styledButton1} titleStyle={styledtext}
                              onPress = {() => { navigation.navigate("Test1")}}
                             />:
