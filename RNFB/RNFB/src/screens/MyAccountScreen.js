@@ -41,7 +41,7 @@ export default function MyAccountScreen({navigation}){
                 <View style={{flexDirection: 'row', justifyContent: 'space-evenly', padding:10}}>
                     <View style={{flexDirection: 'column', margin:10,justifyContent: 'center'}}> 
                         <View style={myPageStyle.styledPicture}/>
-                        <Text style={{fontFamily: 'IBMPlexSansKR-Light', alignItems: 'center'}}>nam</Text>
+                        <Text style={{fontFamily: 'IBMPlexSansKR-Light', alignItems: 'center'}}>name</Text>
                     </View>
                     <View style={{flexDirection: 'column', justifyContent:'flex-start', margin: 10, padding:15}}>
                         {console.log(test)}

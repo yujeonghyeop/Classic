@@ -37,9 +37,9 @@ export default function HomeScreen({navigation}) {
                 </View>
                 <View style={{flex: 1,flexDirection:'column',justifyContent:'center', margin:10}}>
                     <Button title = {nickname} buttonStyle = {mainPageStyle.nicknamebutton} titleStyle = {styledtext}
-                        onPress = {() => { navigation.navigate("MyAccountScreen")}}/>
+                        onPress = {() => {navigation.navigate("MyAccountScreen")}}/>
                     <Text style={styledtext}>{exp}</Text>
-                    {/* <Button title='상세보기' buttonStyle={mainPageStyle.styledButton} titleStyle={buttonTitleW}/> */}
+                    {/*<Button title='상세보기' buttonStyle={mainPageStyle.styledButton} titleStyle={buttonTitleW}/>*/}
                 </View>
             </View> 
       </View>
