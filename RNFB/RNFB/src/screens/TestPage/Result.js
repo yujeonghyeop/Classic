@@ -19,8 +19,6 @@ export default function Result({navigation}){
     //       console.warn(e);
     //     }
     //   });
-    
-
 
     const [url, setUrl] = useState('');
     const [musician, setMusician] = useState('');
@@ -29,14 +27,26 @@ export default function Result({navigation}){
     const user = firebase.auth().currentUser;
     const email = user.email; 
     
+    const resettype = async key =>{
+        firestore().collection("회원").doc(email).update({
+            result : 0,
+            총체 : 0,
+            분석 : 0,
+            자기지향 : 0,
+            사회지향 : 0,
+            이성 : 0,
+            감성 : 0,
+          })   
+    }
+
     const getImage15 = async key =>{
         const imageRef = storage().refFromURL('gs://rnfb-123ee.appspot.com/헨델.png');
-        const inf = firestore().collection("15").doc("정보");
+        const inf = firestore().collection("tool").doc("15");
         await inf.get().then((doc)=>{
             if (doc.exists){
                 const ininf = doc.data();
-                const name = ininf["이름"];
-                const sen = ininf["설명"];
+                const name = ininf["musician"];
+                const sen = ininf["exp"];
                 setMusician(name)
                 setSentence(sen)
                 const userDocument = firestore().collection("회원").
@@ -56,12 +66,12 @@ export default function Result({navigation}){
     }
     const getImage18 = async key =>{
         const imageRef = storage().refFromURL('gs://rnfb-123ee.appspot.com/베토벤.png');
-        const inf = firestore().collection("18").doc("정보");
+        const inf = firestore().collection("tool").doc("18");
         await inf.get().then((doc)=>{
             if (doc.exists){
                 const ininf = doc.data();
-                const name = ininf["이름"];
-                const sen = ininf["설명"];
+                const name = ininf["musician"];
+                const sen = ininf["exp"];
                 setMusician(name)
                 setSentence(sen)
                 const userDocument =firestore().collection("회원").
@@ -81,12 +91,12 @@ export default function Result({navigation}){
     }
     const getImage20 = async key =>{
         const imageRef = storage().refFromURL('gs://rnfb-123ee.appspot.com/브람스.png');
-        const inf = firestore().collection("20").doc("정보");
+        const inf = firestore().collection("tool").doc("20");
         await inf.get().then((doc)=>{
             if (doc.exists){
                 const ininf = doc.data();
-                const name = ininf["이름"];
-                const sen = ininf["설명"];
+                const name = ininf["musician"];
+                const sen = ininf["exp"];
                 setMusician(name)
                 setSentence(sen)
                 const userDocument = firestore().collection("회원").
@@ -106,12 +116,12 @@ export default function Result({navigation}){
     }
     const getImage24 = async key =>{
         const imageRef = storage().refFromURL('gs://rnfb-123ee.appspot.com/하이든.png');
-        const inf = firestore().collection("24").doc("정보");
+        const inf = firestore().collection("tool").doc("24");
         await inf.get().then((doc)=>{
             if (doc.exists){
                 const ininf = doc.data();
-                const name = ininf["이름"];
-                const sen = ininf["설명"];
+                const name = ininf["musician"];
+                const sen = ininf["exp"];
                 setMusician(name)
                 setSentence(sen)
                 const userDocument = firestore().collection("회원").
@@ -131,12 +141,12 @@ export default function Result({navigation}){
     }
     const getImage30 = async key =>{
         const imageRef = storage().refFromURL('gs://rnfb-123ee.appspot.com/슈베르트.png');
-        const inf = firestore().collection("30").doc("정보");
+        const inf = firestore().collection("tool").doc("30");
         await inf.get().then((doc)=>{
             if (doc.exists){
                 const ininf = doc.data();
-                const name = ininf["이름"];
-                const sen = ininf["설명"];
+                const name = ininf["musician"];
+                const sen = ininf["exp"];
                 setMusician(name)
                 setSentence(sen)
                 const userDocument = firestore().collection("회원").
@@ -156,12 +166,12 @@ export default function Result({navigation}){
     }
     const getImage36 = async key =>{
         const imageRef = storage().refFromURL('gs://rnfb-123ee.appspot.com/쇼팽.png');
-        const inf = firestore().collection("36").doc("정보");
+        const inf = firestore().collection("tool").doc("36");
         await inf.get().then((doc)=>{
             if (doc.exists){
                 const ininf = doc.data();
-                const name = ininf["이름"];
-                const sen = ininf["설명"];
+                const name = ininf["musician"];
+                const sen = ininf["exp"];
                 setMusician(name)
                 setSentence(sen)
                 const userDocument = firestore().collection("회원").
@@ -181,12 +191,12 @@ export default function Result({navigation}){
     }
     const getImage40 = async key =>{
         const imageRef = storage().refFromURL('gs://rnfb-123ee.appspot.com/모차르트.png');
-        const inf = firestore().collection("40").doc("정보");
+        const inf = firestore().collection("tool").doc("40");
         await inf.get().then((doc)=>{
             if (doc.exists){
                 const ininf = doc.data();
-                const name = ininf["이름"];
-                const sen = ininf["설명"];
+                const name = ininf["musician"];
+                const sen = ininf["exp"];
                 setMusician(name)
                 setSentence(sen)
                 const userDocument = firestore().collection("회원").
@@ -206,12 +216,12 @@ export default function Result({navigation}){
     }
     const getImage48 = async key =>{
         const imageRef = storage().refFromURL('gs://rnfb-123ee.appspot.com/바흐.png');
-        const inf = firestore().collection("48").doc("정보");
+        const inf = firestore().collection("tool").doc("48");
         await inf.get().then((doc)=>{
             if (doc.exists){
                 const ininf = doc.data();
-                const name = ininf["이름"];
-                const sen = ininf["설명"];
+                const name = ininf["musician"];
+                const sen = ininf["exp"];
                 setMusician(name)
                 setSentence(sen)
                 const userDocument = firestore().collection("회원").
@@ -331,6 +341,7 @@ export default function Result({navigation}){
                     titleStyle = {parameters.buttonTitle}
                             //button에 스타일 입히기
                     onPress = {() => {
+                        resettype()
                         navigation.navigate("Test1")
                 }}
                 />
