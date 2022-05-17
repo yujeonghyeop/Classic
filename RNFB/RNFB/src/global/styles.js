@@ -248,3 +248,22 @@ export const setting ={
        backgroundColor:'#6767A6',
     }
 }
+
+export const ViewAllStyle ={
+    startText : {
+        marginTop:18,
+        color:'#0B1D5F',
+        fontSize:25,
+        fontFamily: 'IBMPlexSansKR-Bold'
+    },
+    contentName : {
+        color:'#0B1D5F',
+        fontSize:20,
+        fontFamily: 'IBMPlexSansKR-Bold'
+    },
+    contentIntroduce : {
+        color:'#0B1D5F',
+        fontSize:17,
+        fontFamily: 'IBMPlexSansKR-Regular'
+    }
+}
