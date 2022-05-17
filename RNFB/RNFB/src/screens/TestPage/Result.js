@@ -39,8 +39,8 @@ export default function Result({navigation}){
                 const sen = ininf["설명"];
                 setMusician(name)
                 setSentence(sen)
-                const userDocument = firestore().collection(email).
-                    doc('결과')
+                const userDocument = firestore().collection("회원").
+                doc(email)
                     .update({
                     '이름' : name,
                     '설명' : sen
@@ -64,8 +64,8 @@ export default function Result({navigation}){
                 const sen = ininf["설명"];
                 setMusician(name)
                 setSentence(sen)
-                const userDocument = firestore().collection(email).
-                    doc('결과')
+                const userDocument =firestore().collection("회원").
+                doc(email)
                     .update({
                     '이름' : name,
                     '설명' : sen
@@ -89,8 +89,8 @@ export default function Result({navigation}){
                 const sen = ininf["설명"];
                 setMusician(name)
                 setSentence(sen)
-                const userDocument = firestore().collection(email).
-                    doc('결과')
+                const userDocument = firestore().collection("회원").
+                doc(email)
                     .update({
                     '이름' : name,
                     '설명' : sen
@@ -114,8 +114,8 @@ export default function Result({navigation}){
                 const sen = ininf["설명"];
                 setMusician(name)
                 setSentence(sen)
-                const userDocument = firestore().collection(email).
-                    doc('결과')
+                const userDocument = firestore().collection("회원").
+                doc(email)
                     .update({
                     '이름' : name,
                     '설명' : sen
@@ -139,8 +139,8 @@ export default function Result({navigation}){
                 const sen = ininf["설명"];
                 setMusician(name)
                 setSentence(sen)
-                const userDocument = firestore().collection(email).
-                    doc('결과')
+                const userDocument = firestore().collection("회원").
+                doc(email)
                     .update({
                     '이름' : name,
                     '설명' : sen
@@ -164,8 +164,8 @@ export default function Result({navigation}){
                 const sen = ininf["설명"];
                 setMusician(name)
                 setSentence(sen)
-                const userDocument = firestore().collection(email).
-                    doc('결과')
+                const userDocument = firestore().collection("회원").
+                doc(email)
                     .update({
                     '이름' : name,
                     '설명' : sen
@@ -189,8 +189,8 @@ export default function Result({navigation}){
                 const sen = ininf["설명"];
                 setMusician(name)
                 setSentence(sen)
-                const userDocument = firestore().collection(email).
-                    doc('결과')
+                const userDocument = firestore().collection("회원").
+                doc(email)
                     .update({
                     '이름' : name,
                     '설명' : sen
@@ -214,8 +214,8 @@ export default function Result({navigation}){
                 const sen = ininf["설명"];
                 setMusician(name)
                 setSentence(sen)
-                const userDocument = firestore().collection(email).
-                    doc('결과')
+                const userDocument = firestore().collection("회원").
+                doc(email)
                     .update({
                     '이름' : name,
                     '설명' : sen
@@ -230,7 +230,7 @@ export default function Result({navigation}){
         setCnt(true);
     }
     const [score, setScore] = useState(1);
-    const first = firestore().collection(email).doc("결과");
+    const first = firestore().collection("회원").doc(email);
     async function Read(){
         await first.get().then((doc)=>{
             if (doc.exists){

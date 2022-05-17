@@ -12,17 +12,17 @@ export default function Test9({navigation}){
     const user = firebase.auth().currentUser;
     const email = user.email;
     getPlan = async () =>{
-        const userDocument = firestore().collection(email).
-        doc('사고유형')
+        const userDocument = firestore().collection("회원").
+        doc(email)
         .update({
-            '계획형' : increment
+            '이성' : increment
         })
     }
     getCnt = async () =>{
-        const userDocument = firestore().collection(email).
-        doc('사고유형')
+        const userDocument = firestore().collection("회원").
+        doc(email)
         .update({
-            '즉흥형' : increment
+            '감성' : increment
         })
     }
     return(

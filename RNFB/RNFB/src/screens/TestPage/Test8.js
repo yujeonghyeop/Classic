@@ -12,17 +12,17 @@ export default function Test8({navigation}){
     const user = firebase.auth().currentUser;
     const email = user.email;
     getPer = async () =>{
-        const userDocument = firestore().collection(email).
-        doc('학습성격')
+        const userDocument = firestore().collection("회원").
+        doc(email)
         .update({
-            '개인형' : increment
+            '총체' : increment
         })
     }
     getSoc = async () =>{
-        const userDocument = firestore().collection(email).
-        doc('학습성격')
+        const userDocument = firestore().collection("회원").
+        doc(email)
         .update({
-            '사회형' : increment
+            '분석' : increment
         })
     }
     return(

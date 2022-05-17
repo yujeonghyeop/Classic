@@ -24,9 +24,6 @@ export default function RootClientTabs(){   //App Stack과 연동하기 위한 �
                 headerShown :false
             }}  //맨 위에 header를 가려주는 역할
         >
-            
-           
-
             <ClientTabs.Screen 
                 name = "Search"
                 component = {SearchScreen}

@@ -12,17 +12,17 @@ export default function Test3({navigation}){
     const email = user.email;
 
     getAct = async () =>{
-        const userDocument = firestore().collection(email).
-        doc('행동조절')
+        const userDocument = firestore().collection("회원").
+        doc(email)
         .update({
-            '활발형' : increment
+            '총체' : increment
         })
     }
     getDif = async () =>{
-        const userDocument = firestore().collection(email).
-        doc('행동조절')
+        const userDocument = firestore().collection("회원").
+        doc(email)
         .update({
-            '차분형' : increment
+            '분석' : increment
         })
     }
     return(

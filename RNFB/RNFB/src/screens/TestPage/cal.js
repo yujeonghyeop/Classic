@@ -13,12 +13,12 @@ export default function Result({navigation}){
     const email = user.email; 
     let result = 1;
     async function cal1(){
-        const first = firestore().collection(email).doc("사고유형");
+        const first = firestore().collection("회원").doc(email);
         await first.get().then((doc)=>{
             if (doc.exists){
                 const pandi = doc.data();
-                const plan = pandi["계획형"];
-                const imp = pandi["즉흥형"];
+                const plan = pandi["이성"];
+                const imp = pandi["감성"];
                 if(plan > imp){
                     result *= 1;
                 }
@@ -33,12 +33,12 @@ export default function Result({navigation}){
         console.log("cal1 complete!",result)
     }
     async function cal2(){
-        const second = firestore().collection(email).doc("학습성격");
+        const second = firestore().collection("회원").doc(email);
         await second.get().then((doc)=>{
             if (doc.exists){
                 const pands = doc.data();
-                const per = pands["개인형"];
-                const soc = pands["사회형"];
+                const per = pands["자기지향"];
+                const soc = pands["사회지향"];
                 if(per > soc){
                     result *= 3;
                 }
@@ -54,12 +54,12 @@ export default function Result({navigation}){
 
     }
     async function cal3(){
-        const third = firestore().collection(email).doc("행동조절");
+        const third = firestore().collection("회원").doc(email);
         await third.get().then((doc)=>{
             if (doc.exists){
                 const aandd = doc.data();
-                const act = aandd["활발형"];
-                const dif = aandd["차분형"];
+                const act = aandd["총체"];
+                const dif = aandd["분석"];
                 if(act > dif){
                     result *= 5;
                 }
@@ -77,8 +77,8 @@ export default function Result({navigation}){
         setLoading(true);
     }
     async function cal4(){    
-            const userDocument = await firestore().collection(email). //현재 접속중인 user의 데이터를 수정해준다.
-            doc('결과')
+            const userDocument = await firestore().collection("회원").
+            doc(email)
             .update({
                 'result' : cnt
             })
