@@ -10,6 +10,10 @@ export default function MyOrdersScreen(){
     return(
         <View style = {{flex:1}}>
             <Image source={Logo} style={logo} />
+            <View style={{flexDirection: 'row', justifyContent:'space-evenly'}}>
+                    <Text>교양과목</Text>
+                    <Text>학습과목</Text>
+                </View>
             <Swiper showsPagination={false} loop={false}>
                 <View style={{alignItems:"center"}}>
                     <Text style={ViewAllStyle.startText}>교양과목</Text>
