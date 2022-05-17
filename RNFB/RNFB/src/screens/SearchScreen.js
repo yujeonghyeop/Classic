@@ -1,7 +1,7 @@
 import React from 'react'
 import { SearchBar } from 'react-native-elements';
-import {View, Text, StyleSheet, Image} from 'react-native'
-import {logo, myPageStyle} from '../global/styles';
+import {View, Text, Image} from 'react-native'
+import {logo} from '../global/styles';
 import { styledtext } from '../global/fontStyles';
 import Logo from '../images/logo.png';
 
@@ -21,6 +21,7 @@ export default class App extends React.Component {
     <View>
         <Image source={Logo} style={logo} />
         <SearchBar
+        style={{fontFamily: 'IBMPlexSansKR-Regular', color: "#FF9D9D"}}
         placeholder="Type here..."
         placeholderTextColor={'#FF9D9D'}
         inputContainerStyle={{backgroundColor: '#F2F2F2'}}

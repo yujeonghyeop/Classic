@@ -30,7 +30,7 @@ export default function MyAccountScreen({navigation}){
                     </View>
                 </View>
             </View>
-            <View style={{flexDirection: 'row', flex: 2,justifyContent:'space-between'}}>
+            <View style={{flexDirection: 'row', flex: 2,justifyContent: ''}}>
                 <Text>스크랩 한 학습공간</Text>
                 <Text>스크랩 한 교양과목</Text>
                 {/* <Button title='스크랩 한 학습공간' buttonStyle={myPageStyle.styledButton} titleStyle={styledtext}/>
