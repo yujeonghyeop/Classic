@@ -1,7 +1,7 @@
 //로그인이 완료되면 메인화면, HomeScreen으로 오게된다.
 
 import React,{useState} from 'react';
-import {View, Text, StyleSheet,Image, ScrollView} from 'react-native';
+import {View, Text, TouchableOpacity,Image, ScrollView} from 'react-native';
 import {Icon, Button} from 'react-native-elements';
 import {buttonTitleW,buttonTitleB, styledtext} from '../global/fontStyles';
 import HomeHeader from '../components/HomeHeader';
@@ -36,8 +36,11 @@ export default function HomeScreen({navigation}) {
                     <Text style={styledtext}>{email}</Text>
                 </View>
                 <View style={{flex: 1,flexDirection:'column',justifyContent:'center', margin:10}}>
-                    <Button title = {nickname} buttonStyle = {mainPageStyle.nicknamebutton} titleStyle = {styledtext}
-                        onPress = {() => {navigation.navigate("MyAccountScreen")}}/>
+                    <TouchableOpacity style = {mainPageStyle.nicknamebutton} onPress = {() => {navigation.navigate("MyAccountScreen")}}>
+                      <Text style={styledtext}>{nickname}, name</Text>
+                    </TouchableOpacity>
+                    {/* <Button title = {nickname} buttonStyle = {mainPageStyle.nicknamebutton} titleStyle = {styledtext}
+                        onPress = {() => {navigation.navigate("MyAccountScreen")}}/> */}
                     <Text style={styledtext}>{exp}</Text>
                     {/*<Button title='상세보기' buttonStyle={mainPageStyle.styledButton} titleStyle={buttonTitleW}/>*/}
                 </View>

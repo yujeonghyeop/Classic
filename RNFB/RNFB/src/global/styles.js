@@ -139,7 +139,13 @@ export const title = {
 }
 
 
-export const myPageStyle ={
+export const myAccountstyle ={
+    container:{
+        flex:1, 
+        alignItems:'space-between', 
+        justifyContent:'center', 
+        flexDirection: 'column'
+    },
     styledBox:{
         flex:3,
         borderColor:'#FF9D9D',
@@ -151,16 +157,14 @@ export const myPageStyle ={
         padding:20,
         width: '95%',
         height: '20%',
+    }, 
+    styledPicture:{ 
+        backgroundColor:'#6767A6',
+        borderRadius: 75,
+        width: 100,
+        height: 100,
     },
     styledButton:{
-        flex:1,
-        alignSelf: 'stretch',
-        backgroundColor: '#E8E8F2',
-        padding:10,
-        marginTop:10,
-        alignItems:'center'
-    }, 
-    styledButton1:{
         backgroundColor:'#E8E8F2',
         width: 180,
         borderRadius: 10,
@@ -170,12 +174,12 @@ export const myPageStyle ={
         flex:8,
         backgroundColor: '#E8E8F2', 
     },
-    styledPicture:{ 
-        backgroundColor:'#6767A6',
-        borderRadius: 75,
-        width: 100,
-        height: 100,
+    ListButton:{
+        width:'50%', 
+        alignItems:'center', 
+        padding:5
     }
+    
 }
 
 export const mainPageStyle = {
@@ -188,6 +192,9 @@ export const mainPageStyle = {
       },
       nicknamebutton : {
         backgroundColor : '#E8E8F2',
+        height:50,
+        alignItems:'center',
+        justifyContent:'center'
       },
       viewStyle: { //Swipe 스타일
         backgroundColor : "#6667ab",
