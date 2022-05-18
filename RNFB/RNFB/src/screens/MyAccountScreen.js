@@ -1,15 +1,14 @@
 import React, { useState,useEffect } from 'react'
 import firestore, { firebase } from '@react-native-firebase/firestore'
-import {View, Text, ScrollView, Image, Pressable, Alert} from 'react-native'
+import {View, Text, ScrollView, Image, TouchableOpacity, Alert} from 'react-native'
 import {Button} from 'react-native-elements';
 import {logo, myPageStyle} from '../global/styles';
-import { styledtext } from '../global/fontStyles';
+import { styledtext, buttonTitleB, buttonTitleW  } from '../global/fontStyles';
 import Logo from '../images/logo.png';
 import Swiper from 'react-native-swiper';
 
-export default function MyAccountScreen({navigation}, props){
+export default function MyAccountScreen({navigation}){
     const user = firebase.auth().currentUser;
-    const {onPress, title="스크랩 한 교양"} = props;
     const email = user.email; 
     const [test, settest] = useState();
     const getname = async key=> {
@@ -37,7 +36,25 @@ export default function MyAccountScreen({navigation}, props){
         getname();
     })
 
-    var isSelect = false;
+    const [button1, setColor1] = useState('#6767A6');
+    const [button2, setColor2] = useState('#E8E8F2');
+    const [button1f, setFont1] = useState(buttonTitleB);
+    const [button2f, setFont2] = useState(buttonTitleW);
+
+    const clickHandler1 = () => {
+        setColor1('#6767A6');
+        setColor2('#E8E8F2');
+        setFont1(buttonTitleB);
+        setFont2(buttonTitleW);
+    }
+
+    const clickHandler2 = () =>{
+        setColor1('#E8E8F2');
+        setColor2('#6767A6');
+        setFont1(buttonTitleW);
+        setFont2(buttonTitleB);
+    }
+
     return(
         <View style = {{flex:1, alignItems:'space-between', justifyContent:'center', flexDirection: 'column'}}>
             <Image source={Logo} style={logo} />
@@ -67,18 +84,14 @@ export default function MyAccountScreen({navigation}, props){
                 </View>
             </View>
             <View style={{flex: 8}}>
-                <View style={{flexDirection: 'row', justifyContent:'space-evenly'}}>
-                    {/* <Text>스크랩 한 공간</Text>
-                    <Text>스크랩 한 교양과목</Text> */}
-                    {/* <Button title='스크랩 한 학습공간' buttonStyle={myPageStyle.styledButton} titleStyle={styledtext}/>
-                    <Button title='스크랩 한 교양과목' buttonStyle={myPageStyle.styledButton} titleStyle={styledtext}/> */}
-                    <Pressable style={[myPageStyle.styledButton,{backgroundColor:isSelect?'black': 'white'}]} onPress={()=>{Alert.alert("Press"); isSelect = true;}}>
-                        <Text>{title}</Text>
-                    </Pressable>
-                    <Pressable style={myPageStyle.styledButton} onPress={onPress}>
-                        <Text>{title}</Text>
-                    </Pressable>
-                </View>
+                <View style={{flexDirection:'row', marginTop:10}}>
+                    <TouchableOpacity style={{backgroundColor:button1,width:'50%', alignItems:'center', padding:5}} onPress={clickHandler1}>
+                        <Text style={button1f}>스크랩 한 학습 공간</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={{backgroundColor:button2,width:'50%', alignItems:'center', padding:5}} onPress={clickHandler2}>
+                        <Text style={button2f}>스크랩 한 교양과목</Text>
+                    </TouchableOpacity>
+                </View> 
                 <Swiper showsPagination={false} loop={false}>
                     <View>
                         <ScrollView showsVerticalScrollIndicator={false}>

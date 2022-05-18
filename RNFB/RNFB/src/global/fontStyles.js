@@ -19,7 +19,7 @@ export const buttonTitleW = {
 
 export const  buttonTitleB = { 
     color:"white",
-    fontSize:20,
+    fontSize:15,
     fontFamily: 'IBMPlexSansKR-SemiBold',
     alignItems:"center",
     justifyContent:"center",
