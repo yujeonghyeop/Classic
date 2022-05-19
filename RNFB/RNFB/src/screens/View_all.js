@@ -52,7 +52,7 @@ const renderScene = SceneMap({
 });
 
 export default function MyOrdersScreen(){
-    const [space, setspace] = useState(['']);
+    const [space, setspace] = useState(['안다미로','몽상']);
     const [location, setlocaction] = useState(['']);
     const spaceshow = async () =>{
         const first = await firestore().collection("15_space")
@@ -63,7 +63,6 @@ export default function MyOrdersScreen(){
             })
         )
         console.log("w" + inputdata)
-        setspace(inputdata)
     })
     }
     console.log(space.s_name)
@@ -75,12 +74,10 @@ export default function MyOrdersScreen(){
         {key: 'second', title: '학습공간'},
     ]);
     useEffect(() => {
-        setspace([''])
-        setlocaction([''])
+        setspace(['안다미로', '몽상'])
         spaceshow();
     },[]);
-    console.log(space)
-    console.log(location)
+    
     return(
             <TabView
                 navigationState={{index, routes}}
