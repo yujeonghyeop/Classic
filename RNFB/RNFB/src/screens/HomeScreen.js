@@ -15,7 +15,7 @@ export default function HomeScreen({navigation}) {
   const [exp, setExp] = useState(null)
   const user = firebase.auth().currentUser;
   const email = user.email; 
-  const first = firestore().collection(email).doc("결과");
+  const first = firestore().collection("회원").doc(email);
   first.get().then((doc)=>{
       if (doc.exists){
           const pandi = doc.data();
@@ -37,7 +37,7 @@ export default function HomeScreen({navigation}) {
                 </View>
                 <View style={{flex: 1,flexDirection:'column',justifyContent:'center', margin:10}}>
                     <TouchableOpacity style = {mainPageStyle.nicknamebutton} onPress = {() => {navigation.navigate("MyAccountScreen")}}>
-                      <Text style={styledtext}>{nickname}, name</Text>
+                      <Text style={styledtext}>{nickname}</Text>
                     </TouchableOpacity>
                     {/* <Button title = {nickname} buttonStyle = {mainPageStyle.nicknamebutton} titleStyle = {styledtext}
                         onPress = {() => {navigation.navigate("MyAccountScreen")}}/> */}
