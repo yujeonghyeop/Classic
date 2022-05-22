@@ -277,9 +277,9 @@ export const ViewAllStyle ={
 
 export const inquiryStyle = {
     buttonStyle : {
-        width:320,
-        height:60,
-        margin:15,
-        backgroundColor:'#6767A6',
+        width: 320,
+        height: 60,
+        margin: 15,
+        backgroundColor: '#6767A6',
     }
 }
