@@ -1,6 +1,6 @@
 //로그인이 완료되면 메인화면, HomeScreen으로 오게된다.
 
-import React,{useState} from 'react';
+import React,{useState,useEffect} from 'react';
 import {View, Text, TouchableOpacity,Image, ScrollView} from 'react-native';
 import {Icon, Button} from 'react-native-elements';
 import {buttonTitleW,buttonTitleB, styledtext} from '../global/fontStyles';
@@ -13,18 +13,47 @@ import firestore, { firebase } from '@react-native-firebase/firestore'
 export default function HomeScreen({navigation}) {
   const [nickname, setNickname] = useState(null)
   const [exp, setExp] = useState(null)
+  const [result, setresult] = useState('')
+  const [space, setspace] = useState([]);
+  const [subject, setsubject] = useState([]);
   const user = firebase.auth().currentUser;
   const email = user.email; 
-  const first = firestore().collection("회원").doc(email);
-  first.get().then((doc)=>{
-      if (doc.exists){
-          const pandi = doc.data();
-          const name = pandi["이름"];
-          const explain = pandi["설명"];
-          setNickname(name);
-          setExp(explain);
-      }
-  })
+  
+  const spaceshow = async () =>{
+    firebase.firestore().collection(result+"_space").onSnapshot(snapshot =>{
+           const tweet = snapshot.docs.map(doc => ({
+               id : doc.id,
+               ...doc.data(),
+           }))
+           setspace(tweet)
+       })
+}
+   const subjectshow = async () =>{
+       firebase.firestore().collection(result+"_subject").onSnapshot(snapshot =>{
+           const tweet = snapshot.docs.map(doc => ({
+               id : doc.id,
+               ...doc.data(),
+           }))
+           setsubject(tweet)
+       })
+       
+   }
+   useEffect(() => {
+    const first = firestore().collection("회원").doc(email);
+    first.get().then((doc)=>{
+        if (doc.exists){
+            const pandi = doc.data();
+            const name = pandi["이름"];
+            const explain = pandi["설명"];
+            const re = pandi["result"];
+            setNickname(name);
+            setresult(re)
+            setExp(explain);
+            spaceshow()
+            subjectshow()
+        }
+    })
+},[]);
   return (
     <View style={mainPageStyle.container}>
       {/* <HomeHeader navigation={navigation} /> */}
@@ -48,20 +77,23 @@ export default function HomeScreen({navigation}) {
       </View>
       <View style={{flex:3, padding:5, marginBottom:5}}ii>
         <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-          <View style={mainPageStyle.viewStyle}></View>
-          <View style={mainPageStyle.viewStyle}></View>
-          <View style={mainPageStyle.viewStyle}></View>
-          <View style={mainPageStyle.viewStyle}></View>
-          <View style={mainPageStyle.viewStyle}></View>
+        {subject.map((data)=>(
+          <View style={mainPageStyle.viewStyle}>
+            <Text>{data.name}</Text>
+            <Text>{data.professor}</Text>
+          </View>
+        ))}
         </ScrollView>
       </View>
+      {console.log(subject,space)}
       <View style={{flex:3, padding:5, marginBottom:5}}ii>
         <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-          <View style={mainPageStyle.viewStyle}></View>
-          <View style={mainPageStyle.viewStyle}></View>
-          <View style={mainPageStyle.viewStyle}></View>
-          <View style={mainPageStyle.viewStyle}></View>
-          <View style={mainPageStyle.viewStyle}></View>
+        {space.map((data)=>(
+          <View style={mainPageStyle.viewStyle}>
+            <Text>{data.name}</Text>
+            <Text>{data.location}</Text>
+          </View>
+        ))}
         </ScrollView>
       </View>
     </View>

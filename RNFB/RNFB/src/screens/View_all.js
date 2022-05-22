@@ -8,21 +8,30 @@ import firestore, { firebase, getDocs } from '@react-native-firebase/firestore';
 
 export default function MyOrdersScreen(){
 
-    const [space, setspace] = useState(['안다미로','몽상']);
+    const [space, setspace] = useState([]);
+    const [subject, setsubject] = useState([]);
+    const [test, settest] = useState([])
     const [location, setlocaction] = useState(['']);
     const spaceshow = async () =>{
-        const first = await firestore().collection("15_space")
-        const inputdata = first.get().then((q) => {
-            q.docs.map((doc)=>({
-                s_name : doc.data()["name"],
-                s_location : doc.data()["location"]
-            })
-        )
-        console.log("w" + inputdata)
-    })
+     firebase.firestore().collection("view_all_space").onSnapshot(snapshot =>{
+            const tweet = snapshot.docs.map(doc => ({
+                id : doc.id,
+                ...doc.data(),
+            }))
+            setspace(tweet)
+        })
+        
+}
+    const subjectshow = async () =>{
+        firebase.firestore().collection("view_all_subject").onSnapshot(snapshot =>{
+            const tweet = snapshot.docs.map(doc => ({
+                id : doc.id,
+                ...doc.data(),
+            }))
+            setsubject(tweet)
+        })
+        
     }
-    console.log(space.s_name)
-
     const layout = useWindowDimensions();
     const [index, setIndex] = React.useState(0);
     const [routes] = React.useState([
@@ -31,11 +40,11 @@ export default function MyOrdersScreen(){
     ]);
 
     useEffect(() => {
-        setspace(['안다미로', '몽상'])
-        spaceshow();
+        spaceshow()
+        subjectshow()
     },[]);
-    
     return(
+        
             <TabView
                 navigationState={{index, routes}}
                 renderScene={({route}) => {
@@ -44,16 +53,18 @@ export default function MyOrdersScreen(){
                             return(
                                 <View style={{alignItems:"center"}}>
                                     <ScrollView showsVerticalScrollIndicator={false} style={{margin:20}}>
+                                        {subject.map((data)=>(
                                         <View>
                                             <View style={{flexDirection:'row', padding:5}}>
                                                 <View style={{width:120,height:120, margin:10, backgroundColor:'#FF9D9D'}}></View>
                                                 <View style={{margin:10}}>
-                                                    <Text style={ViewAllStyle.contentName}>교양과목 이름</Text>
-                                                    <Text style={ViewAllStyle.contentIntroduce}>교양과목 소개</Text>
+                                                    <Text style={ViewAllStyle.contentName}>{data.name}</Text>
+                                                    <Text style={ViewAllStyle.contentIntroduce}>{data.professor}</Text>
                                                 </View>
                                             </View>
                                             <View style={{width:340, height:2, margin:5,backgroundColor:'#a6a6cc'}}></View>
                                         </View>
+                                        ))}
                                     </ScrollView>
                                 </View>
                             );
@@ -65,8 +76,9 @@ export default function MyOrdersScreen(){
                                             <View>
                                                 <View style={{flexDirection:'row', padding:5}}>
                                                     <View style={{width:120,height:120, margin:10, backgroundColor:'#FF9D9D'}}></View>
-                                                    <View style={{margin:10}}>
-                                                        <Text style={ViewAllStyle.contentName}>{data}</Text>
+                                                    <View style={{flexShrink:1,flexGrow:1,flexBasis:150}}>
+                                                        <Text style={ViewAllStyle.contentName}>{data.name}</Text>
+                                                        <Text style={ViewAllStyle.contentIntroduce}>{data.location}</Text>
                                                     </View>
                                                 </View>
                                                 <View style={{width:340, height:2, margin:5,backgroundColor:'#a6a6cc'}}></View>
@@ -88,5 +100,6 @@ export default function MyOrdersScreen(){
                     labelStyle= {{fontSize:15, fontFamily: 'IBMPlexSansKR-Bold'}}
                 />}
             />
+            
     )
 }
