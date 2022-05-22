@@ -16,6 +16,7 @@ import cal from '../screens/TestPage/cal';
 import MyAccountScreen from '../screens/MyAccountScreen';
 import Logout from '../screens/settingScreen/Logout';
 import Inquiry from '../screens/settingScreen/Inquiry';
+import InquiryResult from '../screens/settingScreen/InquiryResult';
 import RootClientTabs from './ClientTabs';
 
 const App = createStackNavigator();
@@ -23,15 +24,21 @@ const App = createStackNavigator();
 export function AppStack(){
     return(
         <App.Navigator>
-             <App.Screen 
+            <App.Screen 
                 name = "App"
                 component = {RootClientTabs}    //로그인 인증이 되었을 때 HomeScreen 대신에 ClientTab을 띄우게 한다.
                 options ={{
                     headerShown : false,
                     ...TransitionPresets.RevealFromBottomAndroid
                 }}
-            />     
-            
+            />
+            <App.Screen 
+                name = "MainScreen"
+                component = {RootClientTabs}    //로그인 인증이 되었을 때 HomeScreen 대신에 ClientTab을 띄우게 한다.
+                options ={{
+                    headerShown : false,
+                }}
+            /> 
             <App.Screen
                  name = "MyAccountScreen"
                  component = {MyAccountScreen}
@@ -128,6 +135,13 @@ export function AppStack(){
             <App.Screen
                 name = "Inquiry"
                 component = {Inquiry}
+                options = {{
+                    headerShown : false
+                }}
+            />
+            <App.Screen
+                name = "InquiryResult"
+                component = {InquiryResult}
                 options = {{
                     headerShown : false
                 }}

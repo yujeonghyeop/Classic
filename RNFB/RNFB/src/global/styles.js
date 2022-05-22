@@ -302,5 +302,21 @@ export const inquiryStyle = {
         borderRadius: 10,
         marginTop: 25,
         padding: 15
+    },
+    InquiryResultcontainer : {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
+    InquiryResultTextView : {
+        height: 300,
+        margin: 20,
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
+    InquiryResultFont : {
+        color: '#0B1D5F',
+        fontSize: 25,
+        fontFamily: 'IBMPlexSansKR-Bold'
     }
 }

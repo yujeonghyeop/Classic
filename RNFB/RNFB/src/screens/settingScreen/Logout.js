@@ -1,5 +1,5 @@
 import React from 'react';
-import{View, Text, StyleSheet, Image} from 'react-native'
+import {View, Text, StyleSheet, Image} from 'react-native'
 import {logo, myPageStyle} from '../../global/styles';
 import Logo from '../../images/logo.png'
 import {Button} from 'react-native-elements';

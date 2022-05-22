@@ -19,28 +19,33 @@ export default class Inquiry extends React.Component {
         this.setState({ content });
     };
 
+    goInquiryResult = () => {
+        this.props.navigation.navigate('InquiryResult');
+    }
     render(){
-    const {title, content} = this.state;
-        
-    return(
-        <View style = {inquiryStyle.container}>
-            <Image source={Logo} style={logo} />
-            <View style ={inquiryStyle.titleView}>
-                <TextInput 
-                    onChangeText={this.changeTitle}
-                    placeholder="제목"
-                    value={title}
+        const {title, content} = this.state;
+
+        return(
+            <View style = {inquiryStyle.container}>
+                <Image source={Logo} style={logo} />
+                <View style ={inquiryStyle.titleView}>
+                    <TextInput 
+                        onChangeText={this.changeTitle}
+                        placeholder="제목"
+                        value={title}
+                    />
+                </View>
+                <View style ={inquiryStyle.contentView}>
+                    <TextInput 
+                        onChangeText={this.changeContent}
+                        placeholder="내용을 입력하세요"
+                        value={content}
+                    />
+                </View>
+                <Button title="문의 제출하기" buttonStyle={inquiryStyle.buttonStyle} titleStyle={buttonTitleInquiry}
+                    onPress={() => this.goInquiryResult()}
                 />
             </View>
-            <View style ={inquiryStyle.contentView}>
-                <TextInput 
-                    onChangeText={this.changeContent}
-                    placeholder="내용을 입력하세요"
-                    value={content}
-                />
-            </View>
-            <Button title="문의 제출하기" buttonStyle={inquiryStyle.buttonStyle} titleStyle={buttonTitleInquiry}/>
-        </View>
-    )
-}
+        )
+    }
 }
