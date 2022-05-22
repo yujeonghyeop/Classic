@@ -20,7 +20,7 @@ export default class App extends React.Component {
     <View>
         <Image source={Logo} style={logo} />
         <SearchBar
-        style={{/*fontFamily: 'IBMPlexSansKR-Regular', */color: "#FF9D9D"}}
+        style={{/*fontFamily: 'IBMPlexSansKR-Regular',*/ color: "#FF9D9D"}}
         placeholder="Type here..."
         placeholderTextColor={'#FF9D9D'}
         inputContainerStyle={{backgroundColor: '#F2F2F2'}}
