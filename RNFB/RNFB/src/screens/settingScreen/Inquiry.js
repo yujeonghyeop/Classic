@@ -1,12 +1,11 @@
 import React from 'react';
-import{View, TextInput, StyleSheet, Image} from 'react-native'
+import {View, TextInput, Image} from 'react-native'
 import {logo, inquiryStyle} from '../../global/styles';
 import Logo from '../../images/logo.png'
 import {Button} from 'react-native-elements';
 import { buttonTitleInquiry  } from '../../global/fontStyles';
-import { render } from 'express/lib/response';
 
-export default function Inquiry(){
+export default class Inquiry extends React.Component {
 
     state = {
         title: '',
@@ -14,12 +13,13 @@ export default function Inquiry(){
     }
 
     changeTitle = (title) => {
-        this.setState({title});
+        this.setState({ title });
     };
     changeContent = (content) => {
-        this.setState({content});
+        this.setState({ content });
     };
 
+    render(){
     const {title, content} = this.state;
         
     return(
@@ -42,4 +42,5 @@ export default function Inquiry(){
             <Button title="문의 제출하기" buttonStyle={inquiryStyle.buttonStyle} titleStyle={buttonTitleInquiry}/>
         </View>
     )
+}
 }

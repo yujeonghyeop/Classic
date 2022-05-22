@@ -300,7 +300,7 @@ export const inquiryStyle = {
         borderColor: '#6767A6',
         borderWidth: 1,
         borderRadius: 10,
-        marginTop: 30,
+        marginTop: 25,
         padding: 15
     }
 }
