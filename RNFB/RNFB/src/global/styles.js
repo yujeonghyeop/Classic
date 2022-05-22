@@ -246,7 +246,6 @@ export const setting ={
         borderRadius:10,
         marginTop:30,
         padding:30
-
     },
     AccountButton:{
        width:200,
@@ -279,7 +278,29 @@ export const inquiryStyle = {
     buttonStyle : {
         width: 320,
         height: 60,
-        margin: 15,
+        margin: 20,
         backgroundColor: '#6767A6',
+    },
+    container : {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
+    titleView : {
+        width: 320,
+        borderColor: '#6767A6',
+        borderWidth: 1,
+        borderRadius: 10,
+        marginTop: 30,
+        padding: 15
+    },
+    contentView: {
+        width: 320,
+        height: 200,
+        borderColor: '#6767A6',
+        borderWidth: 1,
+        borderRadius: 10,
+        marginTop: 30,
+        padding: 15
     }
 }
