@@ -54,7 +54,7 @@ export default function MyOrdersScreen(){
                                 <View style={{alignItems:"center"}}>
                                     <ScrollView showsVerticalScrollIndicator={false} style={{margin:20}}>
                                         {subject.map((data)=>(
-                                        <View>
+                                        <View key ={data.name} >
                                             <View style={{flexDirection:'row', padding:5}}>
                                                 <View style={{width:120,height:120, margin:10, backgroundColor:'#FF9D9D'}}></View>
                                                 <View style={{margin:10}}>
@@ -73,7 +73,7 @@ export default function MyOrdersScreen(){
                                 <View style={{alignItems:"center"}}>
                                     <ScrollView showsVerticalScrollIndicator={false} style={{margin:20}}>
                                         {space.map((data) =>(
-                                            <View>
+                                            <View key ={data.name} >
                                                 <View style={{flexDirection:'row', padding:5}}>
                                                     <View style={{width:120,height:120, margin:10, backgroundColor:'#FF9D9D'}}></View>
                                                     <View style={{flexShrink:1,flexGrow:1,flexBasis:150}}>

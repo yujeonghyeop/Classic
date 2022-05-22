@@ -20,7 +20,7 @@ export default function HomeScreen({navigation}) {
   const email = user.email; 
   
   const spaceshow = async () =>{
-    firebase.firestore().collection(result+"_space").onSnapshot(snapshot =>{
+    await firebase.firestore().collection(result+"_space").onSnapshot(snapshot =>{
            const tweet = snapshot.docs.map(doc => ({
                id : doc.id,
                ...doc.data(),
@@ -29,14 +29,14 @@ export default function HomeScreen({navigation}) {
        })
 }
    const subjectshow = async () =>{
-       firebase.firestore().collection(result+"_subject").onSnapshot(snapshot =>{
+      await firebase.firestore().collection(result+"_subject").onSnapshot(snapshot =>{
            const tweet = snapshot.docs.map(doc => ({
                id : doc.id,
                ...doc.data(),
            }))
            setsubject(tweet)
        })
-       
+  
    }
    useEffect(() => {
     const first = firestore().collection("회원").doc(email);
@@ -49,11 +49,14 @@ export default function HomeScreen({navigation}) {
             setNickname(name);
             setresult(re)
             setExp(explain);
-            spaceshow()
-            subjectshow()
         }
     })
+    
 },[]);
+setTimeout(()=>{
+  spaceshow()
+  subjectshow()
+},1000);
   return (
     <View style={mainPageStyle.container}>
       {/* <HomeHeader navigation={navigation} /> */}
@@ -78,18 +81,18 @@ export default function HomeScreen({navigation}) {
       <View style={{flex:3, padding:5, marginBottom:5}}ii>
         <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
         {subject.map((data)=>(
-          <View style={mainPageStyle.viewStyle}>
+          <View key ={data.name} style={mainPageStyle.viewStyle}>
             <Text>{data.name}</Text>
             <Text>{data.professor}</Text>
           </View>
         ))}
         </ScrollView>
       </View>
-      {console.log(subject,space)}
+
       <View style={{flex:3, padding:5, marginBottom:5}}ii>
         <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
         {space.map((data)=>(
-          <View style={mainPageStyle.viewStyle}>
+          <View  key ={data.name} style={mainPageStyle.viewStyle}>
             <Text>{data.name}</Text>
             <Text>{data.location}</Text>
           </View>
