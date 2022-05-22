@@ -184,19 +184,19 @@ export const myAccountstyle ={
 
 export const mainPageStyle = {
     container: {
-      flex: 1,
-      flexDirection: 'column',
-      backgroundColor:'#FFFFFF',
-      alignContent: 'center',
-      justifyContent: 'center',
-      },
-      nicknamebutton : {
+        flex: 1,
+        flexDirection: 'column',
+        backgroundColor:'#FFFFFF',
+        alignContent: 'center',
+        justifyContent: 'center',
+    },
+    nicknamebutton : {
         backgroundColor : '#E8E8F2',
         height:50,
         alignItems:'center',
         justifyContent:'center'
-      },
-      viewStyle: { //Swipe 스타일
+    },
+    viewStyle: { //Swipe 스타일
         backgroundColor : "#6667ab",
         flex: 1,
         width : 200,
@@ -205,8 +205,8 @@ export const mainPageStyle = {
         alignItems: 'center',
         marginTop:10,
         marginLeft:10
-      },
-      styledPicture:{ 
+    },
+    styledPicture:{ 
         //사진 넣는 곳
         backgroundColor:'#6767A6',
         borderRadius: 75,
@@ -272,5 +272,14 @@ export const ViewAllStyle ={
         color:'#0B1D5F',
         fontSize:17,
         fontFamily: 'IBMPlexSansKR-Regular'
+    }
+}
+
+export const inquiryStyle = {
+    buttonStyle : {
+        width:320,
+        height:60,
+        margin:15,
+        backgroundColor:'#6767A6',
     }
 }

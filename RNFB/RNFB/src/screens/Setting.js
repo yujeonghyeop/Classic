@@ -33,7 +33,7 @@ async function signOut(){   //로그아웃을 하기 위한 function
             <Image source={Logo} style={logo} />
             <View style = {setting.AccountView}>
                 <Button title="Logout" buttonStyle ={setting.AccountButton} titleStyle={buttonTitleB} onPress = {() => { signOut()}}/>
-                <Button title="Q&A" buttonStyle ={setting.AccountButton} titleStyle={buttonTitleB} onPress = {() => { navigation.navigate("Inquiry")}}/>
+                <Button title="문의하기" buttonStyle ={setting.AccountButton} titleStyle={buttonTitleB} onPress = {() => { navigation.navigate("Inquiry")}}/>
             </View>
         </View>
         

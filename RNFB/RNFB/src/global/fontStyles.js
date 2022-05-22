@@ -24,5 +24,12 @@ export const  buttonTitleB = {
     alignItems:"center",
     justifyContent:"center",
     marginTop:3,
-   
+}
+
+export const  buttonTitleInquiry = { 
+    color: "white",
+    fontSize: 20,
+    fontFamily: 'IBMPlexSansKR-SemiBold',
+    alignItems: "center",
+    justifyContent: "center",
 }
