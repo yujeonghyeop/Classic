@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
-import{View, Text, StyleSheet} from 'react-native';
+import{Image,View, Text, StyleSheet} from 'react-native';
+import Logo from '../../images/logo.png';
 import {Icon,Button} from 'react-native-elements'
 import { parameters } from '../../global/styles'
 import firestore, { firebase } from '@react-native-firebase/firestore'
@@ -94,8 +95,11 @@ export default function Result({navigation}){
     },[page])
     return(
         <View style = {styles.container}>
-            <Text style={styles.styledFont}>{loading == true ? navigation.navigate("Result"): "두구두구두구"}</Text>
-            
+            {
+                loading == true ? navigation.navigate("Result"): 
+                <Image source={Logo} style ={styles.logo}/>
+        
+            }
         </View>
     )
 }
@@ -105,11 +109,16 @@ const styles = StyleSheet.create({
         alignItems:'center',
         justifyContent:'center',
         color:'#6667ab',
-        backgroundColor :'#6667ab'
+        backgroundColor :'#E8E8F2',
     },
     styledFont:{
         fontSize : 50,
         color:'white',
         fontWeight:'bold',
+    }, 
+    logo:{
+        borderColor:'#FF9D9D',
+        padding:20,
+        borderWidth:1,
     }
 })
