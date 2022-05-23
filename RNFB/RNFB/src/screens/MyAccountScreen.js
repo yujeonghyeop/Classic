@@ -1,12 +1,15 @@
 import React, { useState,useEffect } from 'react'
 import firestore, { firebase } from '@react-native-firebase/firestore'
-import {View, Text, ScrollView, Image, TouchableOpacity, Alert} from 'react-native'
+import {View, Text, ScrollView, Image, TouchableOpacity, useWindowDimensions} from 'react-native'
 import {Button} from 'react-native-elements';
-import {logo, myAccountstyle} from '../global/styles';
+import {logo, myAccountstyle, ViewAllStyle} from '../global/styles';
 import { styledtext, buttonTitleB, buttonTitleW  } from '../global/fontStyles';
 import Logo from '../images/logo.png';
 import example from '../images/example.png';
 import Swiper from 'react-native-swiper';
+import { getDate } from 'cli';
+import { getDrawerStatusFromState } from '@react-navigation/drawer';
+import { FlatList } from 'react-native-gesture-handler';
 
 export default function MyAccountScreen({navigation}){
     const user = firebase.auth().currentUser;
@@ -41,12 +44,18 @@ export default function MyAccountScreen({navigation}){
     const [button2, setColor2] = useState('#E8E8F2');
     const [button1f, setFont1] = useState(buttonTitleB);
     const [button2f, setFont2] = useState(buttonTitleW);
+    const [index, setIndex] = useState(0);
+    const [space, setspace] = useState([]);
+    const [subject, setsubject] = useState([]);
+    const [location, setlocaction] = useState(['']);
+    const layout = useWindowDimensions();
 
     const clickHandler1 = () => {
         setColor1('#6767A6');
         setColor2('#E8E8F2');
         setFont1(buttonTitleB);
         setFont2(buttonTitleW);
+        setIndex(0);
     }
 
     const clickHandler2 = () =>{
@@ -54,7 +63,34 @@ export default function MyAccountScreen({navigation}){
         setColor2('#6767A6');
         setFont1(buttonTitleW);
         setFont2(buttonTitleB);
+        setIndex(1);
     }
+
+    const spaceshow = async () =>{
+     firebase.firestore().collection("view_all_space").onSnapshot(snapshot =>{
+            const tweet = snapshot.docs.map(doc => ({
+                id : doc.id,
+                ...doc.data(),
+            }))
+            setspace(tweet)
+        })
+        
+    }
+    const subjectshow = async () =>{
+        firebase.firestore().collection("view_all_subject").onSnapshot(snapshot =>{
+            const tweet = snapshot.docs.map(doc => ({
+                id : doc.id,
+                ...doc.data(),
+            }))
+            setsubject(tweet)
+        })
+        
+    }
+
+    useEffect(() => {
+        spaceshow()
+        subjectshow()
+    },[]);
 
     return(
         <View style = {myAccountstyle.container}>
@@ -87,41 +123,48 @@ export default function MyAccountScreen({navigation}){
             <View style={{flex: 8}}>
                 <View style={{flexDirection:'row', marginTop:10}}>
                     <TouchableOpacity style={[myAccountstyle.ListButton, {backgroundColor:button1}]} onPress={clickHandler1}>
-                        <Text style={button1f}>스크랩 한 학습 공간</Text>
+                        <Text style={button1f}>스크랩 한 교양과목</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={[myAccountstyle.ListButton,{backgroundColor:button2}]} onPress={clickHandler2}>
-                        <Text style={button2f}>스크랩 한 교양과목</Text>
+                        <Text style={button2f}>스크랩 한 학습공간</Text>
                     </TouchableOpacity>
                 </View> 
-                <Swiper showsPagination={false} loop={false}>
-                    <View>
-                        <ScrollView showsVerticalScrollIndicator={false}>
-                            <View style={{flexDirection: 'row',width:'100%',height:300, backgroundColor:'#E8E8F2', borderColor: '#FF9D9D', justifyContent:'center', borderBottomWidth:2}}>
-                                <View style={{width:'50%',justifyContent:'center', alignItems:'center'}}>
-                                    <View style={{borderColor: '#FF9D9D',borderWidth:10, padding:10}}>
-                                         <Image source={example} style={{width:100, height:100}}/>
+                <View>
+                    <ScrollView showsVerticalScrollIndicator={false}>
+                            { 
+                                index == 0 ? 
+                                <View>
+                                { subject.map((data)=>(
+                                        <View key ={data.name} >
+                                            <View style={{flexDirection:'row', padding:5}}>
+                                                <View style={{width:120,height:120, margin:10, backgroundColor:'#FF9D9D'}}/>
+                                                <View style={{margin:10}}>
+                                                    <Text style={ViewAllStyle.contentName}>{data.name}</Text>
+                                                    <Text style={ViewAllStyle.contentIntroduce}>{data.professor}</Text>
+                                                </View>
+                                            </View>
+                                        <View style={{width:340, height:2, margin:5,backgroundColor:'#a6a6cc'}}/>
+                                    </View>))
+                                }
+                                </View> : 
+                                <View>
+                                    {space.map((data) =>(
+                                        <View key ={data.name} >
+                                        <View style={{flexDirection:'row', padding:5}}>
+                                            <View style={{width:120,height:120, margin:10, backgroundColor:'#FF9D9D'}}></View>
+                                            <View style={{flexShrink:1,flexGrow:1,flexBasis:150}}>
+                                                <Text style={ViewAllStyle.contentName}>{data.name}</Text>
+                                                <Text style={ViewAllStyle.contentIntroduce}>{data.location}</Text>
+                                            </View>
+                                        </View>
+                                        <View style={{width:340, height:2, margin:5,backgroundColor:'#a6a6cc'}}></View>
                                     </View>
-                                   
-                                </View >
-                                <View style={{width:'50%',justifyContent:'center', alignItems:'center'}}>
-                                    <View style={{alignItems:'flex-start'}}>
-                                        <Text>이름</Text>
-                                        <Text>위치</Text>
+                                    ))}
                                     </View>
-                                </View>
-                            </View>
-                            <View style={{width:300,height:300, backgroundColor:'gray'}}></View>
-                        </ScrollView>
-                    </View>
-                    <View>
-                        <ScrollView >
-                            <View style={{width:300,height:300, backgroundColor:'gray'}}></View>
-                            <View style={{width:300,height:300, backgroundColor:'gray'}}></View>
-                        </ScrollView>
-                    </View>
-                </Swiper>
-            </View>
-                
+                            }
+                    </ScrollView>
+                </View>
+            </View>  
         </View>
     )
 }
