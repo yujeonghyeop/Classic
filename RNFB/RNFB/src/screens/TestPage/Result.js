@@ -1,7 +1,8 @@
 import React, { useState,useEffect } from 'react'
-import{ View, Text, StyleSheet, Image,ScrollView } from 'react-native'
+import{ View, Text, TouchableOpacity, Image,ScrollView } from 'react-native'
 import { Icon, Button } from 'react-native-elements'
 import { parameters,testpageStyle } from '../../global/styles'
+import { buttonTitleB } from '../../global/fontStyles'
 import firestore, { firebase } from '@react-native-firebase/firestore'
 import storage from '@react-native-firebase/storage'
 import * as Progress from 'react-native-progress'
@@ -335,25 +336,17 @@ export default function Result({navigation}){
                     </View>
                 </View>
 
-                <Button 
-                    title = "검사 다시하기"
-                    buttonStyle =  {testpageStyle.styledButton}
-                    titleStyle = {parameters.buttonTitle}
-                            //button에 스타일 입히기
-                    onPress = {() => {
+                <TouchableOpacity style={testpageStyle.styledButton} onPress = {() => {
                         resettype()
                         navigation.navigate("Test1")
-                }}
-                />
-                <Button 
-                    title = "Main Page로 가기"
-                        buttonStyle =  {testpageStyle.styledButton}
-                        titleStyle = {parameters.buttonTitle}
-                                //button에 스타일 입히기
-                        onPress = {() => {
+                }}>
+                    <Text style={buttonTitleB}>검사 다시하기</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={testpageStyle.styledButton} onPress = {() => {
                             navigation.navigate("HomeScreen")
-                    }}
-                />
+                    }}>
+                    <Text style={buttonTitleB}>Main Page로 가기</Text>
+                </TouchableOpacity>
             </View>
         </ScrollView>
 

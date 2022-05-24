@@ -63,17 +63,17 @@ export default function HomeScreen({navigation}) {
       <Image source={Logo} style={logo} />
       <View style={mainPageStyle.styledBox}>
             <View style={{flexDirection:'row'}}>
-                <View style={{flexDirection: 'column', margin: 10,}}> 
+                <View style={{flexDirection: 'column', margin: 10,alignItems:'center'}}> 
                     <View style={mainPageStyle.styledPicture}/>
-                    <Text style={styledtext}>{email}</Text>
+                    <Text style={buttonTitleW}>{email}</Text>
                 </View>
                 <View style={{flex: 1,flexDirection:'column',justifyContent:'center', margin:10}}>
                     <TouchableOpacity style = {mainPageStyle.nicknamebutton} onPress = {() => {navigation.navigate("MyAccountScreen")}}>
-                      <Text style={styledtext}>{nickname}</Text>
+                      <Text style={buttonTitleW}>{nickname}</Text>
                     </TouchableOpacity>
                     {/* <Button title = {nickname} buttonStyle = {mainPageStyle.nicknamebutton} titleStyle = {styledtext}
                         onPress = {() => {navigation.navigate("MyAccountScreen")}}/> */}
-                    <Text style={styledtext}>{exp}</Text>
+                    <View style={{padding:5, alignItems:'center', justifyContent:'center'}}><Text style={styledtext}>{exp}</Text></View>
                     {/*<Button title='상세보기' buttonStyle={mainPageStyle.styledButton} titleStyle={buttonTitleW}/>*/}
                 </View>
             </View> 

@@ -1,7 +1,9 @@
 import React,{ useState, useEffect } from 'react';
-import {View, Text, Image, ScrollView, useWindowDimensions} from 'react-native'
+import {View, Text, TouchableOpacity, ScrollView, useWindowDimensions} from 'react-native'
 import { TabView, SceneMap, TabBar } from 'react-native-tab-view';
-import { parameters, ViewAllStyle } from '../global/styles';
+import {Icon} from 'react-native-elements'
+import { ViewAllStyle } from '../global/styles';
+import { buttonTitleW } from '../global/fontStyles';
 import firestore, { firebase, getDocs } from '@react-native-firebase/firestore';
 
 // 전체보기 페이지
@@ -39,6 +41,11 @@ export default function MyOrdersScreen(){
         {key: 'second', title: '학습공간'},
     ]);
 
+    const [border, setBorderwidth] = useState(0);
+    const scrapHandler = () =>{
+        setBorderwidth(1);
+    }
+
     useEffect(() => {
         spaceshow()
         subjectshow()
@@ -56,11 +63,15 @@ export default function MyOrdersScreen(){
                                         {subject.map((data)=>(
                                         <View key ={data.name} >
                                             <View style={{flexDirection:'row', padding:5}}>
-                                                <View style={{width:120,height:120, margin:10, backgroundColor:'#FF9D9D'}}></View>
+                                                <View style={{width:150,height:150, margin:10, backgroundColor:'#FF9D9D'}}></View>
                                                 <View style={{margin:10}}>
                                                     <Text style={ViewAllStyle.contentName}>{data.name}</Text>
                                                     <Text style={ViewAllStyle.contentIntroduce}>{data.professor}</Text>
+                                                    <TouchableOpacity style={[ViewAllStyle.scrap,{borderWidth:border}]} onPress={scrapHandler}>
+                                                        <Text style={buttonTitleW}>스크랩 하기</Text>
+                                                    </TouchableOpacity>
                                                 </View>
+                                                
                                             </View>
                                             <View style={{width:340, height:2, margin:5,backgroundColor:'#a6a6cc'}}></View>
                                         </View>
@@ -75,10 +86,13 @@ export default function MyOrdersScreen(){
                                         {space.map((data) =>(
                                             <View key ={data.name} >
                                                 <View style={{flexDirection:'row', padding:5}}>
-                                                    <View style={{width:120,height:120, margin:10, backgroundColor:'#FF9D9D'}}></View>
+                                                    <View style={{width:150,height:150, margin:10, backgroundColor:'#FF9D9D'}}></View>
                                                     <View style={{flexShrink:1,flexGrow:1,flexBasis:150}}>
                                                         <Text style={ViewAllStyle.contentName}>{data.name}</Text>
                                                         <Text style={ViewAllStyle.contentIntroduce}>{data.location}</Text>
+                                                        <TouchableOpacity style={[ViewAllStyle.scrap,{borderWidth:border}]} onPress={scrapHandler}>
+                                                            <Text style={buttonTitleW}>스크랩 하기</Text>
+                                                        </TouchableOpacity>
                                                     </View>
                                                 </View>
                                                 <View style={{width:340, height:2, margin:5,backgroundColor:'#a6a6cc'}}></View>

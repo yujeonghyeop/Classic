@@ -279,6 +279,16 @@ export const ViewAllStyle ={
         color:'#0B1D5F',
         fontSize:17,
         fontFamily: 'IBMPlexSansKR-Regular'
+    },
+    scrap:{
+        backgroundColor:'#E8E8F2',
+        margin:5, 
+        width:100,
+        height:50,
+        justifyContent:'center', 
+        alignItems:'center',
+        borderColor: '#FF9D9D',
+        borderWidth:0
     }
 }
 
