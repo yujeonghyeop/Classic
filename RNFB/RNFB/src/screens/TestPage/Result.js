@@ -348,23 +348,13 @@ export default function Result({navigation}){
                 <TouchableOpacity style={testpageStyle.styledButton} onPress = {() => {
                         resettype()
                         navigation.navigate("Test1")
-<<<<<<< HEAD
                 }}>
                     <Text style={buttonTitleB}>검사 다시하기</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={testpageStyle.styledButton} onPress = {() => {
-=======
+
                     }}
-                />
-                <Button 
-                    title = "Main Page로 가기"
-                        buttonStyle =  {testpageStyle.styledButton}
-                        titleStyle = {parameters.buttonTitle}
-                                //button에 스타일 입히기
-                        onPress = {() => {
->>>>>>> 50bfc98d7fd449444c734b253536a33ac4ced1d7
-                            navigation.navigate("HomeScreen")
-                    }}>
+                >
                     <Text style={buttonTitleB}>Main Page로 가기</Text>
                 </TouchableOpacity>
             </View>
