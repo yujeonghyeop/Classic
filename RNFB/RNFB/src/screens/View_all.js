@@ -15,7 +15,7 @@ export default function MyOrdersScreen(){
     const [test, settest] = useState([])
     const [location, setlocaction] = useState(['']);
     const spaceshow = async () =>{
-     firebase.firestore().collection("view_all_space").onSnapshot(snapshot =>{
+        firebase.firestore().collection("view_all_space").onSnapshot(snapshot =>{
             const tweet = snapshot.docs.map(doc => ({
                 id : doc.id,
                 ...doc.data(),

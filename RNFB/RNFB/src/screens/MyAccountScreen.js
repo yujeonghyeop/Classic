@@ -20,7 +20,7 @@ export default function MyAccountScreen({navigation}){
         await inf.get().then((doc)=>{
             if (doc.exists){
                 const ininf = doc.data();
-                const name = ininf["result"];
+                const name = ininf["이름"];
                 settest(name)
                 }
             })
@@ -36,9 +36,6 @@ export default function MyAccountScreen({navigation}){
             감성 : 0,
             })   
     }
-    useEffect(()=>{
-        getname();
-    })
 
     const [button1, setColor1] = useState('#6767A6');
     const [button2, setColor2] = useState('#E8E8F2');
@@ -90,6 +87,7 @@ export default function MyAccountScreen({navigation}){
     useEffect(() => {
         spaceshow()
         subjectshow()
+        getname();
     },[]);
 
     return(
@@ -99,12 +97,14 @@ export default function MyAccountScreen({navigation}){
                 <View style={{flexDirection: 'row', justifyContent: 'space-evenly', padding:10}}>
                     <View style={{flexDirection: 'column', margin:10,justifyContent: 'center'}}> 
                         <View style={myAccountstyle.styledPicture}/>
-                        <Text style={{fontFamily: 'IBMPlexSansKR-Light', alignItems: 'center', marginLeft:30}}>name</Text>
+                        <Text style={{fontFamily: 'IBMPlexSansKR-Light', alignItems: 'center', marginLeft:30}}>{test}</Text>
                     </View>
                     <View style={{flexDirection: 'column', justifyContent:'flex-start', margin: 10, padding:15}}>
                         {console.log(test)}
                         <View style={{flexDirection: 'column', alignItems:'center'}}>
-                            <Button title='상세 보기' buttonStyle={myAccountstyle.styledButton} titleStyle={buttonTitleW} />
+                            <Button title='상세 보기' buttonStyle={myAccountstyle.styledButton} titleStyle={buttonTitleW} 
+                                onPress = {()=> {navigation.navigate("Detail")}}
+                            />
                             {
                             test===0 ? 
                             <Button title='검사하러 가기' buttonStyle={myAccountstyle.styledButton} titleStyle={buttonTitleW}

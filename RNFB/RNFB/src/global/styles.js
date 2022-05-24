@@ -49,6 +49,8 @@ export const testpageStyle = { //testpage에 들어가는 친구들 집합 Resul
         borderColor:'#6667ab',
         height:50,
         paddingHorizontal:20,
+        width:330,
+        margin:15,
         width:350,
         marginBottom:10
     },
@@ -59,7 +61,7 @@ export const testpageStyle = { //testpage에 들어가는 친구들 집합 Resul
         fontFamily : 'IBMPlexSansKR-Regular'
     },
     styledExplain : {
-        width:350,
+        width:330,
         alignItems:"center",
         borderWidth:1,
         borderColor: '#6767A6',

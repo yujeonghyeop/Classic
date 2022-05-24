@@ -20,7 +20,7 @@ export default function HomeScreen({navigation}) {
   const email = user.email; 
   
   const spaceshow = async () =>{
-    await firebase.firestore().collection(result+"_space").onSnapshot(snapshot =>{
+      firebase.firestore().collection(result+"_space").onSnapshot(snapshot =>{
            const tweet = snapshot.docs.map(doc => ({
                id : doc.id,
                ...doc.data(),
@@ -29,7 +29,7 @@ export default function HomeScreen({navigation}) {
        })
 }
    const subjectshow = async () =>{
-      await firebase.firestore().collection(result+"_subject").onSnapshot(snapshot =>{
+      firebase.firestore().collection(result+"_subject").onSnapshot(snapshot =>{
            const tweet = snapshot.docs.map(doc => ({
                id : doc.id,
                ...doc.data(),
@@ -49,13 +49,15 @@ export default function HomeScreen({navigation}) {
             setNickname(name);
             setresult(re)
             setExp(explain);
+            spaceshow()
+            subjectshow()
         }
     })
     
 },[]);
 // setTimeout(()=>{
-//   // spaceshow()
-//   // subjectshow()
+//   spaceshow()
+//   subjectshow()
 // },1000);
   return (
     <View style={mainPageStyle.container}>
