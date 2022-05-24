@@ -3,6 +3,7 @@ import{Image,View, Text, StyleSheet} from 'react-native';
 import Logo from '../../images/logo.png';
 import {Icon,Button} from 'react-native-elements'
 import { parameters } from '../../global/styles'
+import {logo} from '../../global/styles';
 import firestore, { firebase } from '@react-native-firebase/firestore'
 import SplashScreen from 'react-native-splash-screen'
 
@@ -97,7 +98,7 @@ export default function Result({navigation}){
         <View style = {styles.container}>
             {
                 loading == true ? navigation.navigate("Result"): 
-                <Image source={Logo} style ={styles.logo}/>
+                <Image source={Logo} style ={logo}/>
         
             }
         </View>
