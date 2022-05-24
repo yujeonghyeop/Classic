@@ -54,18 +54,8 @@ export default function HomeScreen({navigation}) {
     
 },[]);
 // setTimeout(()=>{
-<<<<<<< HEAD
-<<<<<<< HEAD
-//   spaceshow()
-//   subjectshow()
-=======
 //   // spaceshow()
 //   // subjectshow()
->>>>>>> 28b43d904124387b289c325686c1785f07653dd8
-=======
-//   // spaceshow()
-//   // subjectshow()
->>>>>>> 4c916e7b3382d973768a1cedb7a1a8320955856d
 // },1000);
   return (
     <View style={mainPageStyle.container}>

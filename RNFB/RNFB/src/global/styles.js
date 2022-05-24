@@ -49,13 +49,10 @@ export const testpageStyle = { //testpage에 들어가는 친구들 집합 Resul
         borderColor:'#6667ab',
         height:50,
         paddingHorizontal:20,
-<<<<<<< HEAD
         width:330,
-        margin:15
-=======
+        margin:15,
         width:350,
         marginBottom:10
->>>>>>> 4c916e7b3382d973768a1cedb7a1a8320955856d
     },
     styledMyType : {
         margin:5,
