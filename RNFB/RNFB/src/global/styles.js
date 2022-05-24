@@ -35,12 +35,14 @@ export const parameters = {
 }
 export const testpageStyle = { //testpage에 들어가는 친구들 집합 Result page도 여기
     container:{
+        flexDirection:'column',
         alignItems:'center',
-        justifyContent:'center'
+        justifyContent:'center',
+        padding:5
     },
     styledButton :{     //button 스타일 지정
         backgroundColor : '#6667ab',
-        alignContent : "center",
+        alignItems : "center",
         justifyContent : "center",
         borderRadius : 12,
         borderWidth :1,
@@ -48,7 +50,7 @@ export const testpageStyle = { //testpage에 들어가는 친구들 집합 Resul
         height:50,
         paddingHorizontal:20,
         width:350,
-        margin:15
+        marginBottom:10
     },
     styledMyType : {
         margin:5,
@@ -92,6 +94,12 @@ export const testpageStyle = { //testpage에 들어가는 친구들 집합 Resul
         marginBottom:10,
         fontFamily: 'IBMPlexSansKR-Regular'
     },
+    styledQ1:{
+        fontSize : 60,
+        color:'#FF9D9D',
+        marginBottom:10,
+        fontFamily: 'IBMPlexSansKR-Regular'
+    },
     styledFont:{
         fontSize : 25,
         color:'black',
@@ -105,6 +113,7 @@ export const testpageStyle = { //testpage에 들어가는 친구들 집합 Resul
         alignItems : 'center',
         justifyContent : 'center',
         borderRadius : 10,
+        padding:10
     },
     logo:{
         width: 250,
@@ -112,7 +121,6 @@ export const testpageStyle = { //testpage에 들어가는 친구들 집합 Resul
         alignSelf: 'center',
         margin: 10,
         marginTop: 40,
-        marginBottom :50
     },
     text1: {
         color:'#0B1D5F',
