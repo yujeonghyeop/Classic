@@ -53,10 +53,10 @@ export default function HomeScreen({navigation}) {
     })
     
 },[]);
-setTimeout(()=>{
-  spaceshow()
-  subjectshow()
-},1000);
+// setTimeout(()=>{
+//   spaceshow()
+//   subjectshow()
+// },1000);
   return (
     <View style={mainPageStyle.container}>
       {/* <HomeHeader navigation={navigation} /> */}
