@@ -18,6 +18,7 @@ import Logout from '../screens/settingScreen/Logout';
 import Inquiry from '../screens/settingScreen/Inquiry';
 import InquiryResult from '../screens/settingScreen/InquiryResult';
 import RootClientTabs from './ClientTabs';
+import Detail from '../screens/Detail';
 
 const App = createStackNavigator();
 
@@ -142,6 +143,13 @@ export function AppStack(){
             <App.Screen
                 name = "InquiryResult"
                 component = {InquiryResult}
+                options = {{
+                    headerShown : false
+                }}
+            />
+            <App.Screen
+                name = "Detail"
+                component = {Detail}
                 options = {{
                     headerShown : false
                 }}
