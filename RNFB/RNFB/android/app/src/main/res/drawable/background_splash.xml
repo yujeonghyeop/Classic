@@ -5,7 +5,7 @@
 
     <item
         android:width="300dp"
-        android:height="300dp"
+        android:height="50dp"
         android:drawable="@mipmap/classic_icon"
         android:gravity="center" />
 
