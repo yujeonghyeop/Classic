@@ -1,5 +1,5 @@
 import React from 'react'
-import{View, Text,Image} from 'react-native'
+import{View, TouchableOpacity,Text,Image} from 'react-native'
 import {Icon,Button} from 'react-native-elements'
 import { parameters,testpageStyle } from '../../global/styles'
 import * as Progress from 'react-native-progress'
@@ -28,31 +28,29 @@ export default function Test2({navigation}){
     return(
         <View style = {testpageStyle.container}>
             <Image source={logo} style={testpageStyle.logo} />
-            <Text style={testpageStyle.styledQ}>Q 2</Text>
-            <View style ={testpageStyle.styledBox}>
-            <Text style={testpageStyle.styledFont}>친구와의 약속이 깨졌다</Text>
-            <Text style={testpageStyle.styledFont}>나의 행동은?</Text>
+            <View style={{flexDirection: 'row'}}>
+                <Text style={testpageStyle.styledQ}>Q 2</Text>
+                <Text style={testpageStyle.styledQ1}>.</Text>
             </View>
-            <Button
-            title = "다른 친구와의 약속을 잡아보려 한다"
-                buttonStyle =  {testpageStyle.styledButton}
-                titleStyle = {parameters.buttonTitle}
-                            //button에 스타일 입히기
-                onPress = {() => {
+            <View style ={testpageStyle.styledBox}>
+                <Text style={testpageStyle.styledFont}>친구와의 약속이 깨졌다</Text>
+                <Text style={testpageStyle.styledFont}>나의 행동은?</Text>
+            </View>
+            <View style={{flexDirection: 'column', alignItems:'space-between', marginTop:10, padding:40}}>
+           
+                <TouchableOpacity style={testpageStyle.styledButton} onPress={() => {
                     getSoc()
                     navigation.navigate("Test3")
-                }}
-                />
-            <Button
-            title = "그날은 쉰다"
-                buttonStyle =  {testpageStyle.styledButton}
-                titleStyle = {parameters.buttonTitle}
-                            //button에 스타일 입히기
-                onPress = {() => {
+                }}>
+                    <Text style={parameters.buttonTitle}>편성표를 켜서 프로그램을 확인한다</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={testpageStyle.styledButton} onPress={() => {
                     getPer()
                     navigation.navigate("Test3")
-                }}
-                />
+                }}>
+                    <Text style={parameters.buttonTitle}>돌려보면서 재밌는게 나오면 멈춘다</Text>
+                </TouchableOpacity>
+            </View>
             <Progress.Bar progress={0.2} width={300} color={'#6667ab'} height={10} borderRadius={5} marginBottom={100} marginTop ={30} backgroundColor = {'#E8E8F2'} />
         </View>
     )

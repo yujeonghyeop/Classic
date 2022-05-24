@@ -54,8 +54,8 @@ export default function HomeScreen({navigation}) {
     
 },[]);
 // setTimeout(()=>{
-//   spaceshow()
-//   subjectshow()
+//   // spaceshow()
+//   // subjectshow()
 // },1000);
   return (
     <View style={mainPageStyle.container}>
