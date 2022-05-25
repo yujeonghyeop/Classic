@@ -1,11 +1,10 @@
 import React,{ useState, useEffect } from 'react';
 import {View, Text, TouchableOpacity, ScrollView, useWindowDimensions} from 'react-native'
 import { TabView, SceneMap, TabBar } from 'react-native-tab-view';
-import {Icon} from 'react-native-elements'
 import { ViewAllStyle } from '../global/styles';
 import { buttonTitleW } from '../global/fontStyles';
 import firestore, { firebase, getDocs } from '@react-native-firebase/firestore';
-import {Button,Icon} from 'react-native-elements';
+import {Button, Icon } from 'react-native-elements';
 
 // 전체보기 페이지
 
@@ -87,7 +86,6 @@ export default function MyOrdersScreen(){
                                         {space.map((data) =>(
                                             <View key ={data.name} >
                                                 <View style={{flexDirection:'row', padding:5}}>
-
                                                     <View style={{width:120,height:120, margin:10, backgroundColor:'#FF9D9D'}}>
                                                     <Icon 
                                                             name = 'search'

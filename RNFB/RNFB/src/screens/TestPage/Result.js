@@ -9,7 +9,6 @@ import storage from '@react-native-firebase/storage'
 import * as Progress from 'react-native-progress'
 import Swiper from 'react-native-swiper';
 import LinearGradient from 'react-native-linear-gradient';
-
 export default function Result({navigation}){
     // useEffect(() => {
     //     try {

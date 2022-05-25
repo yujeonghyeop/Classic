@@ -225,16 +225,16 @@ export const mainPageStyle = {
     },
     styledBox: {  //box style
     //box
-      flex:3,
-      borderColor:'#FF9D9D',
-      borderWidth: 1.5,
-      alignContent: 'center',
-      justifyContent: 'center',
-      borderRadius: 20,
-      padding:20,
-      margin:10,
-      width: '95%',
-      height: '10%',
+        flex:3,
+        borderColor:'#FF9D9D',
+        borderWidth: 1.5,
+        alignContent: 'center',
+        justifyContent: 'center',
+        borderRadius: 20,
+        padding:20,
+        margin:10,
+        width: '95%',
+        height: '10%',
     },
     styledButton:{  //상세보기 버튼 디자인
         backgroundColor: '#FFFFFF',
@@ -242,6 +242,23 @@ export const mainPageStyle = {
         borderRadius: 10,
         width:180
     },
+    slide: {
+        flex:1,
+        justifyContent:'center',
+        alignItems:'center',
+        backgroundColor:'#9DD6EB',
+        backgroundColor:'white',
+        flexDirection:'row'
+    },
+    slideText: {
+        width: "50%",
+        height: "100%",
+        alignItems: 'center',
+        justifyContent: 'center',
+        color: '#0B1D5F',
+        fontSize: 20,
+        fontFamily: 'IBMPlexSansKR-Bold'
+    }
 }
 
 export const setting ={
@@ -258,10 +275,10 @@ export const setting ={
         padding:30
     },
     AccountButton:{
-       width:200,
-       height:60,
-       margin:10,
-       backgroundColor:'#6767A6',
+        width:200,
+        height:60,
+        margin:10,
+        backgroundColor:'#6767A6',
     }
 }
 
