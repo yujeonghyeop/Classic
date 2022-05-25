@@ -9,6 +9,11 @@ import storage from '@react-native-firebase/storage'
 import * as Progress from 'react-native-progress'
 import Swiper from 'react-native-swiper';
 import LinearGradient from 'react-native-linear-gradient';
+import mozart from '../../images/mozart.png';
+import bach from '../../images/bach.png';
+import beethoven from '../../images/beethoven.png';
+import brahms from '../../images/brahms.png';
+import chopin from '../../images/chopin.png';
 export default function Result({navigation}){
     // useEffect(() => {
     //     try {
@@ -25,6 +30,7 @@ export default function Result({navigation}){
     const [musician, setMusician] = useState('');
     const [sentence, setSentence] = useState('');
     const [cnt, setCnt] = useState(false);
+    const [source,setsource] = useState()
     const user = firebase.auth().currentUser;
     const email = user.email; 
     
@@ -66,7 +72,6 @@ export default function Result({navigation}){
         setCnt(true);
     }
     const getImage18 = async key =>{
-        const imageRef = storage().refFromURL('gs://rnfb-123ee.appspot.com/베토벤.png');
         const inf = firestore().collection("tool").doc("18");
         await inf.get().then((doc)=>{
             if (doc.exists){
@@ -86,8 +91,7 @@ export default function Result({navigation}){
                 console.log("no data")
             }
         })
-        a = await imageRef.getDownloadURL();
-        setUrl(a);
+        setsource(beethoven)
         setCnt(true);
     }
     const getImage20 = async key =>{
@@ -166,7 +170,6 @@ export default function Result({navigation}){
         setCnt(true);
     }
     const getImage36 = async key =>{
-        const imageRef = storage().refFromURL('gs://rnfb-123ee.appspot.com/쇼팽.png');
         const inf = firestore().collection("tool").doc("36");
         await inf.get().then((doc)=>{
             if (doc.exists){
@@ -186,12 +189,10 @@ export default function Result({navigation}){
                 console.log("no data")
             }
         })
-        a = await imageRef.getDownloadURL();
-        setUrl(a);
+        setsource(chopin)
         setCnt(true);
     }
     const getImage40 = async key =>{
-        const imageRef = storage().refFromURL('gs://rnfb-123ee.appspot.com/모차르트.png');
         const inf = firestore().collection("tool").doc("40");
         await inf.get().then((doc)=>{
             if (doc.exists){
@@ -211,12 +212,10 @@ export default function Result({navigation}){
                 console.log("no data")
             }
         })
-        a = await imageRef.getDownloadURL();
-        setUrl(a);
+        setsource(mozart)
         setCnt(true);
     }
     const getImage48 = async key =>{
-        const imageRef = storage().refFromURL('gs://rnfb-123ee.appspot.com/바흐.png');
         const inf = firestore().collection("tool").doc("48");
         await inf.get().then((doc)=>{
             if (doc.exists){
@@ -236,8 +235,7 @@ export default function Result({navigation}){
                 console.log("no data")
             }
         })
-        a = await imageRef.getDownloadURL();
-        setUrl(a);
+        setsource(bach)
         setCnt(true);
     }
     const [score, setScore] = useState(1);
@@ -295,7 +293,7 @@ export default function Result({navigation}){
                 </View>
                 <Image 
                     style = {{width:300, height:400}}
-                    source = {{uri : url}} 
+                    source = {source} 
                 />
                 
                 <Progress.Bar progress={0.7} width={330} color={'#FF9D9D'} height={35} borderRadius={12} marginTop={25}/>
@@ -342,7 +340,7 @@ export default function Result({navigation}){
                     <Text style={buttonTitleB}>검사 다시하기</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={testpageStyle.styledButton} onPress = {() => {
-
+                        navigation.navigate("HomeScreen")
                     }}
                 >
                     <Text style={buttonTitleB}>Main Page로 가기</Text>
