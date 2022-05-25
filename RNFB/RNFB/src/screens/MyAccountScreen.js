@@ -104,7 +104,9 @@ export default function MyAccountScreen({navigation}){
                     <View style={{flexDirection: 'column', justifyContent:'flex-start', margin: 10, padding:15}}>
                         {console.log(test)}
                         <View style={{flexDirection: 'column', alignItems:'center'}}>
-                            <Button title='상세 보기' buttonStyle={myAccountstyle.styledButton} titleStyle={buttonTitleW} />
+                            <Button title='상세 보기' buttonStyle={myAccountstyle.styledButton} titleStyle={buttonTitleW}
+                            onPress = {() => { navigation.navigate("Detail")}}
+                             />
                             {
                             test===0 ? 
                             <Button title='검사하러 가기' buttonStyle={myAccountstyle.styledButton} titleStyle={buttonTitleW}
