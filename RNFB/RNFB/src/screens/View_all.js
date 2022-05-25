@@ -87,9 +87,7 @@ export default function MyOrdersScreen(){
                                         {space.map((data) =>(
                                             <View key ={data.name} >
                                                 <View style={{flexDirection:'row', padding:5}}>
-<<<<<<< HEAD
-                                                    <View style={{width:150,height:150, margin:10, backgroundColor:'#FF9D9D'}}></View>
-=======
+
                                                     <View style={{width:120,height:120, margin:10, backgroundColor:'#FF9D9D'}}>
                                                     <Icon 
                                                             name = 'search'
@@ -97,7 +95,6 @@ export default function MyOrdersScreen(){
                                                             
                                                         />
                                                     </View>
->>>>>>> 0f632b8d7a097f838a98fc736fa69d167c8f5da6
                                                     <View style={{flexShrink:1,flexGrow:1,flexBasis:150}}>
                                                         <Text style={ViewAllStyle.contentName}>{data.name}</Text>
                                                         <Text style={ViewAllStyle.contentIntroduce}>{data.location}</Text>

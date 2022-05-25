@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import React, { useState,useEffect } from 'react'
 import{ View, Text, TouchableOpacity, Image,ScrollView } from 'react-native'
 import { Icon, Button } from 'react-native-elements'
@@ -8,15 +8,6 @@ import firestore, { firebase } from '@react-native-firebase/firestore'
 import storage from '@react-native-firebase/storage'
 import * as Progress from 'react-native-progress'
 import Swiper from 'react-native-swiper';
-=======
-import React, { useState,useEffect } from 'react';
-import{ View, Text, StyleSheet, Image,ScrollView } from 'react-native';
-import { Icon, Button } from 'react-native-elements';
-import { parameters,testpageStyle } from '../../global/styles';
-import firestore, { firebase } from '@react-native-firebase/firestore';
-import storage from '@react-native-firebase/storage';
-import * as Progress from 'react-native-progress';
->>>>>>> 50bfc98d7fd449444c734b253536a33ac4ced1d7
 import LinearGradient from 'react-native-linear-gradient';
 
 export default function Result({navigation}){
