@@ -62,27 +62,31 @@ export default function HomeScreen({navigation}) {
         <Swiper autoplay={true}>
           <View style={mainPageStyle.slide}>
             <Image
-              source={{uri:"https://pbs.twimg.com/media/FTkTfCYagAAKduQ?format=jpg&name=large"}}
-              style={{width:"100%", height:"100%"}}
+              source={{uri:"https://w.namu.la/s/65a44f971833d6cf2c16e58cb20d518a076aaae093902a1f75361caccef27e1435d612f3de2379cab174726aebe987e1cecbe9a56af4bdddea79f9b7dd8d7bc2b59160b9a95d99c8f703f3357d5d46e1940ffd7820476c3b25f8eecee5ad8febf58fa6389de49ff47831b60e2b115ce1"}}
+              style={{width:"50%", height:"100%", margin:'5%'}}
             />
+            <Text style={mainPageStyle.slideText}>치라미{"\n"}친칠라 포켓몬</Text>
           </View>
           <View style={mainPageStyle.slide}>
             <Image
-              source={{uri:"https://pbs.twimg.com/media/FTI2Ey3aIAAheNb?format=jpg&name=large"}}
-              style={{width:"100%", height:"100%"}}
+              source={{uri:"https://w.namu.la/s/a09cdb2fadaef8fad8180f013d52ceaa89ee9b023cc5ba7f78bcd2febc5ce20843e4646c2529ec88a86988f8f79398f4f082f9036da6331d1fbcf80e6090f4b2ef4b45bee9de4449601744ac43c9115728fde766f0840c2a08ee5d788cb12a35e16d06abe9f0b9914fd81d51e049c9c0"}}
+              style={{width:"50%", height:"100%", margin:'5%'}}
             />
+            <Text style={mainPageStyle.slideText}>피카츄{"\n"}거다이맥스</Text>
           </View>
           <View style={mainPageStyle.slide}>
             <Image
-              source={{uri:"https://pbs.twimg.com/media/FRfygzbaMAIUB_A?format=jpg&name=large"}}
-              style={{width:"100%", height:"100%"}}
+              source={{uri:"https://w.namu.la/s/fd2f3f823495c22acc8eaaeeca4c6f22d0f61b0bde795915fa992d028ef821cd33a1138c75ba4cb974507472348e492e8a38548ee8db6f7006b42354252dd789b5a783f94c850110c91777100e900fa7c65863b517172804cd29ea3bbe1d95e2"}}
+              style={{width:"50%", height:"100%", margin:'5%'}}
             />
+            <Text style={mainPageStyle.slideText}>이브이{"\n"}거다이맥스</Text>
           </View>
           <View style={mainPageStyle.slide}>
             <Image
-              source={{uri:"https://pbs.twimg.com/media/FQh0PldaMAApY4p?format=jpg&name=large"}}
-              style={{width:"100%", height:"100%"}}
+              source={{uri:"https://w.namu.la/s/9d70ee6444bb2695baa9fe667f0a5e9023e6e75dd3fc9d7ca0ec429b5954b94525f9ab2e1306616cedfa018d94c36caa986dc07eb5e711fe4e9ea366c6ba789deffce3e3414a957266af163d272dcaac2072e61e315426c0d775452c7753e2a0"}}
+              style={{width:"50%", height:"100%", margin:'5%'}}
             />
+            <Text style={mainPageStyle.slideText}>염버니{"\n"}토끼 포켓몬</Text>
           </View>
         </Swiper>
       </View>
