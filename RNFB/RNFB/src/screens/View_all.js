@@ -88,13 +88,14 @@ export default function MyOrdersScreen(){
                                                 <View style={{flexDirection:'row', padding:5}}>
                                                     <View style={{width:120,height:120, margin:10, backgroundColor:'#FF9D9D'}}>
                                                     <Icon 
-                                                            name = 'search'
+                                                            name = 'local-library'
                                                             type = 'material'
-                                                            
+                                                            size = {100}
                                                         />
                                                     </View>
                                                     <View style={{flexShrink:1,flexGrow:1,flexBasis:150}}>
                                                         <Text style={ViewAllStyle.contentName}>{data.name}</Text>
+                                                        <Icon name = 'location-pin' type = 'material'/>
                                                         <Text style={ViewAllStyle.contentIntroduce}>{data.location}</Text>
                                                         <TouchableOpacity style={[ViewAllStyle.scrap,{borderWidth:border}]} onPress={scrapHandler}>
                                                             <Text style={buttonTitleW}>스크랩 하기</Text>

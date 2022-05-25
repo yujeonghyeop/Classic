@@ -1,6 +1,6 @@
 import React, { useState,useEffect } from 'react'
 import firestore, { firebase } from '@react-native-firebase/firestore'
-import {View, Text, ScrollView, Image, TouchableOpaciy, useWindowDimensions} from 'react-native'
+import {View, Text, ScrollView, Image, TouchableOpacity, useWindowDimensions} from 'react-native'
 import {Button} from 'react-native-elements';
 import {logo, myAccountstyle, ViewAllStyle} from '../global/styles';
 import { styledtext, buttonTitleB, buttonTitleW  } from '../global/fontStyles';
