@@ -242,6 +242,12 @@ export const mainPageStyle = {
         borderRadius: 10,
         width:180
     },
+    slide: {
+        flex:1,
+        justifyContent:'center',
+        alignItems:'center',
+        backgroundColor:'#9DD6EB'
+    },
 }
 
 export const setting ={

@@ -6,7 +6,6 @@ import firestore, { firebase } from '@react-native-firebase/firestore';
 import storage from '@react-native-firebase/storage';
 import * as Progress from 'react-native-progress';
 import LinearGradient from 'react-native-linear-gradient';
-import Swiper from 'react-native-swiper';
 
 export default function Result({navigation}){
     // useEffect(() => {

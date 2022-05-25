@@ -8,7 +8,8 @@ import HomeHeader from '../components/HomeHeader';
 import {logo, mainPageStyle} from '../global/styles';
 import Logo from '../images/logo.png';
 import {colors, parameters, title} from '../global/styles';
-import firestore, { firebase } from '@react-native-firebase/firestore'
+import Swiper from 'react-native-swiper';
+import firestore, { firebase } from '@react-native-firebase/firestore';
 
 export default function HomeScreen({navigation}) {
   const [nickname, setNickname] = useState(null)
@@ -19,7 +20,7 @@ export default function HomeScreen({navigation}) {
   const user = firebase.auth().currentUser;
   const email = user.email; 
 
-   useEffect(() => {
+  useEffect(() => {
     const first = firestore().collection("회원").doc(email);
     first.get().then((doc)=>{
         if (doc.exists){
@@ -32,7 +33,8 @@ export default function HomeScreen({navigation}) {
             setExp(explain);
         }
     })
-},[]);
+  },[]);
+  
   return (
     <View style={mainPageStyle.container}>
       {/* <HomeHeader navigation={navigation} /> */}
@@ -54,16 +56,35 @@ export default function HomeScreen({navigation}) {
                 </View>
             </View> 
       </View>
-      <View style={{flex:3, padding:5, marginBottom:5}}ii>
-        <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-          <View style={mainPageStyle.viewStyle}></View>
-        </ScrollView>
-      </View>
 
-      <View style={{flex:3, padding:5, marginBottom:5}}ii>
-        <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-          <View style={mainPageStyle.viewStyle}></View>
-        </ScrollView>
+      {/* 메인화면 하단 스와이퍼 (자동) */}
+      <View style={{flex:3, padding:5, marginBottom:5}}>
+        <Swiper autoplay={true}>
+          <View style={mainPageStyle.slide}>
+            <Image
+              source={{uri:"https://pbs.twimg.com/media/FTkTfCYagAAKduQ?format=jpg&name=large"}}
+              style={{width:"100%", height:"100%"}}
+            />
+          </View>
+          <View style={mainPageStyle.slide}>
+            <Image
+              source={{uri:"https://pbs.twimg.com/media/FTI2Ey3aIAAheNb?format=jpg&name=large"}}
+              style={{width:"100%", height:"100%"}}
+            />
+          </View>
+          <View style={mainPageStyle.slide}>
+            <Image
+              source={{uri:"https://pbs.twimg.com/media/FRfygzbaMAIUB_A?format=jpg&name=large"}}
+              style={{width:"100%", height:"100%"}}
+            />
+          </View>
+          <View style={mainPageStyle.slide}>
+            <Image
+              source={{uri:"https://pbs.twimg.com/media/FQh0PldaMAApY4p?format=jpg&name=large"}}
+              style={{width:"100%", height:"100%"}}
+            />
+          </View>
+        </Swiper>
       </View>
     </View>
     
