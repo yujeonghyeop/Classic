@@ -18,26 +18,7 @@ export default function HomeScreen({navigation}) {
   const [subject, setsubject] = useState([]);
   const user = firebase.auth().currentUser;
   const email = user.email; 
-  
-  const spaceshow = async () =>{
-      firebase.firestore().collection(result+"_space").onSnapshot(snapshot =>{
-           const tweet = snapshot.docs.map(doc => ({
-               id : doc.id,
-               ...doc.data(),
-           }))
-           setspace(tweet)
-       })
-}
-   const subjectshow = async () =>{
-      firebase.firestore().collection(result+"_subject").onSnapshot(snapshot =>{
-           const tweet = snapshot.docs.map(doc => ({
-               id : doc.id,
-               ...doc.data(),
-           }))
-           setsubject(tweet)
-       })
-  
-   }
+
    useEffect(() => {
     const first = firestore().collection("회원").doc(email);
     first.get().then((doc)=>{
@@ -49,16 +30,9 @@ export default function HomeScreen({navigation}) {
             setNickname(name);
             setresult(re)
             setExp(explain);
-            spaceshow()
-            subjectshow()
         }
     })
-    
 },[]);
-// setTimeout(()=>{
-//   spaceshow()
-//   subjectshow()
-// },1000);
   return (
     <View style={mainPageStyle.container}>
       {/* <HomeHeader navigation={navigation} /> */}
@@ -82,23 +56,13 @@ export default function HomeScreen({navigation}) {
       </View>
       <View style={{flex:3, padding:5, marginBottom:5}}ii>
         <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-        {subject.map((data)=>(
-          <View key ={data.name} style={mainPageStyle.viewStyle}>
-            <Text>{data.name}</Text>
-            <Text>{data.professor}</Text>
-          </View>
-        ))}
+          <View style={mainPageStyle.viewStyle}></View>
         </ScrollView>
       </View>
 
       <View style={{flex:3, padding:5, marginBottom:5}}ii>
         <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-        {space.map((data)=>(
-          <View  key ={data.name} style={mainPageStyle.viewStyle}>
-            <Text>{data.name}</Text>
-            <Text>{data.location}</Text>
-          </View>
-        ))}
+          <View style={mainPageStyle.viewStyle}></View>
         </ScrollView>
       </View>
     </View>
