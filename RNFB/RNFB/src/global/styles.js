@@ -221,14 +221,12 @@ export const mainPageStyle = {
     },
     styledPicture:{ 
         //사진 넣는 곳
-       borderColor:'#6767AB',
-       borderWidth:3,
-       padding:10,
-       borderRadius: 75,
-       width: 100,
-       height: 100,
-       justifyContent:'center',
-       alignItems:'center'
+        padding:10,
+        borderRadius: 75,
+        width: 100,
+        height: 100,
+        justifyContent:'center',
+        alignItems:'center'
     },
     styledBox: {  //box style
     //box
