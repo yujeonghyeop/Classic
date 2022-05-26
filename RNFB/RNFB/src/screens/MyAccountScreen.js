@@ -5,13 +5,16 @@ import {Button} from 'react-native-elements';
 import {logo, myAccountstyle, ViewAllStyle} from '../global/styles';
 import { styledtext, buttonTitleB, buttonTitleW  } from '../global/fontStyles';
 import Logo from '../images/logo.png';
+import bach from '../images/bach.png';
 import example from '../images/example.png';
 import Swiper from 'react-native-swiper';
 import { getDate } from 'cli';
 import { getDrawerStatusFromState } from '@react-navigation/drawer';
 import { FlatList } from 'react-native-gesture-handler';
+import bach2 from '../images/bach.jpg';
 
 export default function MyAccountScreen({navigation}){
+    const [nickname, setNickname] = useState(null)
     const user = firebase.auth().currentUser;
     const email = user.email; 
     const [test, settest] = useState();
@@ -20,8 +23,10 @@ export default function MyAccountScreen({navigation}){
         await inf.get().then((doc)=>{
             if (doc.exists){
                 const ininf = doc.data();
+                const musician = ininf["이름"];
                 const name = ininf["result"];
                 settest(name)
+                setNickname(musician)
                 }
             })
         }
@@ -67,15 +72,15 @@ export default function MyAccountScreen({navigation}){
     }
 
     const spaceshow = async () =>{
-     firebase.firestore().collection("view_all_space").onSnapshot(snapshot =>{
+        firebase.firestore().collection("view_all_space").onSnapshot(snapshot =>{
             const tweet = snapshot.docs.map(doc => ({
                 id : doc.id,
                 ...doc.data(),
             }))
             setspace(tweet)
         })
-        
     }
+    
     const subjectshow = async () =>{
         firebase.firestore().collection("view_all_subject").onSnapshot(snapshot =>{
             const tweet = snapshot.docs.map(doc => ({
@@ -97,9 +102,14 @@ export default function MyAccountScreen({navigation}){
             <Image source={Logo} style={logo} />
             <View style={myAccountstyle.styledBox}>
                 <View style={{flexDirection: 'row', justifyContent: 'space-evenly', padding:10}}>
-                    <View style={{flexDirection: 'column', margin:10,justifyContent: 'center'}}> 
-                        <View style={myAccountstyle.styledPicture}/>
-                        <Text style={{fontFamily: 'IBMPlexSansKR-Light', alignItems: 'center', marginLeft:30}}>name</Text>
+                    <View style={{flexDirection: 'column', margin:10,justifyContent: 'center', alignItems:'center'}}> 
+                        <View style={myAccountstyle.styledPicture}>
+                            <Image
+                            source={bach2}
+                            style={{width:"140%", height:"140%", margin:'5%', borderRadius:20}}
+                            />
+                        </View>
+                        <Text style={buttonTitleW}>{nickname}</Text>
                     </View>
                     <View style={{flexDirection: 'column', justifyContent:'flex-start', margin: 10, padding:15}}>
                         {console.log(test)}
@@ -130,8 +140,8 @@ export default function MyAccountScreen({navigation}){
                     <TouchableOpacity style={[myAccountstyle.ListButton,{backgroundColor:button2}]} onPress={clickHandler2}>
                         <Text style={button2f}>스크랩 한 학습공간</Text>
                     </TouchableOpacity>
-                </View> 
-                <View>
+                </View>
+                <View style={{marginBottom:60}}>
                     <ScrollView showsVerticalScrollIndicator={false}>
                             { 
                                 index == 0 ? 

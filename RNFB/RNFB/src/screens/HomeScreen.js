@@ -9,6 +9,7 @@ import Swiper from 'react-native-swiper';
 import firestore, { firebase } from '@react-native-firebase/firestore';
 import mozart from '../images/mozart.png';
 import bach from '../images/bach.png';
+import bach2 from '../images/bach.jpg';
 import beethoven from '../images/beethoven.png';
 import brahms from '../images/brahms.png';
 import chopin from '../images/chopin.png';
@@ -44,13 +45,11 @@ export default function HomeScreen({navigation}) {
                 <View style={{flexDirection: 'column', margin: 10,alignItems:'center'}}> 
                     <View style={mainPageStyle.styledPicture}>
                       <Image
-                        source={bach}
-                        style={{width:"100%", height:"100%", margin:'5%'}}
+                        source={bach2}
+                        style={{width:"140%", height:"140%", margin:'5%', borderRadius:20}}
                       />
                       </View>
-
                       <Text style={buttonTitleW}>{email}</Text>
-                    
                 </View>
                 <View style={{flex: 1,flexDirection:'column',justifyContent:'center', margin:10}}>
                     <TouchableOpacity style = {mainPageStyle.nicknamebutton} onPress = {() => {navigation.navigate("MyAccountScreen")}}>
@@ -105,6 +104,5 @@ export default function HomeScreen({navigation}) {
         </Swiper>
       </View>
     </View>
-    
   );
 }
