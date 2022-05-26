@@ -8,7 +8,8 @@ export const colors = {
     CardComment : '#86939e',
     cardbackground : "white", 
     statusbar : "#ff8c52",
-    headerText : "white"
+    headerText : "white",
+    client: '#FF9D9D'
 }
 
 export const parameters = {
@@ -218,16 +219,20 @@ export const mainPageStyle = {
     },
     styledPicture:{ 
         //사진 넣는 곳
-        backgroundColor:'#6767A6',
-        borderRadius: 75,
-        width: 100,
-        height: 100,
+       borderColor:'#6767AB',
+       borderWidth:3,
+       padding:10,
+       borderRadius: 75,
+       width: 100,
+       height: 100,
+       justifyContent:'center',
+       alignItems:'center'
     },
     styledBox: {  //box style
     //box
         flex:3,
         borderColor:'#FF9D9D',
-        borderWidth: 1.5,
+        borderWidth: 2,
         alignContent: 'center',
         justifyContent: 'center',
         borderRadius: 20,

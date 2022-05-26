@@ -45,9 +45,12 @@ export default function HomeScreen({navigation}) {
                     <View style={mainPageStyle.styledPicture}>
                       <Image
                         source={bach}
-                        style={{width:"50%", height:"100%", margin:'5%'}}
-                      /></View>
-                    <Text style={buttonTitleW}>{email}</Text>
+                        style={{width:"100%", height:"100%", margin:'5%'}}
+                      />
+                      </View>
+
+                      <Text style={buttonTitleW}>{email}</Text>
+                    
                 </View>
                 <View style={{flex: 1,flexDirection:'column',justifyContent:'center', margin:10}}>
                     <TouchableOpacity style = {mainPageStyle.nicknamebutton} onPress = {() => {navigation.navigate("MyAccountScreen")}}>
@@ -55,21 +58,21 @@ export default function HomeScreen({navigation}) {
                     </TouchableOpacity>
                     {/* <Button title = {nickname} buttonStyle = {mainPageStyle.nicknamebutton} titleStyle = {styledtext}
                         onPress = {() => {navigation.navigate("MyAccountScreen")}}/> */}
-                    <View style={{padding:5, alignItems:'center', justifyContent:'center'}}><Text style={styledtext}>{exp}</Text></View>
+                    <View style={{padding:5, alignItems:'center', justifyContent:'center'}}><Text style={buttonTitleW}>{exp}</Text></View>
                     {/*<Button title='상세보기' buttonStyle={mainPageStyle.styledButton} titleStyle={buttonTitleW}/>*/}
                 </View>
             </View> 
       </View>
 
       {/* 메인화면 하단 스와이퍼 (자동) */}
-      <View style={{flex:3, padding:5, marginBottom:5}}>
+      <View style={{flex:5, padding:5, marginBottom:5}}>
         <Swiper autoplay={true}>
           <View style={mainPageStyle.slide}>
-            <Image
-              source={mozart}
-              style={{width:"50%", height:"100%", margin:'5%'}}
-            />
-            <Text style={mainPageStyle.slideText}>모차르트{"\n"}음악의 신동</Text>
+              <Image
+                source={mozart}
+                style={{width:"50%", height:"100%", margin:'5%'}}
+              />
+              <Text style={mainPageStyle.slideText}>모차르트{"\n"}음악의 신동</Text>  
           </View>
           <View style={mainPageStyle.slide}>
             <Image

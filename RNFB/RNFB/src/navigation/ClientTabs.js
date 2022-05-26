@@ -18,7 +18,7 @@ export default function RootClientTabs(){   //App Stack과 연동하기 위한 �
     return(
         <ClientTabs.Navigator initialRouteName = 'HomeScreen'
             screenOptions = {{
-                activeTintColor : colors.buttons
+                activeTintColor : '#FF9D9D'
             }}
             screenOptions = {{
                 headerShown :false
