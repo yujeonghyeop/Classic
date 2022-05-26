@@ -118,7 +118,7 @@ export default function MyAccountScreen({navigation}){
                             onPress = {() => { navigation.navigate("Detail")}}
                              />
                            
-                            {test===0 ? <Button title='다시 검사하기' buttonStyle={myAccountstyle.styledButton} titleStyle={buttonTitleW}
+                            {test!==0 ? <Button title='다시 검사하기' buttonStyle={myAccountstyle.styledButton} titleStyle={buttonTitleW}
                             onPress = {() => 
                                 {   resettype()
                                     navigation.navigate("Test1")}
