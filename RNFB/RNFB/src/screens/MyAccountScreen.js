@@ -11,6 +11,7 @@ import Swiper from 'react-native-swiper';
 import { getDate } from 'cli';
 import { getDrawerStatusFromState } from '@react-navigation/drawer';
 import { FlatList } from 'react-native-gesture-handler';
+import bach2 from '../images/bach.jpg';
 
 export default function MyAccountScreen({navigation}){
     const [nickname, setNickname] = useState(null)
@@ -103,7 +104,10 @@ export default function MyAccountScreen({navigation}){
                 <View style={{flexDirection: 'row', justifyContent: 'space-evenly', padding:10}}>
                     <View style={{flexDirection: 'column', margin:10,justifyContent: 'center', alignItems:'center'}}> 
                         <View style={myAccountstyle.styledPicture}>
-                        <Image source={bach} style={{width:"100%", height:"100%", margin:'5%'}}/>
+                            <Image
+                            source={bach2}
+                            style={{width:"140%", height:"140%", margin:'5%', borderRadius:20}}
+                            />
                         </View>
                         <Text style={buttonTitleW}>{nickname}</Text>
                     </View>
