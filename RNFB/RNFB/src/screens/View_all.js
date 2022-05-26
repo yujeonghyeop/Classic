@@ -1,14 +1,17 @@
 import React,{ useState, useEffect } from 'react';
-import {View, Text, TouchableOpacity, ScrollView, useWindowDimensions} from 'react-native'
+import { View, Text, TouchableOpacity, ScrollView, useWindowDimensions } from 'react-native'
 import { TabView, SceneMap, TabBar } from 'react-native-tab-view';
 import { ViewAllStyle } from '../global/styles';
 import { buttonTitleW } from '../global/fontStyles';
 import firestore, { firebase, getDocs } from '@react-native-firebase/firestore';
-import {Button, Icon } from 'react-native-elements';
+import { Button, Icon } from 'react-native-elements';
 
 // 전체보기 페이지
 
 export default function MyOrdersScreen(){
+
+    const user = firebase.auth().currentUser;
+    const email = user.email;
 
     const [space, setspace] = useState([]);
     const [subject, setsubject] = useState([]);
@@ -22,8 +25,8 @@ export default function MyOrdersScreen(){
             }))
             setspace(tweet)
         })
-        
-}
+    }
+
     const subjectshow = async () =>{
         firebase.firestore().collection("view_all_subject").onSnapshot(snapshot =>{
             const tweet = snapshot.docs.map(doc => ({
@@ -42,7 +45,12 @@ export default function MyOrdersScreen(){
     ]);
 
     const [border, setBorderwidth] = useState(0);
-    const scrapHandler = () =>{
+    const scrapHandler = async (dataName) =>{
+        const userDocument = firestore().collection("회원").
+        doc(email)
+        .update({
+            "test" : dataName
+        })
         setBorderwidth(1);
     }
 
@@ -51,7 +59,6 @@ export default function MyOrdersScreen(){
         subjectshow()
     },[]);
     return(
-        
             <TabView
                 navigationState={{index, routes}}
                 renderScene={({route}) => {
@@ -96,7 +103,7 @@ export default function MyOrdersScreen(){
                                                     <View style={{flexShrink:1,flexGrow:1,flexBasis:150}}>
                                                         <Text style={ViewAllStyle.contentName}>{data.name}</Text>
                                                         <Text style={ViewAllStyle.contentIntroduce}>{data.location}</Text>
-                                                        <TouchableOpacity style={[ViewAllStyle.scrap,{borderWidth:border}]} onPress={scrapHandler}>
+                                                        <TouchableOpacity style={[ViewAllStyle.scrap,{borderWidth:border}]} onPress={scrapHandler(data.name)}>
                                                             <Text style={buttonTitleW}>스크랩 하기</Text>
                                                         </TouchableOpacity>
                                                     </View>
@@ -120,6 +127,5 @@ export default function MyOrdersScreen(){
                     labelStyle= {{fontSize:15, fontFamily: 'IBMPlexSansKR-Bold'}}
                 />}
             />
-            
     )
 }
