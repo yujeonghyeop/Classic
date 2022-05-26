@@ -172,10 +172,14 @@ export const myAccountstyle ={
         height: '20%',
     }, 
     styledPicture:{ 
-        backgroundColor:'#6767A6',
-        borderRadius: 75,
-        width: 100,
-        height: 100,
+        borderColor:'#6767AB',
+       borderWidth:3,
+       padding:10,
+       borderRadius: 75,
+       width: 100,
+       height: 100,
+       justifyContent:'center',
+       alignItems:'center'
     },
     styledButton:{
         backgroundColor:'#E8E8F2',
