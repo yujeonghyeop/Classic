@@ -34,6 +34,11 @@ async function signUp(values){  // firebase에 email, password 넘겨주는 역�
   try{
     await auth().createUserWithEmailAndPassword(email, password)  //email, password를 firebase에 넘김
     firestore().collection("회원").doc(email).set({
+      exp : "",
+      more_exp : "",
+      t_id : "",
+      m_space : {},
+      m_subject : {},
       result : 0,
       총체 : 0,
       분석 : 0,
