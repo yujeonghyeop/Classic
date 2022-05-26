@@ -10,9 +10,6 @@ import { Button, Icon } from 'react-native-elements';
 
 export default function MyOrdersScreen(){
 
-    const user = firebase.auth().currentUser;
-    const email = user.email;
-
     const [space, setspace] = useState([]);
     const [subject, setsubject] = useState([]);
     const [test, settest] = useState([])
@@ -25,8 +22,8 @@ export default function MyOrdersScreen(){
             }))
             setspace(tweet)
         })
-    }
-
+        
+}
     const subjectshow = async () =>{
         firebase.firestore().collection("view_all_subject").onSnapshot(snapshot =>{
             const tweet = snapshot.docs.map(doc => ({
@@ -45,12 +42,7 @@ export default function MyOrdersScreen(){
     ]);
 
     const [border, setBorderwidth] = useState(0);
-    const scrapHandler = async (dataName) =>{
-        const userDocument = firestore().collection("회원").
-        doc(email)
-        .update({
-            "test" : dataName
-        })
+    const scrapHandler = () =>{
         setBorderwidth(1);
     }
 
@@ -59,6 +51,7 @@ export default function MyOrdersScreen(){
         subjectshow()
     },[]);
     return(
+        
             <TabView
                 navigationState={{index, routes}}
                 renderScene={({route}) => {
@@ -70,11 +63,11 @@ export default function MyOrdersScreen(){
                                         {subject.map((data)=>(
                                         <View key ={data.name} >
                                             <View style={{flexDirection:'row', padding:5}}>
-                                                <View style={{width:150,height:150, margin:10, backgroundColor:'#FF9D9D'}}>                                                
+                                                <View style={{width:150,height:150, margin:10, backgroundColor:'#FF9D9D'}}>
                                                 </View>
                                                 <View style={{margin:10}}>
                                                     <Text style={ViewAllStyle.contentName}>{data.name}</Text>
-                                                    <Text style={ViewAllStyle.contentIntroduce}>{data.professor}</Text>                                                    
+                                                    <Text style={ViewAllStyle.contentIntroduce}>{data.professor}</Text>
                                                 </View>
                                                 <View>                                                    
                                                     <TouchableOpacity style={[ViewAllStyle.scrap,/*{borderWidth:border}*/]} onPress={scrapHandler}>
@@ -109,7 +102,7 @@ export default function MyOrdersScreen(){
                                                     <View style={{flexShrink:1,flexGrow:1,flexBasis:150}}>
                                                         <Text style={ViewAllStyle.contentName}>{data.name}</Text>
                                                         <Text style={ViewAllStyle.contentIntroduce}>{data.location}</Text>
-                                                        <TouchableOpacity style={[ViewAllStyle.scrap,{borderWidth:border}]} onPress={scrapHandler(data.name)}>
+                                                        <TouchableOpacity style={[ViewAllStyle.scrap,{borderWidth:border}]} onPress={scrapHandler}>
                                                             <Text style={buttonTitleW}>스크랩 하기</Text>
                                                         </TouchableOpacity>
                                                     </View>
@@ -133,5 +126,6 @@ export default function MyOrdersScreen(){
                     labelStyle= {{fontSize:15, fontFamily: 'IBMPlexSansKR-Bold'}}
                 />}
             />
+            
     )
 }
