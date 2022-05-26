@@ -67,15 +67,15 @@ export default function MyAccountScreen({navigation}){
     }
 
     const spaceshow = async () =>{
-     firebase.firestore().collection("view_all_space").onSnapshot(snapshot =>{
+        firebase.firestore().collection("view_all_space").onSnapshot(snapshot =>{
             const tweet = snapshot.docs.map(doc => ({
                 id : doc.id,
                 ...doc.data(),
             }))
             setspace(tweet)
         })
-        
     }
+    
     const subjectshow = async () =>{
         firebase.firestore().collection("view_all_subject").onSnapshot(snapshot =>{
             const tweet = snapshot.docs.map(doc => ({
@@ -131,7 +131,7 @@ export default function MyAccountScreen({navigation}){
                         <Text style={button2f}>스크랩 한 학습공간</Text>
                     </TouchableOpacity>
                 </View> 
-                <View>
+                <View style={{marginBottom:60}}>
                     <ScrollView showsVerticalScrollIndicator={false}>
                             { 
                                 index == 0 ? 
