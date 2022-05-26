@@ -17,6 +17,12 @@ export const buttonTitleW = {
     fontFamily: 'IBMPlexSansKR-SemiBold'
 }
 
+export const buttonTitleBL = {
+    color:'white',
+    fontSize: 20,
+    fontFamily: 'IBMPlexSansKR-SemiBold'
+}
+
 export const  buttonTitleB = { 
     color:"white",
     fontSize:15,
