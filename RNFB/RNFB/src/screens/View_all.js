@@ -114,18 +114,28 @@ export default function MyOrdersScreen(){
                                             <View key ={data.name} >
                                                 <TouchableOpacity style={{backgroundColor:press2}} onPress={pressHandler2}>
                                                    <View style={{flexDirection:'row', padding:5}}>
-                                                        <View style={{width:120,height:120, margin:10, backgroundColor:'#FF9D9D'}}>
-                                                            {data.kate ==='school' && (<Icon name = 'festival' type = 'material'size = {120} />)}
-                                                            {data.kate ==='cafe' && (<Icon name = 'emoji-food-beverage' type = 'material'size = {120}/>)}
-                                                            {data.kate ==='sc' && (<Icon name = 'meeting-room' type = 'material'size = {120}/>)}
-                                                        </View>
-                                                        <View style={{flexShrink:1,flexGrow:1,flexBasis:150}}>
-                                                            <Text style={ViewAllStyle.contentName}>{data.name}</Text>
-                                                            <Text style={ViewAllStyle.contentIntroduce}>{data.location}</Text>
-                                                        </View>
-                                                    </View> 
+                                                    <View style={{width:120,height:120, margin:10, backgroundColor:'#FF9D9D'}}>
+                                                    {data.kate ==='school' && (<Icon name = 'festival' type = 'material'size = {120} />)}
+                                                    {data.kate ==='cafe' && (<Icon name = 'emoji-food-beverage' type = 'material'size = {120}/>)}
+                                                    {data.kate ==='sc' && (<Icon name = 'meeting-room' type = 'material'size = {120}/>)}
+                                                    </View>
+                                                    <View style={{margin:10}}>
+                                                        <Text style={ViewAllStyle.contentName}>{data.name}</Text>
+                                                        <Text style={ViewAllStyle.contentIntroduce}>{data.location}</Text>
+                                                    </View>
+                                                    <View>
+                                                        <TouchableOpacity style={[ViewAllStyle.scrap,/*{borderWidth:border}*/]} onPress={scrapHandler}>
+                                                            <Icon 
+                                                                name = 'add'
+                                                                type = 'material'
+                                                                size = {40}
+                                                            />
+                                                        </TouchableOpacity>
+                                                    </View>
+                                                </View>
                                                 </TouchableOpacity>
                                                 
+
                                                 <View style={{width:340, height:2, margin:5,backgroundColor:'#a6a6cc'}}></View>
                                             </View>
                                         ))}
@@ -140,6 +150,7 @@ export default function MyOrdersScreen(){
                 initialLayout={{width:layout.width}}
                 style={{backgroundColor:"white"}}
                 renderTabBar={ props => <TabBar {...props}
+
                     indicatorStyle={{backgroundColor:'#FF9D9D'}}
                     style={{backgroundColor: '#6767A6'}}
                     labelStyle= {{fontSize:15, fontFamily: 'IBMPlexSansKR-Bold'}}/>
