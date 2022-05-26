@@ -1,10 +1,10 @@
 import React,{ useState, useEffect } from 'react';
-import {View, Text, TouchableOpacity, ScrollView, useWindowDimensions} from 'react-native'
+import { View, Text, TouchableOpacity, ScrollView, useWindowDimensions } from 'react-native'
 import { TabView, SceneMap, TabBar } from 'react-native-tab-view';
 import { ViewAllStyle } from '../global/styles';
 import { buttonTitleW } from '../global/fontStyles';
 import firestore, { firebase, getDocs } from '@react-native-firebase/firestore';
-import {Button, Icon } from 'react-native-elements';
+import { Button, Icon } from 'react-native-elements';
 
 // 전체보기 페이지
 
@@ -75,11 +75,16 @@ export default function MyOrdersScreen(){
                                                 <View style={{margin:10}}>
                                                     <Text style={ViewAllStyle.contentName}>{data.name}</Text>
                                                     <Text style={ViewAllStyle.contentIntroduce}>{data.professor}</Text>
-                                                    <TouchableOpacity style={[ViewAllStyle.scrap,{borderWidth:border}]} onPress={scrapHandler}>
-                                                        <Text style={buttonTitleW}>스크랩 하기</Text>
+                                                </View>
+                                                <View>                                                    
+                                                    <TouchableOpacity style={[ViewAllStyle.scrap,/*{borderWidth:border}*/]} onPress={scrapHandler}>
+                                                        <Icon 
+                                                            name = 'add'
+                                                            type = 'material'
+                                                            size = {40}
+                                                        />
                                                     </TouchableOpacity>
                                                 </View>
-                                                
                                             </View>
                                             <View style={{width:340, height:2, margin:5,backgroundColor:'#a6a6cc'}}></View>
                                         </View>

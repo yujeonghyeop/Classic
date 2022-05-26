@@ -3,12 +3,14 @@ import React,{useState,useRef, useContext} from 'react';
 import {View, Text, StyleSheet, Dimensions, TextInput, Alert,Image} from 'react-native'
 import {colors, parameters, title,testpageStyle} from '../../global/styles'
 import {Icon,Button,SocialIcon} from 'react-native-elements'
+import { buttonTitleBL } from '../../global/fontStyles';
 import Header from '../../components/Header';
 import * as Animatable from 'react-native-animatable'   //animate한 요소를 더하기 위한 import
 import { Formik } from 'formik'; //user Authetication
 import auth from '@react-native-firebase/auth'
 import { SignInContext } from '../../contexts/authContext';
 import logo from '../../images/logo.png'
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 
 export default function SignInScreen({navigation}){
@@ -125,15 +127,9 @@ async function signIn(data){
 
                 <View style = {{marginHorizontal:20, marginVertical : 20}}> 
                 {/* button에 여백 두기 */}
-                    <Button 
-                        title = "로그인 하기"
-                            buttonStyle =  {parameters.styledButton}
-                            titleStyle = {parameters.buttonTitle}
-                            
-                            //SIGN IN 버튼을 누르면 저장되어 있던 value들이 Submit된다.
-                            onPress = {props.handleSubmit}
-                            
-                    />
+                    <TouchableOpacity style={parameters.styledButton} onPress = {props.handleSubmit}>
+                        <Text style={buttonTitleBL}>로그인 하기</Text>
+                    </TouchableOpacity>
                 </View>
                 </View>
                 }
