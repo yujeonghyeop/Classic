@@ -136,7 +136,7 @@ export default function MyAccountScreen({navigation}){
                     <TouchableOpacity style={[myAccountstyle.ListButton,{backgroundColor:button2}]} onPress={clickHandler2}>
                         <Text style={button2f}>스크랩 한 학습공간</Text>
                     </TouchableOpacity>
-                </View> 
+                </View>
                 <View style={{marginBottom:60}}>
                     <ScrollView showsVerticalScrollIndicator={false}>
                             { 
