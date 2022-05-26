@@ -76,7 +76,7 @@ export default function MyOrdersScreen(){
                                                     <Text style={ViewAllStyle.contentName}>{data.name}</Text>
                                                     <Text style={ViewAllStyle.contentIntroduce}>{data.professor}</Text>
                                                 </View>
-                                                <View>                                                    
+                                                <View>
                                                     <TouchableOpacity style={[ViewAllStyle.scrap,/*{borderWidth:border}*/]} onPress={scrapHandler}>
                                                         <Icon 
                                                             name = 'add'
@@ -104,11 +104,17 @@ export default function MyOrdersScreen(){
                                                     {data.kate ==='cafe' && (<Icon name = 'emoji-food-beverage' type = 'material'size = {120}/>)}
                                                     {data.kate ==='sc' && (<Icon name = 'meeting-room' type = 'material'size = {120}/>)}
                                                     </View>
-                                                    <View style={{flexShrink:1,flexGrow:1,flexBasis:150}}>
+                                                    <View style={{margin:10}}>
                                                         <Text style={ViewAllStyle.contentName}>{data.name}</Text>
                                                         <Text style={ViewAllStyle.contentIntroduce}>{data.location}</Text>
-                                                        <TouchableOpacity style={[ViewAllStyle.scrap,{borderWidth:border}]} onPress={scrapHandler}>
-                                                            <Text style={buttonTitleW}>스크랩 하기</Text>
+                                                    </View>
+                                                    <View>
+                                                        <TouchableOpacity style={[ViewAllStyle.scrap,/*{borderWidth:border}*/]} onPress={scrapHandler}>
+                                                            <Icon 
+                                                                name = 'add'
+                                                                type = 'material'
+                                                                size = {40}
+                                                            />
                                                         </TouchableOpacity>
                                                     </View>
                                                 </View>
