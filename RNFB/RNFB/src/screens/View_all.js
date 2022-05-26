@@ -63,7 +63,7 @@ export default function MyOrdersScreen(){
                                         {subject.map((data)=>(
                                         <View key ={data.name} >
                                             <View style={{flexDirection:'row', padding:5}}>
-                                                <View style={{width:150,height:150, margin:10, backgroundColor:'#FF9D9D'}}>
+                                                <View style={{width:120,height:120, margin:10, backgroundColor:'#FF9D9D'}}>
                                                 {data.kate ==='자연과 과학' && (<Icon name = 'emoji-nature' type = 'material'size = {120} />)}
                                                 {data.kate ==='인간과 사회' && (<Icon name = 'public' type = 'material'size = {120}/>)}
                                                 {data.kate ==='문학과 예술' && (<Icon name = 'palette' type = 'material'size = {120}/>)}
@@ -75,16 +75,10 @@ export default function MyOrdersScreen(){
                                                 <View style={{margin:10}}>
                                                     <Text style={ViewAllStyle.contentName}>{data.name}</Text>
                                                     <Text style={ViewAllStyle.contentIntroduce}>{data.professor}</Text>
-                                                </View>
-                                                <View>                                                    
-                                                    <TouchableOpacity style={[ViewAllStyle.scrap,/*{borderWidth:border}*/]} onPress={scrapHandler}>
-                                                        <Icon 
-                                                            name = 'add'
-                                                            type = 'material'
-                                                            size = {40}
-                                                        />
-                                                    </TouchableOpacity>
-                                                </View>
+                                                    <TouchableOpacity style={[ViewAllStyle.scrap,{borderWidth:border}]} onPress={scrapHandler}>
+                                                            <Text style={buttonTitleW}>스크랩 하기</Text>
+                                                        </TouchableOpacity>
+                                                </View>                                              
                                             </View>
                                             <View style={{width:340, height:2, margin:5,backgroundColor:'#a6a6cc'}}></View>
                                         </View>
