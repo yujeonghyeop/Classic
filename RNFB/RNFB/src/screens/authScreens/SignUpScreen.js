@@ -7,7 +7,8 @@ import { StyleSheet,Text,View, ScrollView, Image, TextInput, Alert } from 'react
 import {colors, logo} from '../../global/styles'
 import Header from '../../components/Header'
 import { Formik } from 'formik'; //user Authetication
-import {Icon, Button, CheckBox} from 'react-native-elements'
+import {Icon, Button, } from 'react-native-elements'
+import { CheckBox } from "@rneui/themed";
 import * as Animatable from 'react-native-animatable'   //animate한 요소를 더하기 위한 import
 import auth from '@react-native-firebase/auth'
 import Logo from '../../images/logo.png'
@@ -29,6 +30,8 @@ const SignUpScreen = ({navigation}) => {
 
 const[passwordFocussed, setPasswordFocussed] = useState(false)
 const[passwordBlured,setPasswordBlured] = useState(false)
+const[checkBox1, setCheckBox1] = useState(false)
+const[checkBox2, setCheckBox2] = useState(false)
 async function signUp(values){  // firebase에 email, password 넘겨주는 역할
   const {email, password} = values
   try{
@@ -144,10 +147,15 @@ async function signUp(values){  // firebase에 email, password 넘겨주는 역�
                             {/*개인정보 활용 동의를 위한 View */}
                             <View>
                               <CheckBox
+                                
                                 title = '개인정보 제3자 제공 동의(선택)'
+                                checked={checkBox1}
+                                onPress={()=>setCheckBox1(!checkBox1)}
                               />
                               <CheckBox
                                 title = '만 14세 미만의 어린이/학생 이용자는 체크해주세요'
+                                checked={checkBox2}
+                                onPress={()=>setCheckBox2(!checkBox2)}
                               />
                             
                             </View>
