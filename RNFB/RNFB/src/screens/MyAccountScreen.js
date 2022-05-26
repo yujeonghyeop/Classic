@@ -107,17 +107,17 @@ export default function MyAccountScreen({navigation}){
                             <Button title='상세 보기' buttonStyle={myAccountstyle.styledButton} titleStyle={buttonTitleW}
                             onPress = {() => { navigation.navigate("Detail")}}
                              />
-                            {
-                            test===0 ? 
-                            <Button title='검사하러 가기' buttonStyle={myAccountstyle.styledButton} titleStyle={buttonTitleW}
-                             onPress = {() => { navigation.navigate("Test1")}}
-                            />:
-                            <Button title='다시 검사하기' buttonStyle={myAccountstyle.styledButton} titleStyle={buttonTitleW}
+                           
+                            {test===0 ? <Button title='다시 검사하기' buttonStyle={myAccountstyle.styledButton} titleStyle={buttonTitleW}
                             onPress = {() => 
                                 {   resettype()
                                     navigation.navigate("Test1")}
                                 }
-                           />}
+                           />
+                            : <Button title='검사하러 가기' buttonStyle={myAccountstyle.styledButton} titleStyle={buttonTitleW}
+                             onPress = {() => { navigation.navigate("Test1")}}
+                            />
+                            }
                         </View>
                     </View>
                 </View>

@@ -33,22 +33,22 @@ export default function Test3({navigation}){
                 <Text style={testpageStyle.styledQ1}>.</Text>
             </View>
             <View style ={testpageStyle.styledBox}>
-                <Text style={testpageStyle.styledFont}>친구와의 약속이 깨졌다</Text>
-                <Text style={testpageStyle.styledFont}>나의 행동은?</Text>
+                <Text style={testpageStyle.styledFont}>학습 과정에서</Text>
+                <Text style={testpageStyle.styledFont}>내가 중요하게 생각 하는 것은?</Text>
             </View>
             <View style={{flexDirection: 'column', alignItems:'space-between', marginTop:10, padding:40}}>
            
                 <TouchableOpacity style={testpageStyle.styledButton} onPress={() => {
-                    getSoc()
+                    getAct()
                     navigation.navigate("Test4")
                 }}>
-                    <Text style={parameters.buttonTitle}>편성표를 켜서 프로그램을 확인한다</Text>
+                    <Text style={parameters.buttonTitle}>내가 이해한 내용을 내 방식으로 다시 정리해 보면서 학습한다.</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={testpageStyle.styledButton} onPress={() => {
-                    getPer()
+                    getDif()
                     navigation.navigate("Test4")
                 }}>
-                    <Text style={parameters.buttonTitle}>돌려보면서 재밌는게 나오면 멈춘다</Text>
+                    <Text style={parameters.buttonTitle}>내가 이해한 내용과 원래 배웠던 내용이 다르지 않은지 확인하며 학습한다.</Text>
                 </TouchableOpacity>
             </View>
             <Progress.Bar progress={0.3} width={300} color={'#6667ab'} height={10} borderRadius={5} marginBottom={100} marginTop ={30} backgroundColor = {'#E8E8F2'} />

@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from 'react'
-import { SearchBar } from 'react-native-elements';
+import { SearchBar, Icon } from 'react-native-elements';
 import {View, Text, Image} from 'react-native'
 import {logo} from '../global/styles';
 import Logo from '../images/logo.png';
@@ -79,7 +79,12 @@ export default function SearchScreen(){
       <View style={{alignItems:"center"}}>
           <View>
               <View style={{flexDirection:'row', padding:5}}>
-                  <View style={{width:120,height:120, margin:10, backgroundColor:'#FF9D9D'}}></View>
+                  <View style={{width:120,height:120, margin:10, backgroundColor:'#FF9D9D'}}>
+                    {findspaceresult.kate ==='school' && (<Icon name = 'festival' type = 'material'size = {120} />)}
+                    {findspaceresult.kate ==='cafe' && (<Icon name = 'emoji-food-beverage' type = 'material'size = {120}/>)}
+                    {findspaceresult.kate ==='sc' && (<Icon name = 'meeting-room' type = 'material'size = {120}/>)}
+
+                  </View>
                   <View style={{flexShrink:1,flexGrow:1,flexBasis:150}}>
                       <Text style={ViewAllStyle.contentName}>{findspaceresult.name}</Text>
                       <Text style={ViewAllStyle.contentIntroduce}>{findspaceresult.location}</Text>
@@ -92,7 +97,15 @@ export default function SearchScreen(){
       <View style={{alignItems:"center"}}>
           <View>
               <View style={{flexDirection:'row', padding:5}}>
-                  <View style={{width:120,height:120, margin:10, backgroundColor:'#FF9D9D'}}></View>
+                  <View style={{width:120,height:120, margin:10, backgroundColor:'#FF9D9D'}}>
+                  {findsubjectresult.kate ==='자연과 과학' && (<Icon name = 'emoji-nature' type = 'material'size = {120} />)}
+                    {findsubjectresult.kate ==='인간과 사회' && (<Icon name = 'public' type = 'material'size = {120}/>)}
+                    {findsubjectresult.kate ==='문학과 예술' && (<Icon name = 'palette' type = 'material'size = {120}/>)}
+                    {findsubjectresult.kate ==='역사와 철학' && (<Icon name = 'auto-stories' type = 'material'size = {120}/>)}
+                    {findsubjectresult.kate ==='일반선택' && (<Icon name = 'border-color' type = 'material'size = {120}/>)}
+                    {findsubjectresult.kate ==='일반교양' && (<Icon name = 'self-improvement' type = 'material'size = {120}/>)}
+                   
+                  </View>
                   <View style={{flexShrink:1,flexGrow:1,flexBasis:150}}>
                       <Text style={ViewAllStyle.contentName}>{findsubjectresult.name}</Text>
                       <Text style={ViewAllStyle.contentIntroduce}>{findsubjectresult.professor}</Text>

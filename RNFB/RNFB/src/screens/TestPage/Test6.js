@@ -34,22 +34,22 @@ export default function Test6({navigation}){
                 <Text style={testpageStyle.styledQ1}>.</Text>
             </View>
             <View style ={testpageStyle.styledBox}>
-                <Text style={testpageStyle.styledFont}>친구와의 약속이 깨졌다</Text>
-                <Text style={testpageStyle.styledFont}>나의 행동은?</Text>
+                <Text style={testpageStyle.styledFont}>친구가 목이 아픈 것 같다고 말했을 때, </Text>
+                <Text style={testpageStyle.styledFont}>나의 반응은?</Text>
             </View>
             <View style={{flexDirection: 'column', alignItems:'space-between', marginTop:10, padding:40}}>
            
                 <TouchableOpacity style={testpageStyle.styledButton} onPress={() => {
-                    getSoc()
+                    getCnt()
                     navigation.navigate("Test7")
                 }}>
-                    <Text style={parameters.buttonTitle}>편성표를 켜서 프로그램을 확인한다</Text>
+                    <Text style={parameters.buttonTitle}>괜찮아? 약 좀 사다줄까?</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={testpageStyle.styledButton} onPress={() => {
-                    getPer()
+                    getPlan()
                     navigation.navigate("Test7")
                 }}>
-                    <Text style={parameters.buttonTitle}>돌려보면서 재밌는게 나오면 멈춘다</Text>
+                    <Text style={parameters.buttonTitle}>왜 아파? 어디가 아픈데?</Text>
                 </TouchableOpacity>
             </View>
             <Progress.Bar progress={0.6} width={300} color={'#6667ab'} height={10} borderRadius={5} marginBottom={100} marginTop ={30} backgroundColor = {'#E8E8F2'} />
