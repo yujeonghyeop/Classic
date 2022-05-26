@@ -23,7 +23,9 @@ export const parameters = {
         borderColor:'#6667ab',
         height:50,
         paddingHorizontal:20,
-        width:"100%"
+        width:"100%",
+        justifyContent:'center',
+        alignItems:'center'
     },
     buttonTitle:{   //button 안에 있는 Text 스타일 지정 
         color:"white",
@@ -274,7 +276,7 @@ export const setting ={
     },
     AccountView:{
         borderColor:'#FF9D9D',
-        borderWidth:1,
+        borderWidth:2,
         borderRadius:10,
         marginTop:30,
         padding:30

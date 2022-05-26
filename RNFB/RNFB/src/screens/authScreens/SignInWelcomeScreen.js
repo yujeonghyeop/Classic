@@ -4,10 +4,12 @@ import React,{useState,useRef,useEffect, useContext} from 'react';
 
 import {View, Text, StyleSheet, Dimensions, Image} from 'react-native'
 import {colors, parameters, title,testpageStyle} from '../../global/styles'
+import { buttonTitleBL } from '../../global/fontStyles';
 import {Button} from 'react-native-elements'
 import { SignInContext } from '../../contexts/authContext';
 import auth from '@react-native-firebase/auth'
 import logo from '../../images/logo.png'
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 
 export default function SignInWelcomeScreen({navigation}){  //props는 navigation을 위함 
@@ -36,31 +38,22 @@ useEffect(()=>{ //파이어베이스 이용하여 로그인하는 부분
         <View style = {{flex:4}}>
             <View style = {{marginHorizontal:20, marginVertical : 20,marginTop:-80}}> 
                 {/* button에 여백 두기 */}
-                    <Button 
-                        title = "로그인 하기"
-                            buttonStyle =  {parameters.styledButton}
-                            titleStyle = {parameters.buttonTitle}
-
-                            //button에 스타일 입히기
-
+                    <TouchableOpacity 
+                            style =  {parameters.styledButton}
                                 onPress = {() => {
                                     navigation.navigate("SignInScreen")
                                 }}
                                 //이 버튼을 누를 때 SignInScreen으로 가라는 navigation 등록
-                            
-                    />
+                    >
+                        <Text style={buttonTitleBL}>로그인 하기</Text>
+                    </TouchableOpacity>
             </View>
             <View style = {{marginHorizontal:20, marginTop : 10}}>
-                    <Button 
-                        title = "검사 하러 가기"
-                        buttonStyle = {styles.createButton}
-                        titleStyle = {styles.createButtonTitle}
-
-                        onPress = {() => {
+                    <TouchableOpacity style={parameters.styledButton} onPress = {() => {
                             navigation.navigate("Test1")
-                        }}
-                        
-                    />
+                        }}>
+                        <Text style={buttonTitleBL}>검사 하러 가기</Text>
+                    </TouchableOpacity>
 
                 </View>
 
