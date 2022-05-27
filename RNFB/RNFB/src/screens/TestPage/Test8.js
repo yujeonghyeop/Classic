@@ -15,14 +15,14 @@ export default function Test8({navigation}){
         const userDocument = firestore().collection("회원").
         doc(email)
         .update({
-            '총체' : increment
+            '자기지향' : increment
         })
     }
     getSoc = async () =>{
         const userDocument = firestore().collection("회원").
         doc(email)
         .update({
-            '분석' : increment
+            '사회지향' : increment
         })
     }
     return(
@@ -33,22 +33,21 @@ export default function Test8({navigation}){
                 <Text style={testpageStyle.styledQ1}>.</Text>
             </View>
             <View style ={testpageStyle.styledBox}>
-                <Text style={testpageStyle.styledFont}>친구와의 약속이 깨졌다</Text>
-                <Text style={testpageStyle.styledFont}>나의 행동은?</Text>
+                <Text style={testpageStyle.styledFont}>나의 실수를 대하는 방법은?</Text>
             </View>
             <View style={{flexDirection: 'column', alignItems:'space-between', marginTop:10, padding:40}}>
            
                 <TouchableOpacity style={testpageStyle.styledButton} onPress={() => {
-                    getSoc()
-                    navigation.navigate("Test9")
-                }}>
-                    <Text style={parameters.buttonTitle}>편성표를 켜서 프로그램을 확인한다</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={testpageStyle.styledButton} onPress={() => {
                     getPer()
                     navigation.navigate("Test9")
                 }}>
-                    <Text style={parameters.buttonTitle}>돌려보면서 재밌는게 나오면 멈춘다</Text>
+                    <Text style={parameters.buttonTitle}>나의 실수에서 교훈을 얻기</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={testpageStyle.styledButton} onPress={() => {
+                    getSoc()
+                    navigation.navigate("Test9")
+                }}>
+                    <Text style={parameters.buttonTitle}>실수를 다른 사람들이 모르도록 숨기기</Text>
                 </TouchableOpacity>
             </View>
             <Progress.Bar progress={0.8} width={300} color={'#6667ab'} height={10} borderRadius={5} marginBottom={100} marginTop ={30} backgroundColor = {'#E8E8F2'} />

@@ -53,7 +53,7 @@ export default function HomeScreen({navigation}) {
                 </View>
                 <View style={{flex: 1,flexDirection:'column',justifyContent:'center', margin:10}}>
                     <TouchableOpacity style = {mainPageStyle.nicknamebutton} onPress = {() => {navigation.navigate("MyAccountScreen")}}>
-                      <Text style={buttonTitleW}>{nickname}</Text>
+                      {result===0 ?<Text>검사를 진행해 주세요!</Text> : <Text style={buttonTitleW}>{nickname}</Text> }
                     </TouchableOpacity>
                     {/* <Button title = {nickname} buttonStyle = {mainPageStyle.nicknamebutton} titleStyle = {styledtext}
                         onPress = {() => {navigation.navigate("MyAccountScreen")}}/> */}

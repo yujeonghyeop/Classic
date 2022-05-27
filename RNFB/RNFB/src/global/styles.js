@@ -171,15 +171,12 @@ export const myAccountstyle ={
         width: '95%',
         height: '20%',
     }, 
-    styledPicture:{ 
-        borderColor:'#6767AB',
-       borderWidth:3,
-       padding:10,
-       borderRadius: 75,
-       width: 100,
-       height: 100,
-       justifyContent:'center',
-       alignItems:'center'
+    styledPicture:{
+        padding:10,
+        width: 100,
+        height: 100,
+        justifyContent:'center',
+        alignItems:'center'
     },
     styledButton:{
         backgroundColor:'#E8E8F2',
@@ -226,7 +223,6 @@ export const mainPageStyle = {
     styledPicture:{ 
         //사진 넣는 곳
         padding:10,
-        borderRadius: 75,
         width: 100,
         height: 100,
         justifyContent:'center',

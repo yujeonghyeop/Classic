@@ -11,6 +11,7 @@ import Swiper from 'react-native-swiper';
 import { getDate } from 'cli';
 import { getDrawerStatusFromState } from '@react-navigation/drawer';
 import { FlatList } from 'react-native-gesture-handler';
+import bach2 from '../images/bach.jpg';
 
 export default function MyAccountScreen({navigation}){
     const [nickname, setNickname] = useState(null)
@@ -103,7 +104,10 @@ export default function MyAccountScreen({navigation}){
                 <View style={{flexDirection: 'row', justifyContent: 'space-evenly', padding:10}}>
                     <View style={{flexDirection: 'column', margin:10,justifyContent: 'center', alignItems:'center'}}> 
                         <View style={myAccountstyle.styledPicture}>
-                        <Image source={bach} style={{width:"100%", height:"100%", margin:'5%'}}/>
+                            <Image
+                            source={bach2}
+                            style={{width:"140%", height:"140%", margin:'5%', borderRadius:20}}
+                            />
                         </View>
                         <Text style={buttonTitleW}>{nickname}</Text>
                     </View>
@@ -113,17 +117,17 @@ export default function MyAccountScreen({navigation}){
                             <Button title='상세 보기' buttonStyle={myAccountstyle.styledButton} titleStyle={buttonTitleW}
                             onPress = {() => { navigation.navigate("Detail")}}
                              />
-                            {
-                            test===0 ? 
-                            <Button title='검사하러 가기' buttonStyle={myAccountstyle.styledButton} titleStyle={buttonTitleW}
-                             onPress = {() => { navigation.navigate("Test1")}}
-                            />:
-                            <Button title='다시 검사하기' buttonStyle={myAccountstyle.styledButton} titleStyle={buttonTitleW}
+                           
+                            {test!==0 ? <Button title='다시 검사하기' buttonStyle={myAccountstyle.styledButton} titleStyle={buttonTitleW}
                             onPress = {() => 
                                 {   resettype()
                                     navigation.navigate("Test1")}
                                 }
-                           />}
+                           />
+                            : <Button title='검사하러 가기' buttonStyle={myAccountstyle.styledButton} titleStyle={buttonTitleW}
+                             onPress = {() => { navigation.navigate("Test1")}}
+                            />
+                            }
                         </View>
                     </View>
                 </View>
@@ -136,7 +140,7 @@ export default function MyAccountScreen({navigation}){
                     <TouchableOpacity style={[myAccountstyle.ListButton,{backgroundColor:button2}]} onPress={clickHandler2}>
                         <Text style={button2f}>스크랩 한 학습공간</Text>
                     </TouchableOpacity>
-                </View> 
+                </View>
                 <View style={{marginBottom:60}}>
                     <ScrollView showsVerticalScrollIndicator={false}>
                             { 
