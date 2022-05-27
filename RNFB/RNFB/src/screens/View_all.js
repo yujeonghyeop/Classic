@@ -125,7 +125,7 @@ export default function MyOrdersScreen(){
                 onIndexChange={setIndex}
                 initialLayout={{width:layout.width}}
                 style={{backgroundColor:"white"}}
-                renderTabBar={props => <TabBar {…props}
+                renderTabBar={props => <TabBar {...props}
                     indicatorStyle={{backgroundColor:'#FF9D9D'}}
                     style={{backgroundColor: '#6767A6'}}
                     labelStyle= {{fontSize:15, fontFamily: 'IBMPlexSansKR-Bold'}}
