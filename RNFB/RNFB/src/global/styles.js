@@ -362,3 +362,19 @@ export const inquiryStyle = {
         fontFamily: 'IBMPlexSansKR-Bold'
     }
 }
+
+export const detailStyle={
+    styledBox:{
+        borderColor:'#FF9D9D',
+        borderWidth: 1.5,
+        alignSelf:'center',
+        justifyContent: 'center',
+        borderRadius: 20,
+        alignItems: 'center',
+        padding:20,
+        width: '95%',
+        height: '80%',
+
+    }
+
+}

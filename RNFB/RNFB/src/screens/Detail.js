@@ -8,7 +8,8 @@ import{View, Text, StyleSheet, Image,ScrollView} from 'react-native'
 import {logo} from '../global/styles';
 import Logo from '../images/logo.png';
 //import { buttonTitleB } from '../global/fontStyles';
-import {setting, myAccountstyle,} from '../global/styles';
+import {setting, detailStyle} from '../global/styles';
+import { detail } from '../global/fontStyles';
 //import auth from '@react-native-firebase/auth';
 //import { SignInContext } from '../contexts/authContext';
 
@@ -28,14 +29,14 @@ export default function Detail({navigation}){
       },[]);
 
     return(
-        <View style = {myAccountstyle.container}>
+        <View style>
             <ScrollView showsVerticalScrollIndicator={false}>
-            <Image source={Logo} style={logo}/>
-            <View style={myAccountstyle.styledBox}>
-            <Text style={{color: '#6767A6', fontSize: 20, fontFamily: 'IBMPlexSansKR-Regular'}}>
-                {more_exp}
-                </Text>
-            </View>
+                <Image source={Logo} style={logo}/>
+                <View style={detailStyle.styledBox}>
+                    <Text style={detail}>
+                        {more_exp}
+                    </Text>
+                </View>
             </ScrollView>
         </View>
         

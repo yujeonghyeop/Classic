@@ -39,3 +39,9 @@ export const  buttonTitleInquiry = {
     alignItems: "center",
     justifyContent: "center",
 }
+
+export const detail ={
+    color: '#6767A6', 
+    fontSize: 20, 
+    fontFamily: 'IBMPlexSansKR-Regular'
+}
