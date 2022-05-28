@@ -79,7 +79,7 @@ export default function MyOrdersScreen(){
         subjectshow()
     },[]);
     return(
-        
+
             <TabView
                 navigationState={{index, routes}}
                 renderScene={({route}) => {
@@ -105,15 +105,6 @@ export default function MyOrdersScreen(){
                                                         <Text style={ViewAllStyle.contentName}>{data.name}</Text>
                                                         <Text style={ViewAllStyle.contentIntroduce}>{data.professor}</Text>
                                                     </View>
-                                                    <View>                                                    
-                                                        <TouchableOpacity style={[ViewAllStyle.scrap,/*{borderWidth:border}*/]} onPress={scrapHandler}>
-                                                            <Icon 
-                                                                name = 'add'
-                                                                type = 'material'
-                                                                size = {40}
-                                                            />
-                                                        </TouchableOpacity>
-                                                    </View>
                                                 </View>
                                             </TouchableOpacity>
                                             <View style={{width:340, height:2, margin:5,backgroundColor:'#a6a6cc'}}></View>
@@ -138,15 +129,6 @@ export default function MyOrdersScreen(){
                                                     <View style={{margin:10}}>
                                                         <Text style={ViewAllStyle.contentName}>{data.name}</Text>
                                                         <Text style={ViewAllStyle.contentIntroduce}>{data.location}</Text>
-                                                    </View>
-                                                    <View>
-                                                        <TouchableOpacity style={[ViewAllStyle.scrap,/*{borderWidth:border}*/]} onPress={scrapHandler}>
-                                                            <Icon 
-                                                                name = 'add'
-                                                                type = 'material'
-                                                                size = {40}
-                                                            />
-                                                        </TouchableOpacity>
                                                     </View>
                                                 </View>
                                                 </TouchableOpacity>
