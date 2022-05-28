@@ -9,10 +9,16 @@ import Swiper from 'react-native-swiper';
 import firestore, { firebase } from '@react-native-firebase/firestore';
 import mozart from '../images/mozart.png';
 import bach from '../images/bach.png';
-import bach2 from '../images/bachmain.jpg';
 import beethoven from '../images/beethoven.png';
 import brahms from '../images/brahms.png';
 import chopin from '../images/chopin.png';
+
+import bachMain from '../images/bachMain.jpg';
+import beethovenMain from '../images/beethovenMain.jpg';
+import brahmsMain from '../images/brahmsMain.jpg';
+import chopinMain from '../images/chopinMain.jpg';
+import mozartMain from '../images/mozartMain.jpg';
+import noMain from '../images/noMain.jpg';
 
 export default function HomeScreen({navigation}) {
   const [nickname, setNickname] = useState(null)
@@ -36,6 +42,26 @@ export default function HomeScreen({navigation}) {
     })
   },[]);
   
+
+  const profile = (name) => {
+    if(name === "로맨티스트 브람스"){
+      return brahmsMain;
+    }
+    else if(name === "피아노의 시인 쇼팽"){
+      return chopinMain;
+    }
+    else if(name === "베토벤 닉네임 머임"){
+      return beethovenMain;
+    }
+    else if(name === "음악의 신동 모차르트"){
+      return mozartMain;
+    }
+    else if(name === "음악의 아버지 바흐"){
+      return bachMain;
+    }
+    return noMain;
+  }
+  
   return (
     <View style={mainPageStyle.container}>
       {/* <HomeHeader navigation={navigation} /> */}
@@ -45,7 +71,7 @@ export default function HomeScreen({navigation}) {
                 <View style={{flexDirection: 'column', margin: 10,alignItems:'center'}}> 
                     <View style={mainPageStyle.styledPicture}>
                       <Image
-                        source={bach2}
+                        source={profile(nickname)}
                         style={{width:"140%", height:"140%", margin:'5%', borderRadius:20}}
                       />
                       </View>
