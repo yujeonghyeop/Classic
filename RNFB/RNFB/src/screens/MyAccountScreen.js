@@ -64,21 +64,16 @@ export default function MyAccountScreen({navigation}){
             감성 : 0,
             })   
     }
-    useEffect(()=>{
-        getname();
-        spaceshow();
-        subjectshow();
-    })
-
     const [button1, setColor1] = useState('#6767A6');
     const [button2, setColor2] = useState('#E8E8F2');
     const [button1f, setFont1] = useState(buttonTitleB);
     const [button2f, setFont2] = useState(buttonTitleW);
     const [index, setIndex] = useState(0);
-    const [location, setlocaction] = useState(['']);
     const layout = useWindowDimensions();
 
     const clickHandler1 = () => {
+        
+        subjectshow();
         setColor1('#6767A6');
         setColor2('#E8E8F2');
         setFont1(buttonTitleB);
@@ -87,12 +82,16 @@ export default function MyAccountScreen({navigation}){
     }
 
     const clickHandler2 = () =>{
+        spaceshow();
         setColor1('#E8E8F2');
         setColor2('#6767A6');
         setFont1(buttonTitleW);
         setFont2(buttonTitleB);
         setIndex(1);
     }
+    useEffect(()=>{
+        getname();
+    })
     return(
         <View style = {myAccountstyle.container}>
             <Image source={Logo} style={logo} />

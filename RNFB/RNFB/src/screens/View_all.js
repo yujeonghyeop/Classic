@@ -15,8 +15,6 @@ export default function MyOrdersScreen(){
     const[press2, setPress2] = useState('');
     const [space, setspace] = useState([]);
     const [subject, setsubject] = useState([]);
-    const [test, settest] = useState([])
-    const [location, setlocaction] = useState(['']);
     const user = firebase.auth().currentUser;
     const email = user.email; 
     const spaceshow = async () =>{
@@ -52,10 +50,7 @@ export default function MyOrdersScreen(){
         console.log(1)
     }
 
-    useEffect(() => {
-        spaceshow()
-        subjectshow()
-    },[]);
+   
 
     const pressHandler1 = (params,e)=>{
         setPress1('#E8E8F2');
@@ -79,7 +74,10 @@ export default function MyOrdersScreen(){
                 })
         setPress2('#E8E8F2');
     }
-
+    useEffect(() => {
+        spaceshow()
+        subjectshow()
+    },[]);
     return(
         
             <TabView
