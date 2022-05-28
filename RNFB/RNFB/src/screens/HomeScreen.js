@@ -9,7 +9,7 @@ import Swiper from 'react-native-swiper';
 import firestore, { firebase } from '@react-native-firebase/firestore';
 import mozart from '../images/mozart.png';
 import bach from '../images/bach.png';
-import bach2 from '../images/bach.jpg';
+import bach2 from '../images/bachmain.jpg';
 import beethoven from '../images/beethoven.png';
 import brahms from '../images/brahms.png';
 import chopin from '../images/chopin.png';

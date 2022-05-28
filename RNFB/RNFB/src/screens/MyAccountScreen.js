@@ -11,7 +11,7 @@ import Swiper from 'react-native-swiper';
 import { getDate } from 'cli';
 import { getDrawerStatusFromState } from '@react-navigation/drawer';
 import { FlatList } from 'react-native-gesture-handler';
-import bach2 from '../images/bach.jpg';
+import bach2 from '../images/bachmain.jpg';
 
 export default function MyAccountScreen({navigation}){
     const [nickname, setNickname] = useState(null)
@@ -118,14 +118,14 @@ export default function MyAccountScreen({navigation}){
                             onPress = {() => { navigation.navigate("Detail")}}
                              />
                            
-                            {test===0 ? <Button title='다시 검사하기' buttonStyle={myAccountstyle.styledButton} titleStyle={buttonTitleW}
+                            {test===0 ? <Button title='검사하러 가기' buttonStyle={myAccountstyle.styledButton} titleStyle={buttonTitleW}
+                             onPress = {() => { navigation.navigate("Test1")}}
+                           />
+                            :<Button title='다시 검사하기' buttonStyle={myAccountstyle.styledButton} titleStyle={buttonTitleW}
                             onPress = {() => 
                                 {   resettype()
                                     navigation.navigate("Test1")}
-                                }
-                           />
-                            : <Button title='검사하러 가기' buttonStyle={myAccountstyle.styledButton} titleStyle={buttonTitleW}
-                             onPress = {() => { navigation.navigate("Test1")}}
+                                } 
                             />
                             }
                         </View>
