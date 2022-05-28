@@ -1,5 +1,5 @@
 import React from 'react'
-import{View, TouchableOpacity,Text,Image} from 'react-native'
+import {View, Text, TouchableOpacity,Image} from 'react-native'
 import {Button} from 'react-native-elements'
 import { parameters,testpageStyle } from '../../global/styles'
 import * as Progress from 'react-native-progress'

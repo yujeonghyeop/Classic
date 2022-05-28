@@ -1,7 +1,6 @@
 import React from 'react'
-import{View, TouchableOpacity,Text,Image} from 'react-native'
-import {Button} from 'react-native-elements'
-import { parameters,testpageStyle } from '../../global/styles'
+import {View, Text, TouchableOpacity,Image} from 'react-native'
+import { parameters, testpageStyle } from '../../global/styles'
 import * as Progress from 'react-native-progress'
 import firestore, { firebase } from '@react-native-firebase/firestore'
 import logo from '../../images/logo.png';
@@ -37,7 +36,6 @@ export default function Test5({navigation}){
                 <Text style={testpageStyle.styledFont}>내가 중요하게 생각 하는 것은?</Text>
             </View>
             <View style={{flexDirection: 'column', alignItems:'space-between', marginTop:10, padding:40}}>
-           
                 <TouchableOpacity style={testpageStyle.styledButton} onPress={() => {
                     getAct()
                     navigation.navigate("Test6")

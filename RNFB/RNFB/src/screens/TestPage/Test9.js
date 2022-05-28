@@ -1,7 +1,6 @@
 import React from 'react'
-import{View,TouchableOpacity, Text,Image} from 'react-native'
-import {Button} from 'react-native-elements'
-import { parameters,testpageStyle } from '../../global/styles'
+import {View, Text, TouchableOpacity,Image} from 'react-native'
+import { parameters, testpageStyle } from '../../global/styles'
 import * as Progress from 'react-native-progress'
 import firestore, { firebase } from '@react-native-firebase/firestore'
 import logo from '../../images/logo.png';
@@ -34,11 +33,10 @@ export default function Test9({navigation}){
                 <Text style={testpageStyle.styledQ1}>.</Text>
             </View>
             <View style ={testpageStyle.styledBox}>
-                <Text style={testpageStyle.styledFont}>친구가 나한테 해주기 어려운 부탁을 했다.</Text>
+                <Text style={testpageStyle.styledFont}>친구가 나한테 어려운 부탁을 했다.</Text>
                 <Text style={testpageStyle.styledFont}>"생각해볼게"라는 내 대답의 의도는?</Text>
             </View>
             <View style={{flexDirection: 'column', alignItems:'space-between', marginTop:10, padding:40}}>
-           
                 <TouchableOpacity style={testpageStyle.styledButton} onPress={() => {
                     getPlan()
                     navigation.navigate("cal")

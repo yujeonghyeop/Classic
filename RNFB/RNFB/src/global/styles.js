@@ -106,10 +106,16 @@ export const testpageStyle = { //testpage에 들어가는 친구들 집합 Resul
         fontFamily: 'IBMPlexSansKR-Regular'
     },
     styledFont:{
-        fontSize : 25,
+        fontSize : 22,
         color:'black',
         justifyContent : 'center',
         fontFamily: 'IBMPlexSansKR-SemiBold'
+    },
+    buttonTitle:{
+        fontSize : 18,
+        color:'white',
+        justifyContent : 'center',
+        fontFamily: 'IBMPlexSansKR-Regular'
     },
     styledBox : {
         width : 350,
