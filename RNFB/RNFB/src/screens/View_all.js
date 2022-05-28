@@ -2,10 +2,9 @@ import React,{ useState, useEffect } from 'react';
 import { View, Text, TouchableOpacity, ScrollView, useWindowDimensions } from 'react-native'
 import { TabView, SceneMap, TabBar } from 'react-native-tab-view';
 import { ViewAllStyle } from '../global/styles';
-import { buttonTitleW } from '../global/fontStyles';
-import { CheckBox } from "@rneui/themed";
+import { styledtext } from '../global/fontStyles';
 import firestore, { firebase, getDocs } from '@react-native-firebase/firestore';
-import { Button, Icon } from 'react-native-elements';
+import { Icon } from 'react-native-elements';
 
 // 전체보기 페이지
 
@@ -88,6 +87,9 @@ export default function MyOrdersScreen(){
                             return(
                                 <View style={{alignItems:"center"}}>
                                     <ScrollView showsVerticalScrollIndicator={false} style={{margin:20}}>
+                                        <View style={{alignItems:'center', justifyContent:'center'}}>
+                                            <Text style={styledtext}>터치하면 스크랩됩니다.</Text>
+                                        </View>   
                                         {subject.map((data)=>(
                                         <View key ={data.name} >
                                             <TouchableOpacity style={{backgroundColor:press1}} onPress={(e)=>{pressHandler1(data,e)}}>
@@ -116,21 +118,24 @@ export default function MyOrdersScreen(){
                         case 'second':
                             return(
                                 <View style={{alignItems:"center"}}>
-                                    <ScrollView showsVerticalScrollIndicator={false} style={{margin:20}}>
+                                    <ScrollView showsVerticalScrollIndicator={false} style={{margin:10}}>
+                                        <View style={{alignItems:'center', justifyContent:'center', marginTop:10}}>
+                                            <Text style={styledtext}>터치하면 스크랩됩니다.</Text>
+                                        </View>   
                                         {space.map((data) =>(
                                             <View key ={data.name} >
                                                 <TouchableOpacity style={{backgroundColor:press2}} onPress={(e)=>{pressHandler2(data,e)}}>
-                                                   <View style={{flexDirection:'row', padding:5}}>
-                                                    <View style={{width:120,height:120, margin:10, backgroundColor:'#FF9D9D'}}>
-                                                    {data.kate ==='school' && (<Icon name = 'festival' type = 'material'size = {120} />)}
-                                                    {data.kate ==='cafe' && (<Icon name = 'emoji-food-beverage' type = 'material'size = {120}/>)}
-                                                    {data.kate ==='sc' && (<Icon name = 'meeting-room' type = 'material'size = {120}/>)}
+                                                    <View style={{flexDirection:'row', padding:5}}>
+                                                        <View style={{width:120,height:120, margin:10, backgroundColor:'#FF9D9D'}}>
+                                                        {data.kate ==='school' && (<Icon name = 'festival' type = 'material'size = {120} />)}
+                                                        {data.kate ==='cafe' && (<Icon name = 'emoji-food-beverage' type = 'material'size = {120}/>)}
+                                                        {data.kate ==='sc' && (<Icon name = 'meeting-room' type = 'material'size = {120}/>)}
+                                                        </View>
+                                                        <View style={{margin:10}}>
+                                                            <Text style={ViewAllStyle.contentName}>{data.name}</Text>
+                                                            <Text style={ViewAllStyle.contentIntroduce}>{data.location}</Text>
+                                                        </View>
                                                     </View>
-                                                    <View style={{margin:10}}>
-                                                        <Text style={ViewAllStyle.contentName}>{data.name}</Text>
-                                                        <Text style={ViewAllStyle.contentIntroduce}>{data.location}</Text>
-                                                    </View>
-                                                </View>
                                                 </TouchableOpacity>
                                                 
 
