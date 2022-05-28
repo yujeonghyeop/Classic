@@ -1,7 +1,7 @@
 import React, { useState,useEffect } from 'react'
 import firestore, { firebase } from '@react-native-firebase/firestore'
 import {View, Text, ScrollView, Image, TouchableOpacity, useWindowDimensions} from 'react-native'
-import {Button} from 'react-native-elements';
+import {Button,Icon} from 'react-native-elements';
 import {logo, myAccountstyle, ViewAllStyle} from '../global/styles';
 import { styledtext, buttonTitleB, buttonTitleW  } from '../global/fontStyles';
 import Logo from '../images/logo.png';
@@ -18,6 +18,29 @@ export default function MyAccountScreen({navigation}){
     const user = firebase.auth().currentUser;
     const email = user.email; 
     const [test, settest] = useState();
+    const [space, setspace] = useState([])
+    const [subject, setsubject] = useState([]);
+
+    const spaceshow = async () =>{
+        firebase.firestore().collection("회원").doc(email).collection("myspace").onSnapshot(snapshot =>{
+            const tweet = snapshot.docs.map(doc => ({
+                id : doc.id,
+                ...doc.data(),
+            }))
+            setspace(tweet)
+        })
+        
+    }
+    const subjectshow = async () =>{
+        firebase.firestore().collection("회원").doc(email).collection("mysubject").onSnapshot(snapshot =>{
+            const tweet = snapshot.docs.map(doc => ({
+                id : doc.id,
+                ...doc.data(),
+            }))
+            setsubject(tweet)
+        })
+        
+    }
     const getname = async key=> {
         const inf = firestore().collection("회원").doc(email)
         await inf.get().then((doc)=>{
@@ -43,6 +66,8 @@ export default function MyAccountScreen({navigation}){
     }
     useEffect(()=>{
         getname();
+        spaceshow();
+        subjectshow();
     })
 
     const [button1, setColor1] = useState('#6767A6');
@@ -50,8 +75,6 @@ export default function MyAccountScreen({navigation}){
     const [button1f, setFont1] = useState(buttonTitleB);
     const [button2f, setFont2] = useState(buttonTitleW);
     const [index, setIndex] = useState(0);
-    const [space, setspace] = useState([]);
-    const [subject, setsubject] = useState([]);
     const [location, setlocaction] = useState(['']);
     const layout = useWindowDimensions();
 
@@ -70,33 +93,6 @@ export default function MyAccountScreen({navigation}){
         setFont2(buttonTitleB);
         setIndex(1);
     }
-
-    const spaceshow = async () =>{
-        firebase.firestore().collection("view_all_space").onSnapshot(snapshot =>{
-            const tweet = snapshot.docs.map(doc => ({
-                id : doc.id,
-                ...doc.data(),
-            }))
-            setspace(tweet)
-        })
-    }
-    
-    const subjectshow = async () =>{
-        firebase.firestore().collection("view_all_subject").onSnapshot(snapshot =>{
-            const tweet = snapshot.docs.map(doc => ({
-                id : doc.id,
-                ...doc.data(),
-            }))
-            setsubject(tweet)
-        })
-        
-    }
-
-    useEffect(() => {
-        spaceshow()
-        subjectshow()
-    },[]);
-
     return(
         <View style = {myAccountstyle.container}>
             <Image source={Logo} style={logo} />
@@ -112,7 +108,6 @@ export default function MyAccountScreen({navigation}){
                         <Text style={buttonTitleW}>{nickname}</Text>
                     </View>
                     <View style={{flexDirection: 'column', justifyContent:'flex-start', margin: 10, padding:15}}>
-                        {console.log(test)}
                         <View style={{flexDirection: 'column', alignItems:'center'}}>
                             <Button title='상세 보기' buttonStyle={myAccountstyle.styledButton} titleStyle={buttonTitleW}
                             onPress = {() => { navigation.navigate("Detail")}}
@@ -149,7 +144,14 @@ export default function MyAccountScreen({navigation}){
                                 { subject.map((data)=>(
                                         <View key ={data.name} >
                                             <View style={{flexDirection:'row', padding:5}}>
-                                                <View style={{width:120,height:120, margin:10, backgroundColor:'#FF9D9D'}}/>
+                                                <View style={{width:120,height:120, margin:10, backgroundColor:'#FF9D9D'}}>
+                                                 {data.kate ==='자연과 과학' && (<Icon name = 'emoji-nature' type = 'material'size = {120} />)}
+                                                 {data.kate ==='인간과 사회' && (<Icon name = 'public' type = 'material'size = {120}/>)}
+                                                 {data.kate ==='문학과 예술' && (<Icon name = 'palette' type = 'material'size = {120}/>)}
+                                                 {data.kate ==='역사와 철학' && (<Icon name = 'auto-stories' type = 'material'size = {120}/>)}
+                                                 {data.kate ==='일반선택' && (<Icon name = 'border-color' type = 'material'size = {120}/>)}
+                                                 {data.kate ==='일반교양' && (<Icon name = 'self-improvement' type = 'material'size = {120}/>)}
+                                                </View>
                                                 <View style={{margin:10}}>
                                                     <Text style={ViewAllStyle.contentName}>{data.name}</Text>
                                                     <Text style={ViewAllStyle.contentIntroduce}>{data.professor}</Text>
@@ -163,7 +165,11 @@ export default function MyAccountScreen({navigation}){
                                     {space.map((data) =>(
                                         <View key ={data.name} >
                                         <View style={{flexDirection:'row', padding:5}}>
-                                            <View style={{width:120,height:120, margin:10, backgroundColor:'#FF9D9D'}}></View>
+                                            <View style={{width:120,height:120, margin:10, backgroundColor:'#FF9D9D'}}>
+                                                    {data.kate ==='school' && (<Icon name = 'festival' type = 'material'size = {120} />)}
+                                                    {data.kate ==='cafe' && (<Icon name = 'emoji-food-beverage' type = 'material'size = {120}/>)}
+                                                    {data.kate ==='sc' && (<Icon name = 'meeting-room' type = 'material'size = {120}/>)}
+                                            </View>
                                             <View style={{flexShrink:1,flexGrow:1,flexBasis:150}}>
                                                 <Text style={ViewAllStyle.contentName}>{data.name}</Text>
                                                 <Text style={ViewAllStyle.contentIntroduce}>{data.location}</Text>

@@ -3,7 +3,7 @@
 // import React from 'react';
 import React,{useState, useEffect, useContext} from 'react';
 import firestore, { firebase } from '@react-native-firebase/firestore';
-import{View, Text, StyleSheet, Image} from 'react-native'
+import{View, Text, StyleSheet, Image,ScrollView} from 'react-native'
 //import {Button} from 'react-native-elements';
 import {logo} from '../global/styles';
 import Logo from '../images/logo.png';
@@ -29,12 +29,14 @@ export default function Detail({navigation}){
 
     return(
         <View style = {myAccountstyle.container}>
+            <ScrollView showsVerticalScrollIndicator={false}>
             <Image source={Logo} style={logo}/>
             <View style={myAccountstyle.styledBox}>
             <Text style={{color: '#6767A6', fontSize: 20, fontFamily: 'IBMPlexSansKR-Regular'}}>
                 {more_exp}
                 </Text>
             </View>
+            </ScrollView>
         </View>
         
     )
