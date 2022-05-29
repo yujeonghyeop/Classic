@@ -1,5 +1,6 @@
 import React, { useState,useEffect } from 'react'
 import firestore, { firebase } from '@react-native-firebase/firestore'
+import { useIsFocused } from '@react-navigation/core';
 import {View, Text, ScrollView, Image, TouchableOpacity, useWindowDimensions} from 'react-native'
 import {Button,Icon} from 'react-native-elements';
 import {logo, myAccountstyle, ViewAllStyle} from '../global/styles';
@@ -20,6 +21,7 @@ import mozartMain from '../images/mozartMain.jpg';
 import noMain from '../images/noMain.jpg';
 
 export default function MyAccountScreen({navigation}){
+    const isFocused = useIsFocused();
     const [nickname, setNickname] = useState(null)
     const user = firebase.auth().currentUser;
     const email = user.email; 
@@ -96,7 +98,7 @@ export default function MyAccountScreen({navigation}){
     }
     useEffect(()=>{
         getname();
-    })
+    },[isFocused])
 
     const profile = (name) => {
         if(name === "로맨티스트 브람스"){
@@ -116,7 +118,6 @@ export default function MyAccountScreen({navigation}){
         }
         return noMain;
     }
-    
     return(
         <View style = {myAccountstyle.container}>
             <Image source={Logo} style={logo} />

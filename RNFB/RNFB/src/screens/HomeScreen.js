@@ -1,6 +1,7 @@
 //로그인이 완료되면 메인화면, HomeScreen으로 오게된다.
 
 import React,{useState,useEffect} from 'react';
+import { useIsFocused } from '@react-navigation/core';
 import {View, Text, TouchableOpacity,Image, ScrollView} from 'react-native';
 import {buttonTitleW,buttonTitleB, styledtext} from '../global/fontStyles';
 import {logo, mainPageStyle} from '../global/styles';
@@ -24,6 +25,7 @@ import mozartMain from '../images/mozartMain.jpg';
 import noMain from '../images/noMain.jpg';
 
 export default function HomeScreen({navigation}) {
+  const isFocused = useIsFocused();
   const [nickname, setNickname] = useState(null)
   const [exp, setExp] = useState(null)
   const [result, setresult] = useState('')
@@ -43,7 +45,7 @@ export default function HomeScreen({navigation}) {
             setExp(explain);
         }
     })
-  },[]);
+  },[isFocused]);
   
 
   const profile = (name) => {
@@ -64,7 +66,6 @@ export default function HomeScreen({navigation}) {
     }
     return noMain;
   }
-  
   return (
     <View style={mainPageStyle.container}>
       {/* <HomeHeader navigation={navigation} /> */}

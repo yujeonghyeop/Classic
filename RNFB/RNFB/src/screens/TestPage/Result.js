@@ -21,7 +21,14 @@ export default function Result({navigation}){
     
     const [musician, setMusician] = useState('');
     const [sentence, setSentence] = useState('');
+    const [srate, setsrate] = useState(0);
+    const [hrate, sethrate] = useState(0);
+    const [drate, setdrate] = useState(0);
     const [cnt, setCnt] = useState(false);
+    const [subject, setsubject] = useState();
+    const [subjecticon, setsubjecticon] = useState();
+    const [space, setspace] = useState();
+    const [spaceicon, setspaceicon] = useState();
     const [source,setsource] = useState()
     const user = firebase.auth().currentUser;
     const email = user.email; 
@@ -243,38 +250,77 @@ export default function Result({navigation}){
             if (doc.exists){
                 const pandi = doc.data();
                 const plan = pandi["result"];
+                const rate1 = pandi["사고유형비율"]
+                const rate2 = pandi["학습성격비율"]
+                const rate3 = pandi["행동조절비율"]
+                setsrate(rate1)
+                sethrate(rate2)
+                setdrate(rate3)
                 if (plan === 15){
+                    setsubject("서양영화사")
+                    setsubjecticon("palette")
+                    setspace("안다미로 스터디카페")
+                    setspaceicon("meeting-room")
                     setScore(plan);
                     getImage15();
                 }
                 else if(plan === 18){
+                    setsubject("자연과학의 이해")
+                    setsubjecticon("emoji-nature")
+                    setspace("안다미로 스터디카페")
+                    setspaceicon("meeting-room")
                     setScore(plan);
                     getImage18();
                 }
                 else if (plan === 20){
+                    setsubject("인류학이란 무엇인가")
+                    setsubjecticon("auto-stories")
+                    setspace("투썸플레이스")
+                    setspaceicon("emoji-food-beverage")
                     setScore(plan);
                     getImage20();
                 }
                 else if (plan === 24){
+                    setsubject("서양철학사")
+                    setsubjecticon("auto-stories")
+                    setspace("투썸플레이스")
+                    setspaceicon("emoji-food-beverage")
                     setScore(plan);
                     getImage24();
                 }
                 else if (plan === 30){
+                    setsubject("현대사회의 윤리")
+                    setsubjecticon("auto-stories")
+                    setspace("토브 스터디카페")
+                    setspaceicon("meeting-room")
                     setScore(plan);
                     getImage30();
                 }
                 else if (plan === 36){
+                    setsubject("철학이란 무엇인가")
+                    setsubjecticon("auto-stories")
+                    setspace("토브 스터디카페")
+                    setspaceicon("meeting-room")
                     setScore(plan);
                     getImage36();
                 } 
                 else if (plan === 40){
+                    setsubject("형식논리학")
+                    setsubjecticon("auto-stories")
+                    setspace("플랜트 스터디카페")
+                    setspaceicon("meeting-room")
                     setScore(plan);
                     getImage40();
                 }
                 else if (plan === 48){
+                    setsubject("독일 명작의 이해")
+                    setsubjecticon("self-improvement")
+                    setspace("플랜트 스터디카페")
+                    setspaceicon("meeting-room")
                     setScore(plan);
                     getImage48();
                 }
+
             }
         })
     }
@@ -294,19 +340,19 @@ export default function Result({navigation}){
                     source = {source} 
                 />
                 
-                <Progress.Bar progress={0.7} width={330} color={'#FF9D9D'} height={35} borderRadius={12} marginTop={25}/>
+                <Progress.Bar progress={srate} width={330} color={'#FF9D9D'} height={35} borderRadius={12} marginTop={25}/>
                 <View style = {{flex:1, flexDirection:'row', width:340, justifyContent:'space-between'}}>
                     <Text style = {testpageStyle.styledMyType}>계획형</Text>
                     <Text style = {testpageStyle.styledMyType}>즉흥형</Text>
                 </View>
 
-                <Progress.Bar progress={0.5} width={330} color={'#FF9D9D'} height={35} borderRadius={12} />
+                <Progress.Bar progress={hrate} width={330} color={'#FF9D9D'} height={35} borderRadius={12} />
                 <View style = {{flex:1, flexDirection:'row', width:340, justifyContent:'space-between'}}>
                     <Text style = {testpageStyle.styledMyType}>사회형</Text>
                     <Text style = {testpageStyle.styledMyType}>개인형</Text>
                 </View>
 
-                <Progress.Bar progress={0.8} width={330} color={'#FF9D9D'} height={35} borderRadius={12}/>
+                <Progress.Bar progress={drate} width={330} color={'#FF9D9D'} height={35} borderRadius={12}/>
                 <View style = {{flex:1, flexDirection:'row', width:340, justifyContent:'space-between'}}>
                     <Text style = {testpageStyle.styledMyType}>활발형</Text>
                     <Text style = {testpageStyle.styledMyType}>차분형</Text>
@@ -320,14 +366,18 @@ export default function Result({navigation}){
                     <View style = {{position: 'absolute', left:70, top:-25, height:80, width:40, backgroundColor:'#6767A6', transform: [{rotate: '80deg'}]}}></View>
                     <View style = {testpageStyle.styledRecommend}>
                         <Text style = {testpageStyle.styledRecommendText1}>최고의 공부장소</Text>
-                        <View style ={{height:130, width:130, backgroundColor:'red'}}></View>
-                        <Text style = {testpageStyle.styledRecommendText2}>어쩌구저쩌구카페</Text>
+                        <View style ={{height:130, width:130, backgroundColor:'#FF9D9D'}}>
+                        <Icon name = {spaceicon} type = 'material'size = {120}/>
+                        </View>
+                        <Text style = {testpageStyle.styledRecommendText2}>{space}</Text>
                     </View>
                     <View style = {{position: 'absolute', right:70, top:-25, height:80, width:40, backgroundColor:'#6767A6', transform: [{rotate: '80deg'}]}}></View>
                     <View style = {testpageStyle.styledRecommend}>
                         <Text style = {testpageStyle.styledRecommendText1}>최고의 교양과목</Text>
-                        <View style = {{height:130, width:130, backgroundColor:'blue'}}></View>
-                        <Text style = {testpageStyle.styledRecommendText2}>울랄라울랄라과목</Text>
+                        <View style = {{height:130, width:130, backgroundColor:'#FF9D9D'}}>
+                        <Icon name = {subjecticon} type = 'material'size = {120}/>
+                        </View>
+                        <Text style = {testpageStyle.styledRecommendText2}>{subject}</Text>
                     </View>
                 </View>
 
