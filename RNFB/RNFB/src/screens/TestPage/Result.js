@@ -14,19 +14,11 @@ import bach from '../../images/bach.png';
 import beethoven from '../../images/beethoven.png';
 import brahms from '../../images/brahms.png';
 import chopin from '../../images/chopin.png';
+import haydn from '../../images/Haydn.png';
+import hendel from '../../images/hendel.png';
+import schubert from '../../images/Schubert.png';
 export default function Result({navigation}){
-    // useEffect(() => {
-    //     try {
-    //       setTimeout(() => {
-    //         SplashScreen.hide(); /** 추가 **/
-    //       }, 2000); /** 스플래시 시간 조절 (2초) **/
-    //     } catch(e) {
-    //       console.warn('에러발생');
-    //       console.warn(e);
-    //     }
-    //   });
-
-    const [url, setUrl] = useState('');
+    
     const [musician, setMusician] = useState('');
     const [sentence, setSentence] = useState('');
     const [cnt, setCnt] = useState(false);
@@ -47,7 +39,6 @@ export default function Result({navigation}){
     }
 
     const getImage15 = async key =>{
-        const imageRef = storage().refFromURL('gs://rnfb-123ee.appspot.com/헨델.png');
         const inf = firestore().collection("tool").doc("15");
         await inf.get().then((doc)=>{
             if (doc.exists){
@@ -69,8 +60,7 @@ export default function Result({navigation}){
                 console.log("no data")
             }
         })
-        a = await imageRef.getDownloadURL();
-        setUrl(a);
+        setsource(hendel)
         setCnt(true);
     }
     const getImage18 = async key =>{
@@ -99,7 +89,6 @@ export default function Result({navigation}){
         setCnt(true);
     }
     const getImage20 = async key =>{
-        const imageRef = storage().refFromURL('gs://rnfb-123ee.appspot.com/브람스.png');
         const inf = firestore().collection("tool").doc("20");
         await inf.get().then((doc)=>{
             if (doc.exists){
@@ -121,12 +110,10 @@ export default function Result({navigation}){
                 console.log("no data")
             }
         })
-        a = await imageRef.getDownloadURL();
-        setUrl(a);
+        setsource(brahms)
         setCnt(true);
     }
     const getImage24 = async key =>{
-        const imageRef = storage().refFromURL('gs://rnfb-123ee.appspot.com/하이든.png');
         const inf = firestore().collection("tool").doc("24");
         await inf.get().then((doc)=>{
             if (doc.exists){
@@ -148,12 +135,10 @@ export default function Result({navigation}){
                 console.log("no data")
             }
         })
-        a = await imageRef.getDownloadURL();
-        setUrl(a);
+        setsource(haydn)
         setCnt(true);
     }
     const getImage30 = async key =>{
-        const imageRef = storage().refFromURL('gs://rnfb-123ee.appspot.com/슈베르트.png');
         const inf = firestore().collection("tool").doc("30");
         await inf.get().then((doc)=>{
             if (doc.exists){
@@ -175,8 +160,7 @@ export default function Result({navigation}){
                 console.log("no data")
             }
         })
-        a = await imageRef.getDownloadURL();
-        setUrl(a);
+        setsource(schubert)
         setCnt(true);
     }
     const getImage36 = async key =>{

@@ -12,6 +12,9 @@ import bach from '../images/bach.png';
 import beethoven from '../images/beethoven.png';
 import brahms from '../images/brahms.png';
 import chopin from '../images/chopin.png';
+import haydn from '../images/Haydn.png';
+import hendel from '../images/hendel.png';
+import schubert from '../images/Schubert.png';
 
 import bachMain from '../images/bachMain.jpg';
 import beethovenMain from '../images/beethovenMain.jpg';
@@ -50,7 +53,7 @@ export default function HomeScreen({navigation}) {
     else if(name === "피아노의 시인 쇼팽"){
       return chopinMain;
     }
-    else if(name === "베토벤 닉네임 머임"){
+    else if(name === "악성 베토벤"){
       return beethovenMain;
     }
     else if(name === "음악의 신동 모차르트"){
@@ -126,6 +129,30 @@ export default function HomeScreen({navigation}) {
               style={{width:"50%", height:"100%", margin:'5%'}}
             />
             <Text style={mainPageStyle.slideText}>쇼팽{"\n"}피아노의 시인</Text>
+          </View>
+
+          <View style={mainPageStyle.slide}>
+            <Image
+              source={schubert}
+              style={{width:"50%", height:"100%", margin:'5%'}}
+            />
+            <Text style={mainPageStyle.slideText}>슈베르트{"\n"}가곡의 왕</Text>
+          </View>
+
+          <View style={mainPageStyle.slide}>
+            <Image
+              source={haydn}
+              style={{width:"50%", height:"100%", margin:'5%'}}
+            />
+            <Text style={mainPageStyle.slideText}>하이든{"\n"}교양곡의 아버지</Text>
+          </View>
+
+          <View style={mainPageStyle.slide}>
+            <Image
+              source={hendel}
+              style={{width:"50%", height:"100%", margin:'5%'}}
+            />
+            <Text style={mainPageStyle.slideText}>헨델{"\n"}음악의 어머니</Text>
           </View>
         </Swiper>
       </View>

@@ -105,7 +105,7 @@ export default function MyAccountScreen({navigation}){
         else if(name === "피아노의 시인 쇼팽"){
             return chopinMain;
         }
-        else if(name === "베토벤 닉네임 머임"){
+        else if(name === "악성 베토벤"){
             return beethovenMain;
         }
         else if(name === "음악의 신동 모차르트"){
