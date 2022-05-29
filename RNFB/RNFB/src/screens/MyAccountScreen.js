@@ -18,6 +18,9 @@ import beethovenMain from '../images/beethovenMain.jpg';
 import brahmsMain from '../images/brahmsMain.jpg';
 import chopinMain from '../images/chopinMain.jpg';
 import mozartMain from '../images/mozartMain.jpg';
+import HaydnMain from '../images/HaydnMain.jpg';
+import hendelMain from '../images/hendelMain.jpg';
+import SchubertMain from '../images/SchubertMain.jpg';
 import noMain from '../images/noMain.jpg';
 
 export default function MyAccountScreen({navigation}){
@@ -116,6 +119,15 @@ export default function MyAccountScreen({navigation}){
         else if(name === "음악의 아버지 바흐"){
             return bachMain;
         }
+        else if(name === "가곡의 왕 슈베르트"){
+            return SchubertMain;
+        }
+        else if(name === "교향곡의 아버지 하이든"){
+            return HaydnMain;
+        }
+        else if(name === "음악의 어머니 헨델"){
+            return hendelMain;
+        }
         return noMain;
     }
     return(
@@ -170,12 +182,12 @@ export default function MyAccountScreen({navigation}){
                                         <View key ={data.name} >
                                             <View style={{flexDirection:'row', padding:5}}>
                                                 <View style={{width:120,height:120, margin:10, backgroundColor:'#FF9D9D'}}>
-                                                 {data.kate ==='자연과 과학' && (<Icon name = 'emoji-nature' type = 'material'size = {120} />)}
-                                                 {data.kate ==='인간과 사회' && (<Icon name = 'public' type = 'material'size = {120}/>)}
-                                                 {data.kate ==='문학과 예술' && (<Icon name = 'palette' type = 'material'size = {120}/>)}
-                                                 {data.kate ==='역사와 철학' && (<Icon name = 'auto-stories' type = 'material'size = {120}/>)}
-                                                 {data.kate ==='일반선택' && (<Icon name = 'border-color' type = 'material'size = {120}/>)}
-                                                 {data.kate ==='일반교양' && (<Icon name = 'self-improvement' type = 'material'size = {120}/>)}
+                                                {data.kate ==='자연과 과학' && (<Icon name = 'emoji-nature' type = 'material'size = {120} />)}
+                                                {data.kate ==='인간과 사회' && (<Icon name = 'public' type = 'material'size = {120}/>)}
+                                                {data.kate ==='문학과 예술' && (<Icon name = 'palette' type = 'material'size = {120}/>)}
+                                                {data.kate ==='역사와 철학' && (<Icon name = 'auto-stories' type = 'material'size = {120}/>)}
+                                                {data.kate ==='일반선택' && (<Icon name = 'border-color' type = 'material'size = {120}/>)}
+                                                {data.kate ==='일반교양' && (<Icon name = 'self-improvement' type = 'material'size = {120}/>)}
                                                 </View>
                                                 <View style={{margin:10}}>
                                                     <Text style={ViewAllStyle.contentName}>{data.name}</Text>

@@ -268,16 +268,14 @@ export const mainPageStyle = {
         justifyContent: 'center',
         color: '#0B1D5F',
         fontSize: 20,
-        fontFamily: 'IBMPlexSansKR-Regular'
+        fontFamily: 'IBMPlexSansKR-Bold'
     },
-    slideTextTMI: {
+    slidedetailText: {
         width: "50%",
         height: "100%",
-        alignItems: 'center',
-        justifyContent: 'center',
         color: '#0B1D5F',
-        fontSize: 18,
-        fontFamily: 'IBMPlexSansKR-LIght'
+        fontSize: 10,
+        fontFamily: 'IBMPlexSansKR-Bold'
     }
 }
 
