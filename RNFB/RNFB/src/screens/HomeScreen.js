@@ -22,6 +22,9 @@ import beethovenMain from '../images/beethovenMain.jpg';
 import brahmsMain from '../images/brahmsMain.jpg';
 import chopinMain from '../images/chopinMain.jpg';
 import mozartMain from '../images/mozartMain.jpg';
+import HaydnMain from '../images/HaydnMain.jpg';
+import hendelMain from '../images/hendelMain.jpg';
+import SchubertMain from '../images/SchubertMain.jpg';
 import noMain from '../images/noMain.jpg';
 
 export default function HomeScreen({navigation}) {
@@ -63,6 +66,15 @@ export default function HomeScreen({navigation}) {
     }
     else if(name === "음악의 아버지 바흐"){
       return bachMain;
+    }
+    else if(name === "가곡의 왕 슈베르트"){
+      return SchubertMain;
+    }
+    else if(name === "교향곡의 아버지 하이든"){
+      return HaydnMain;
+    }
+    else if(name === "음악의 어머니 헨델"){
+      return hendelMain;
     }
     return noMain;
   }
@@ -146,7 +158,7 @@ export default function HomeScreen({navigation}) {
               source={haydn}
               style={{width:"50%", height:"100%", margin:'5%'}}
             />
-            <Text style={mainPageStyle.slideText}>하이든{"\n"}교양곡의 아버지</Text>
+            <Text style={mainPageStyle.slideText}>하이든{"\n"}교향곡의 아버지</Text>
           </View>
 
           <View style={mainPageStyle.slide}>
