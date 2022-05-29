@@ -275,7 +275,7 @@ export const mainPageStyle = {
         height: "100%",
         color: '#0B1D5F',
         fontSize: 10,
-        fontFamily: 'IBMPlexSansKR-Bold'
+        fontFamily: 'IBMPlexSansKR-Regular'
     }
 }
 
