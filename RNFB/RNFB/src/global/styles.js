@@ -269,6 +269,13 @@ export const mainPageStyle = {
         color: '#0B1D5F',
         fontSize: 20,
         fontFamily: 'IBMPlexSansKR-Bold'
+    },
+    slidedetailText: {
+        width: "50%",
+        height: "100%",
+        color: '#0B1D5F',
+        fontSize: 10,
+        fontFamily: 'IBMPlexSansKR-Bold'
     }
 }
 

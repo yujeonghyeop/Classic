@@ -109,6 +109,7 @@ export default function HomeScreen({navigation}) {
               style={{width:"50%", height:"100%", margin:'5%'}}
             />
             <Text style={mainPageStyle.slideText}>바흐{"\n"}음악의 아버지</Text>
+            
           </View>
           <View style={mainPageStyle.slide}>
             <Image
