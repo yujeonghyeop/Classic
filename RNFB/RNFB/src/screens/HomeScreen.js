@@ -137,7 +137,7 @@ export default function HomeScreen({navigation}) {
             />
             <View style={mainPageStyle.slideTextView}>
                 <Text style={mainPageStyle.slideText1}>베토벤{"\n"}음악의 성인</Text>
-                <Text style={mainPageStyle.slideText2}>이곳은설명적는곳{"\n"}어쩌구저쩌구</Text>
+                <Text style={mainPageStyle.slideText2}>청각장애를 딛고{"\n"}불굴의 의지와{"\n"}인간승리를 상징하며,{"\n"}특유의 까탈스럽고{"\n"}불같은 성격 탓에{"\n"}‘괴팍한 천재’로{"\n"}불린다.</Text>
             </View>
           </View>
 
