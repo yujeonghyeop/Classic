@@ -115,7 +115,7 @@ export default function HomeScreen({navigation}) {
               source={beethoven}
               style={{width:"50%", height:"100%", margin:'5%'}}
             />
-            <Text style={mainPageStyle.slideText}>베토벤{"\n"}음악의 성인</Text>
+            <Text style={mainPageStyle.slideText}>베토벤{"\n"}음악의 성인{"\n"}{"\n"}청각장애를 딛고{"\n"}불굴의 의지와{"\n"}인간승리를 상징하며,{"\n"}특유의 까탈스럽고{"\n"}불같은 성격 탓에{"\n"}‘괴팍한 천재’로{"\n"}불린다.{"\n"}</Text>
           </View>
           <View style={mainPageStyle.slide}>
             <Image
