@@ -261,14 +261,19 @@ export const mainPageStyle = {
         backgroundColor:'white',
         flexDirection:'row'
     },
-    slideText: {
+    slideTextView:{
         width: "50%",
-        height: "100%",
-        alignItems: 'center',
-        justifyContent: 'center',
+        height: "100%"
+    },
+    slideText1: {
         color: '#0B1D5F',
         fontSize: 20,
         fontFamily: 'IBMPlexSansKR-Bold'
+    },
+    slideText2: {
+        color: '#0B1D5F',
+        fontSize: 15,
+        fontFamily: 'IBMPlexSansKR-Regular'
     },
     slidedetailText: {
         width: "50%",

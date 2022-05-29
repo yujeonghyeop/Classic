@@ -113,36 +113,54 @@ export default function HomeScreen({navigation}) {
                 source={mozart}
                 style={{width:"50%", height:"100%", margin:'5%'}}
               />
-              <Text style={mainPageStyle.slideText}>모차르트{"\n"}음악의 신동</Text>  
+              <View style={mainPageStyle.slideTextView}>
+                <Text style={mainPageStyle.slideText1}>모차르트{"\n"}음악의 신동</Text>
+                <Text style={mainPageStyle.slideText2}>이곳은설명적는곳{"\n"}어쩌구저쩌구</Text>
+              </View>
           </View>
+
           <View style={mainPageStyle.slide}>
             <Image
               source={bach}
               style={{width:"50%", height:"100%", margin:'5%'}}
             />
-            <Text style={mainPageStyle.slideText}>바흐{"\n"}음악의 아버지</Text>
-            
+            <View style={mainPageStyle.slideTextView}>
+                <Text style={mainPageStyle.slideText1}>바흐{"\n"}음악의 아버지</Text>
+                <Text style={mainPageStyle.slideText2}>이곳은설명적는곳{"\n"}어쩌구저쩌구</Text>
+            </View>
           </View>
+
           <View style={mainPageStyle.slide}>
             <Image
               source={beethoven}
               style={{width:"50%", height:"100%", margin:'5%'}}
             />
-            <Text style={mainPageStyle.slideText}>베토벤{"\n"}음악의 성인</Text>
+            <View style={mainPageStyle.slideTextView}>
+                <Text style={mainPageStyle.slideText1}>베토벤{"\n"}음악의 성인</Text>
+                <Text style={mainPageStyle.slideText2}>이곳은설명적는곳{"\n"}어쩌구저쩌구</Text>
+            </View>
           </View>
+
           <View style={mainPageStyle.slide}>
             <Image
               source={brahms}
               style={{width:"50%", height:"100%", margin:'5%'}}
             />
-            <Text style={mainPageStyle.slideText}>브람스{"\n"}음악계의 로맨티스트</Text>
+            <View style={mainPageStyle.slideTextView}>
+                <Text style={mainPageStyle.slideText1}>브람스{"\n"}음악계의 로맨티스트</Text>
+                <Text style={mainPageStyle.slideText2}>이곳은설명적는곳{"\n"}어쩌구저쩌구</Text>
+            </View>
           </View>
+
           <View style={mainPageStyle.slide}>
             <Image
               source={chopin}
               style={{width:"50%", height:"100%", margin:'5%'}}
             />
-            <Text style={mainPageStyle.slideText}>쇼팽{"\n"}피아노의 시인</Text>
+            <View style={mainPageStyle.slideTextView}>
+                <Text style={mainPageStyle.slideText1}>쇼팽{"\n"}피아노의 시인</Text>
+                <Text style={mainPageStyle.slideText2}>이곳은설명적는곳{"\n"}어쩌구저쩌구</Text>
+            </View>
           </View>
 
           <View style={mainPageStyle.slide}>
@@ -150,7 +168,10 @@ export default function HomeScreen({navigation}) {
               source={schubert}
               style={{width:"50%", height:"100%", margin:'5%'}}
             />
-            <Text style={mainPageStyle.slideText}>슈베르트{"\n"}가곡의 왕</Text>
+            <View style={mainPageStyle.slideTextView}>
+                <Text style={mainPageStyle.slideText1}>슈베르트{"\n"}가곡의 왕</Text>
+                <Text style={mainPageStyle.slideText2}>이곳은설명적는곳{"\n"}어쩌구저쩌구</Text>
+            </View>
           </View>
 
           <View style={mainPageStyle.slide}>
@@ -158,7 +179,10 @@ export default function HomeScreen({navigation}) {
               source={haydn}
               style={{width:"50%", height:"100%", margin:'5%'}}
             />
-            <Text style={mainPageStyle.slideText}>하이든{"\n"}교향곡의 아버지</Text>
+            <View style={mainPageStyle.slideTextView}>
+                <Text style={mainPageStyle.slideText1}>하이든{"\n"}교향곡의 아버지</Text>
+                <Text style={mainPageStyle.slideText2}>이곳은설명적는곳{"\n"}어쩌구저쩌구</Text>
+            </View>
           </View>
 
           <View style={mainPageStyle.slide}>
@@ -166,7 +190,10 @@ export default function HomeScreen({navigation}) {
               source={hendel}
               style={{width:"50%", height:"100%", margin:'5%'}}
             />
-            <Text style={mainPageStyle.slideText}>헨델{"\n"}음악의 어머니</Text>
+            <View style={mainPageStyle.slideTextView}>
+                <Text style={mainPageStyle.slideText1}>헨델{"\n"}음악의 어머니</Text>
+                <Text style={mainPageStyle.slideText2}>이곳은설명적는곳{"\n"}어쩌구저쩌구</Text>
+            </View>
           </View>
         </Swiper>
       </View>
