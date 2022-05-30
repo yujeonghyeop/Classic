@@ -11,6 +11,9 @@ export default function Result({navigation}){
     const[loading, setLoading] = useState(false);
     const[page, setPage] = useState(false);
     const[cnt, setcnt] = useState(1);
+    const [srate, setsrate] = useState(0)
+    const [hrate, sethrate] = useState(0)
+    const [drate, setdrate] = useState(0)
     const user = firebase.auth().currentUser;
     const email = user.email; 
     let result = 1;
@@ -21,11 +24,14 @@ export default function Result({navigation}){
                 const pandi = doc.data();
                 const plan = pandi["이성"];
                 const imp = pandi["감성"];
+                
                 if(plan > imp){
                     result *= 1;
+                    setsrate((plan/(plan+imp)).toFixed(2))
                 }
                 else{
                     result *= 2;
+                    setsrate((imp/(plan+imp)).toFixed(2))
                 }
             }
             else{
@@ -43,9 +49,11 @@ export default function Result({navigation}){
                 const soc = pands["사회지향"];
                 if(per > soc){
                     result *= 3;
+                    sethrate((per/(per+soc)).toFixed(2))
                 }
                 else{
                     result *= 4;
+                    sethrate((soc/(per+soc)).toFixed(2))
                 }
             }
             else{
@@ -64,9 +72,11 @@ export default function Result({navigation}){
                 const dif = aandd["분석"];
                 if(act > dif){
                     result *= 5;
+                    setdrate((act/(act+dif)).toFixed(2))
                 }
                 else{
                     result *= 6;
+                    setdrate((dif/(act+dif)).toFixed(2))
                 }
             }
             else{
@@ -82,7 +92,10 @@ export default function Result({navigation}){
             const userDocument = await firestore().collection("회원").
             doc(email)
             .update({
-                'result' : cnt
+                'result' : cnt,
+                '사고유형비율' : srate,
+                '학습성격비율' : hrate,
+                '행동조절비율' : drate 
             })
             console.log("setting completed");
         }

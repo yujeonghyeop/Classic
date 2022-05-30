@@ -1,5 +1,5 @@
 import React from 'react'
-import{View, TouchableOpacity,Text,Image} from 'react-native'
+import {View, Text, TouchableOpacity,Image} from 'react-native'
 import {Button} from 'react-native-elements'
 import { parameters,testpageStyle } from '../../global/styles'
 import * as Progress from 'react-native-progress'
@@ -33,22 +33,21 @@ export default function Test3({navigation}){
                 <Text style={testpageStyle.styledQ1}>.</Text>
             </View>
             <View style ={testpageStyle.styledBox}>
-                <Text style={testpageStyle.styledFont}>학습 과정에서</Text>
-                <Text style={testpageStyle.styledFont}>내가 중요하게 생각 하는 것은?</Text>
+                <Text style={testpageStyle.styledFont}>배운 내용을 이해했는지 확인할 때,</Text>
+                <Text style={testpageStyle.styledFont}>내가 선호하는 방식은?</Text>
             </View>
             <View style={{flexDirection: 'column', alignItems:'space-between', marginTop:10, padding:40}}>
-           
                 <TouchableOpacity style={testpageStyle.styledButton} onPress={() => {
                     getAct()
                     navigation.navigate("Test4")
                 }}>
-                    <Text style={parameters.buttonTitle}>내가 이해한 내용을 내 방식으로 다시 정리해 보면서 학습한다.</Text>
+                    <Text style={parameters.buttonTitle}>나만의 방식으로 다시 정리해본다.</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={testpageStyle.styledButton} onPress={() => {
                     getDif()
                     navigation.navigate("Test4")
                 }}>
-                    <Text style={parameters.buttonTitle}>내가 이해한 내용과 원래 배웠던 내용이 다르지 않은지 확인하며 학습한다.</Text>
+                    <Text style={parameters.buttonTitle}>개념과 다르지는 않은지 비교한다.</Text>
                 </TouchableOpacity>
             </View>
             <Progress.Bar progress={0.3} width={300} color={'#6667ab'} height={10} borderRadius={5} marginBottom={100} marginTop ={30} backgroundColor = {'#E8E8F2'} />

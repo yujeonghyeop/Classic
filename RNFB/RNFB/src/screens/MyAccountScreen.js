@@ -1,5 +1,6 @@
 import React, { useState,useEffect } from 'react'
 import firestore, { firebase } from '@react-native-firebase/firestore'
+import { useIsFocused } from '@react-navigation/core';
 import {View, Text, ScrollView, Image, TouchableOpacity, useWindowDimensions} from 'react-native'
 import {Button,Icon} from 'react-native-elements';
 import {logo, myAccountstyle, ViewAllStyle} from '../global/styles';
@@ -11,9 +12,19 @@ import Swiper from 'react-native-swiper';
 import { getDate } from 'cli';
 import { getDrawerStatusFromState } from '@react-navigation/drawer';
 import { FlatList } from 'react-native-gesture-handler';
-import bach2 from '../images/bachmain.jpg';
+
+import bachMain from '../images/bachMain.jpg';
+import beethovenMain from '../images/beethovenMain.jpg';
+import brahmsMain from '../images/brahmsMain.jpg';
+import chopinMain from '../images/chopinMain.jpg';
+import mozartMain from '../images/mozartMain.jpg';
+import HaydnMain from '../images/HaydnMain.jpg';
+import hendelMain from '../images/hendelMain.jpg';
+import SchubertMain from '../images/SchubertMain.jpg';
+import noMain from '../images/noMain.jpg';
 
 export default function MyAccountScreen({navigation}){
+    const isFocused = useIsFocused();
     const [nickname, setNickname] = useState(null)
     const user = firebase.auth().currentUser;
     const email = user.email; 
@@ -72,7 +83,6 @@ export default function MyAccountScreen({navigation}){
     const layout = useWindowDimensions();
 
     const clickHandler1 = () => {
-        
         subjectshow();
         setColor1('#6767A6');
         setColor2('#E8E8F2');
@@ -91,7 +101,35 @@ export default function MyAccountScreen({navigation}){
     }
     useEffect(()=>{
         getname();
-    })
+    },[isFocused])
+
+    const profile = (name) => {
+        if(name === "로맨티스트 브람스"){
+            return brahmsMain;
+        }
+        else if(name === "피아노의 시인 쇼팽"){
+            return chopinMain;
+        }
+        else if(name === "악성 베토벤"){
+            return beethovenMain;
+        }
+        else if(name === "음악의 신동 모차르트"){
+            return mozartMain;
+        }
+        else if(name === "음악의 아버지 바흐"){
+            return bachMain;
+        }
+        else if(name === "가곡의 왕 슈베르트"){
+            return SchubertMain;
+        }
+        else if(name === "교향곡의 아버지 하이든"){
+            return HaydnMain;
+        }
+        else if(name === "음악의 어머니 헨델"){
+            return hendelMain;
+        }
+        return noMain;
+    }
     return(
         <View style = {myAccountstyle.container}>
             <Image source={Logo} style={logo} />
@@ -100,7 +138,7 @@ export default function MyAccountScreen({navigation}){
                     <View style={{flexDirection: 'column', margin:10,justifyContent: 'center', alignItems:'center'}}> 
                         <View style={myAccountstyle.styledPicture}>
                             <Image
-                            source={bach2}
+                            source={profile(nickname)}
                             style={{width:"140%", height:"140%", margin:'5%', borderRadius:20}}
                             />
                         </View>
@@ -110,11 +148,11 @@ export default function MyAccountScreen({navigation}){
                         <View style={{flexDirection: 'column', alignItems:'center'}}>
                             <Button title='상세 보기' buttonStyle={myAccountstyle.styledButton} titleStyle={buttonTitleW}
                             onPress = {() => { navigation.navigate("Detail")}}
-                             />
-                           
+                            />
+
                             {test===0 ? <Button title='검사하러 가기' buttonStyle={myAccountstyle.styledButton} titleStyle={buttonTitleW}
-                             onPress = {() => { navigation.navigate("Test1")}}
-                           />
+                            onPress = {() => { navigation.navigate("Test1")}}
+                            />
                             :<Button title='다시 검사하기' buttonStyle={myAccountstyle.styledButton} titleStyle={buttonTitleW}
                             onPress = {() => 
                                 {   resettype()
@@ -144,12 +182,12 @@ export default function MyAccountScreen({navigation}){
                                         <View key ={data.name} >
                                             <View style={{flexDirection:'row', padding:5}}>
                                                 <View style={{width:120,height:120, margin:10, backgroundColor:'#FF9D9D'}}>
-                                                 {data.kate ==='자연과 과학' && (<Icon name = 'emoji-nature' type = 'material'size = {120} />)}
-                                                 {data.kate ==='인간과 사회' && (<Icon name = 'public' type = 'material'size = {120}/>)}
-                                                 {data.kate ==='문학과 예술' && (<Icon name = 'palette' type = 'material'size = {120}/>)}
-                                                 {data.kate ==='역사와 철학' && (<Icon name = 'auto-stories' type = 'material'size = {120}/>)}
-                                                 {data.kate ==='일반선택' && (<Icon name = 'border-color' type = 'material'size = {120}/>)}
-                                                 {data.kate ==='일반교양' && (<Icon name = 'self-improvement' type = 'material'size = {120}/>)}
+                                                {data.kate ==='자연과 과학' && (<Icon name = 'emoji-nature' type = 'material'size = {120} />)}
+                                                {data.kate ==='인간과 사회' && (<Icon name = 'public' type = 'material'size = {120}/>)}
+                                                {data.kate ==='문학과 예술' && (<Icon name = 'palette' type = 'material'size = {120}/>)}
+                                                {data.kate ==='역사와 철학' && (<Icon name = 'auto-stories' type = 'material'size = {120}/>)}
+                                                {data.kate ==='일반선택' && (<Icon name = 'border-color' type = 'material'size = {120}/>)}
+                                                {data.kate ==='일반교양' && (<Icon name = 'self-improvement' type = 'material'size = {120}/>)}
                                                 </View>
                                                 <View style={{margin:10}}>
                                                     <Text style={ViewAllStyle.contentName}>{data.name}</Text>

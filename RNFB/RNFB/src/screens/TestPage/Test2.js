@@ -1,7 +1,6 @@
 import React from 'react'
-import{View, TouchableOpacity,Text,Image} from 'react-native'
-import {Icon,Button} from 'react-native-elements'
-import { parameters,testpageStyle } from '../../global/styles'
+import {View, Text, TouchableOpacity,Image} from 'react-native'
+import { testpageStyle } from '../../global/styles'
 import * as Progress from 'react-native-progress'
 import firestore, { firebase } from '@react-native-firebase/firestore'
 import logo from '../../images/logo.png';
@@ -37,18 +36,17 @@ export default function Test2({navigation}){
                 <Text style={testpageStyle.styledFont}>가장 먼저 하는 일은?</Text>
             </View>
             <View style={{flexDirection: 'column', alignItems:'space-between', marginTop:10, padding:40}}>
-           
                 <TouchableOpacity style={testpageStyle.styledButton} onPress={() => {
                     getSoc()
                     navigation.navigate("Test3")
                 }}>
-                    <Text style={parameters.buttonTitle}>주변에 나를 본 사람이 있는지 확인한다</Text>
+                    <Text style={testpageStyle.buttonTitle}>주변에 나를 본 사람이 있는지 확인한다</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={testpageStyle.styledButton} onPress={() => {
                     getPer()
                     navigation.navigate("Test3")
                 }}>
-                    <Text style={parameters.buttonTitle}>내 몸에 다친곳이 있는지 확인한다</Text>
+                    <Text style={testpageStyle.buttonTitle}>내 몸에 다친곳이 있는지 확인한다</Text>
                 </TouchableOpacity>
             </View>
             <Progress.Bar progress={0.2} width={300} color={'#6667ab'} height={10} borderRadius={5} marginBottom={100} marginTop ={30} backgroundColor = {'#E8E8F2'} />

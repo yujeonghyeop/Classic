@@ -1,5 +1,5 @@
 import React from 'react'
-import{View,TouchableOpacity, Text,Image} from 'react-native'
+import {View, Text, TouchableOpacity,Image} from 'react-native'
 import {Button} from 'react-native-elements'
 import { parameters,testpageStyle } from '../../global/styles'
 import * as Progress from 'react-native-progress'
@@ -34,7 +34,7 @@ export default function Test6({navigation}){
                 <Text style={testpageStyle.styledQ1}>.</Text>
             </View>
             <View style ={testpageStyle.styledBox}>
-                <Text style={testpageStyle.styledFont}>친구가 목이 아픈 것 같다고 말했을 때, </Text>
+                <Text style={testpageStyle.styledFont}>친구가 몸이 아프다고 말했을 때,</Text>
                 <Text style={testpageStyle.styledFont}>나의 반응은?</Text>
             </View>
             <View style={{flexDirection: 'column', alignItems:'space-between', marginTop:10, padding:40}}>

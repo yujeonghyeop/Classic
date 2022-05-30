@@ -106,10 +106,16 @@ export const testpageStyle = { //testpage에 들어가는 친구들 집합 Resul
         fontFamily: 'IBMPlexSansKR-Regular'
     },
     styledFont:{
-        fontSize : 25,
+        fontSize : 22,
         color:'black',
         justifyContent : 'center',
         fontFamily: 'IBMPlexSansKR-SemiBold'
+    },
+    buttonTitle:{
+        fontSize : 18,
+        color:'white',
+        justifyContent : 'center',
+        fontFamily: 'IBMPlexSansKR-Regular'
     },
     styledBox : {
         width : 350,
@@ -255,14 +261,26 @@ export const mainPageStyle = {
         backgroundColor:'white',
         flexDirection:'row'
     },
-    slideText: {
+    slideTextView:{
         width: "50%",
-        height: "100%",
-        alignItems: 'center',
-        justifyContent: 'center',
+        height: "100%"
+    },
+    slideText1: {
         color: '#0B1D5F',
         fontSize: 20,
         fontFamily: 'IBMPlexSansKR-Bold'
+    },
+    slideText2: {
+        color: '#0B1D5F',
+        fontSize: 15,
+        fontFamily: 'IBMPlexSansKR-Regular'
+    },
+    slidedetailText: {
+        width: "50%",
+        height: "100%",
+        color: '#0B1D5F',
+        fontSize: 10,
+        fontFamily: 'IBMPlexSansKR-Regular'
     }
 }
 
