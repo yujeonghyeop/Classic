@@ -54,13 +54,11 @@ export default function Result({navigation}){
                 const ininf = doc.data();
                 const name = ininf["musician"];
                 const sen = ininf["exp"];
-                const longsen = ininf["more_exp"];
                 setMusician(name)
                 setSentence(sen)
                 const userDocument = firestore().collection("회원").
                 doc(email)
                     .update({
-                    'more_exp' : longsen,
                     '이름' : name,
                     '설명' : sen
                 })
@@ -80,13 +78,11 @@ export default function Result({navigation}){
                 const ininf = doc.data();
                 const name = ininf["musician"];
                 const sen = ininf["exp"];
-                const longsen = ininf["more_exp"];
                 setMusician(name)
                 setSentence(sen)
                 const userDocument =firestore().collection("회원").
                 doc(email)
                     .update({
-                    'more_exp' : longsen,
                     '이름' : name,
                     '설명' : sen
                 })
@@ -106,13 +102,11 @@ export default function Result({navigation}){
                 const ininf = doc.data();
                 const name = ininf["musician"];
                 const sen = ininf["exp"];
-                const longsen = ininf["more_exp"];
                 setMusician(name)
                 setSentence(sen)
                 const userDocument = firestore().collection("회원").
                 doc(email)
                     .update({
-                    'more_exp' : longsen,
                     '이름' : name,
                     '설명' : sen
                 })
@@ -133,13 +127,11 @@ export default function Result({navigation}){
                 const ininf = doc.data();
                 const name = ininf["musician"];
                 const sen = ininf["exp"];
-                const longsen = ininf["more_exp"];
                 setMusician(name)
                 setSentence(sen)
                 const userDocument = firestore().collection("회원").
                 doc(email)
                     .update({
-                    'more_exp' : longsen,
                     '이름' : name,
                     '설명' : sen
                 })
@@ -160,13 +152,11 @@ export default function Result({navigation}){
                 const ininf = doc.data();
                 const name = ininf["musician"];
                 const sen = ininf["exp"];
-                const longsen = ininf["more_exp"];
                 setMusician(name)
                 setSentence(sen)
                 const userDocument = firestore().collection("회원").
                 doc(email)
                     .update({
-                    'more_exp' : longsen,
                     '이름' : name,
                     '설명' : sen
                 })
@@ -186,13 +176,11 @@ export default function Result({navigation}){
                 const ininf = doc.data();
                 const name = ininf["musician"];
                 const sen = ininf["exp"];
-                const longsen = ininf["more_exp"];
                 setMusician(name)
                 setSentence(sen)
                 const userDocument = firestore().collection("회원").
                 doc(email)
                     .update({
-                    'more_exp' : longsen,
                     '이름' : name,
                     '설명' : sen
                 })
@@ -211,7 +199,6 @@ export default function Result({navigation}){
                 const ininf = doc.data();
                 const name = ininf["musician"];
                 const sen = ininf["exp"];
-                const longsen = ininf["more_exp"];
                 setMusician(name)
                 setSentence(sen)
                 const userDocument = firestore().collection("회원").
@@ -235,7 +222,6 @@ export default function Result({navigation}){
                 const ininf = doc.data();
                 const name = ininf["musician"];
                 const sen = ininf["exp"];
-                const longsen = ininf["more_exp"];
                 setMusician(name)
                 setSentence(sen)
                 const userDocument = firestore().collection("회원").
@@ -310,7 +296,7 @@ export default function Result({navigation}){
                     source = {source} 
                 />
                 
-                <Progress.Bar progress={0.7} width={330} color={'#FF9D9D'} height={35} borderRadius={12} marginTop={25}/>
+                <Progress.Bar progress={0.7} width={330} color={'#FF9D9D'} height={35} borderRadius={12} marginTop={25} />
                 <View style = {{flex:1, flexDirection:'row', width:340, justifyContent:'space-between'}}>
                     <Text style = {testpageStyle.styledMyType}>계획형</Text>
                     <Text style = {testpageStyle.styledMyType}>즉흥형</Text>
