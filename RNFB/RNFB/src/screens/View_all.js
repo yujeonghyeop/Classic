@@ -5,6 +5,7 @@ import { ViewAllStyle } from '../global/styles';
 import { styledtext } from '../global/fontStyles';
 import firestore, { firebase, getDocs } from '@react-native-firebase/firestore';
 import { Icon } from 'react-native-elements';
+import { TextInput } from 'react-native-gesture-handler';
 
 // 전체보기 페이지
 
@@ -52,7 +53,7 @@ export default function MyOrdersScreen(){
    
 
     const pressHandler1 = (params,e)=>{
-        setPress1('#E8E8F2');
+        // setPress1('#E8E8F2');
         const userDocument = firestore().collection("회원").
                 doc(email).collection("mysubject").doc(params["id"])
                     .set({
@@ -71,7 +72,7 @@ export default function MyOrdersScreen(){
                     'location' : params["location"],
                     'name' : params["name"]
                 })
-        setPress2('#E8E8F2');
+        // setPress2('#E8E8F2');
     }
     useEffect(() => {
         spaceshow()
@@ -86,7 +87,7 @@ export default function MyOrdersScreen(){
                         case 'first':
                             return(
                                 <View style={{alignItems:"center"}}>
-                                    <ScrollView showsVerticalScrollIndicator={false} style={{margin:20}}>
+                                    <ScrollView showsVerticalScrollIndicator={false} style={{margin:10}}>
                                         <View style={{alignItems:'center', justifyContent:'center'}}>
                                             <Text style={styledtext}>터치하면 스크랩됩니다.</Text>
                                         </View>   
@@ -133,12 +134,11 @@ export default function MyOrdersScreen(){
                                                         </View>
                                                         <View style={{margin:10}}>
                                                             <Text style={ViewAllStyle.contentName}>{data.name}</Text>
-                                                            <Text style={ViewAllStyle.contentIntroduce}>{data.location}</Text>
+                                                            <Text style={ViewAllStyle.contentIntroduce} multiline={true}>{(data.location).substr(0,15)}</Text>
+                                                            <Text style={ViewAllStyle.contentIntroduce} multiline={true}>{(data.location).substr(15,30)}</Text>
                                                         </View>
                                                     </View>
                                                 </TouchableOpacity>
-                                                
-
                                                 <View style={{width:340, height:2, margin:5,backgroundColor:'#a6a6cc'}}></View>
                                             </View>
                                         ))}
