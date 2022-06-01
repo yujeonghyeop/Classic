@@ -335,14 +335,14 @@ export default function Result({navigation}){
 
                 <Progress.Bar progress={hrate} width={330} color={'#FF9D9D'} height={35} borderRadius={12} />
                 <View style = {{flex:1, flexDirection:'row', width:340, justifyContent:'space-between'}}>
-                    <Text style = {testpageStyle.styledMyType}>사회형</Text>
                     <Text style = {testpageStyle.styledMyType}>개인형</Text>
+                    <Text style = {testpageStyle.styledMyType}>사회형</Text>
                 </View>
 
                 <Progress.Bar progress={drate} width={330} color={'#FF9D9D'} height={35} borderRadius={12}/>
                 <View style = {{flex:1, flexDirection:'row', width:340, justifyContent:'space-between'}}>
-                    <Text style = {testpageStyle.styledMyType}>활발형</Text>
-                    <Text style = {testpageStyle.styledMyType}>차분형</Text>
+                    <Text style = {testpageStyle.styledMyType}>총체형</Text>
+                    <Text style = {testpageStyle.styledMyType}>분석형</Text>
                 </View>
 
                 <View style = {testpageStyle.styledExplain}>

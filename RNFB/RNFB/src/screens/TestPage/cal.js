@@ -27,7 +27,7 @@ export default function Result({navigation}){
                 
                 if(plan > imp){
                     result *= 1;
-                    setsrate((plan/(plan+imp)).toFixed(2))
+                    setsrate((imp/(plan+imp)).toFixed(2))
                 }
                 else{
                     result *= 2;
@@ -49,7 +49,7 @@ export default function Result({navigation}){
                 const soc = pands["사회지향"];
                 if(per > soc){
                     result *= 3;
-                    sethrate((per/(per+soc)).toFixed(2))
+                    sethrate((soc/(per+soc)).toFixed(2))
                 }
                 else{
                     result *= 4;
@@ -72,7 +72,7 @@ export default function Result({navigation}){
                 const dif = aandd["분석"];
                 if(act > dif){
                     result *= 5;
-                    setdrate((act/(act+dif)).toFixed(2))
+                    setdrate((dif/(act+dif)).toFixed(2))
                 }
                 else{
                     result *= 6;
