@@ -40,13 +40,13 @@ export default function Test5({navigation}){
                     getAct()
                     navigation.navigate("Test6")
                 }}>
-                    <Text style={parameters.buttonTitle}>목차를 중심으로 구조 파악하기</Text>
+                    <Text style={parameters.buttonTitle}>목차를 중심으로 구조 파악</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={testpageStyle.styledButton} onPress={() => {
                     getDif()
                     navigation.navigate("Test6")
                 }}>
-                    <Text style={parameters.buttonTitle}>세부 설명을 중심으로 내용 이해하기</Text>
+                    <Text style={parameters.buttonTitle}>세부 설명을 중심으로 이해</Text>
                 </TouchableOpacity>
             </View>
             <Progress.Bar progress={0.5} width={300} color={'#6667ab'} height={10} borderRadius={5} marginBottom={100} marginTop ={30} backgroundColor = {'#E8E8F2'} />

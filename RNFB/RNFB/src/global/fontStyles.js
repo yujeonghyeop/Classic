@@ -13,7 +13,7 @@ export const styledtext = {
 }
 export const buttonTitleW = {
     color:'black',
-    fontSize: 15,
+    fontSize: 13,
     fontFamily: 'IBMPlexSansKR-SemiBold'
 }
 
