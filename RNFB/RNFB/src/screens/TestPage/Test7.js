@@ -42,7 +42,7 @@ export default function Test7({navigation}){
                     getAct()
                     navigation.navigate("Test8")
                 }}>
-                    <Text style={parameters.buttonTitle}>나만의 말과 규칙으로 바꾸어 이해하기</Text>
+                    <Text style={parameters.buttonTitle}>나만의 어휘로 바꾸어 이해하기</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={testpageStyle.styledButton} onPress={() => {
                     getDif()

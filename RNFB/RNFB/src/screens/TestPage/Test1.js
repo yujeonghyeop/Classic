@@ -34,21 +34,21 @@ export default function Test1({navigation}){
                 <Text style={testpageStyle.styledQ1}>.</Text>
             </View>
             <View style ={testpageStyle.styledBox}>
-                <Text style={testpageStyle.styledFont}>TV를 틀고 뭘 볼지 정하는</Text>
-                <Text style={testpageStyle.styledFont}>나의 모습은?</Text>
+                <Text style={testpageStyle.styledFont}>내가 공부할 때</Text>
+                <Text style={testpageStyle.styledFont}>더 선호하는 방식은?</Text>
             </View>
             <View style={{flexDirection: 'column', alignItems:'space-between', marginTop:10, padding:40}}>
                 <TouchableOpacity style={testpageStyle.styledButton} onPress={() => {
                     getPlan()
                     navigation.navigate("Test2")
                 }}>
-                    <Text style={parameters.buttonTitle}>편성표를 켜서 프로그램을 확인한다</Text>
+                    <Text style={parameters.buttonTitle}>미리 신중하게 계획하기</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={testpageStyle.styledButton} onPress={() => {
                     getCnt()
                     navigation.navigate("Test2")
                 }}>
-                    <Text style={parameters.buttonTitle}>돌려보면서 재밌는게 나오면 멈춘다</Text>
+                    <Text style={parameters.buttonTitle}>상황에 따라 다음 계획 세우기</Text>
                 </TouchableOpacity>
             </View>
             <Progress.Bar progress={0.1} width={300} color={'#6667ab'} height={10} borderRadius={5} marginBottom={100} marginTop ={30} backgroundColor = {'#E8E8F2'} />

@@ -47,7 +47,7 @@ export default function Test8({navigation}){
                     getSoc()
                     navigation.navigate("Test9")
                 }}>
-                    <Text style={parameters.buttonTitle}>실수를 다른 사람들이 모르도록 숨기기</Text>
+                    <Text style={parameters.buttonTitle}>다른 사람들이 모르도록 숨기기</Text>
                 </TouchableOpacity>
             </View>
             <Progress.Bar progress={0.8} width={300} color={'#6667ab'} height={10} borderRadius={5} marginBottom={100} marginTop ={30} backgroundColor = {'#E8E8F2'} />

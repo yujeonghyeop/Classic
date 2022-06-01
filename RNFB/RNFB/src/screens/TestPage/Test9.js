@@ -33,15 +33,16 @@ export default function Test9({navigation}){
                 <Text style={testpageStyle.styledQ1}>.</Text>
             </View>
             <View style ={testpageStyle.styledBox}>
-                <Text style={testpageStyle.styledFont}>친구가 나한테 어려운 부탁을 했다.</Text>
-                <Text style={testpageStyle.styledFont}>"생각해볼게"라는 내 대답의 의도는?</Text>
+                <Text style={testpageStyle.styledFont}>친구에게 어려운 부탁이 왔다</Text>
+                <Text style={testpageStyle.styledFont}>"생각해볼게"라고 말했을 때,</Text>
+                <Text style={testpageStyle.styledFont}>내 대답의 의도는?</Text>
             </View>
             <View style={{flexDirection: 'column', alignItems:'space-between', marginTop:10, padding:40}}>
                 <TouchableOpacity style={testpageStyle.styledButton} onPress={() => {
                     getPlan()
                     navigation.navigate("cal")
                 }}>
-                    <Text style={parameters.buttonTitle}>충분히 생각한 뒤, 답변을 하기 위해</Text>
+                    <Text style={parameters.buttonTitle}>충분히 생각하고 답하기 위해</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={testpageStyle.styledButton} onPress={() => {
                     getCnt()

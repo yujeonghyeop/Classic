@@ -170,7 +170,7 @@ export default function HomeScreen({navigation}) {
             />
             <View style={mainPageStyle.slideTextView}>
                 <Text style={mainPageStyle.slideText1}>슈베르트{"\n"}가곡의 왕</Text>
-                <Text style={mainPageStyle.slideText2}>가곡의 반주에 스토리를 입혀{"\n"}일반적인 가곡을{"\n"}예술의 경지로 끌어 올렸다.{"\n"}생전에 633개의{"\n"}가곡을 만들었으며{"\n"}많은 문필가의 시를 이용하여{"\n"}가곡의 왕이라 불린다.</Text>
+                <Text style={mainPageStyle.slideText2}>가곡의 반주에 스토리를{"\n"}입혀 일반적인 가곡을{"\n"}예술의 경지로 끌어 올렸다.{"\n"}생전에 633개의{"\n"}가곡을 만들었으며{"\n"}많은 문필가의 시를 이용해{"\n"}가곡의 왕이라 불린다.</Text>
             </View>
           </View>
 
@@ -181,7 +181,7 @@ export default function HomeScreen({navigation}) {
             />
             <View style={mainPageStyle.slideTextView}>
                 <Text style={mainPageStyle.slideText1}>하이든{"\n"}교향곡의 아버지</Text>
-                <Text style={mainPageStyle.slideText2}>30년 넘게 에스테하지가의{"\n"}궁정음악가로 있으면서{"\n"}모든 교향곡의 틀을 정립한{"\n"}사람이다. 하이든의 교향곡은{"\n"}100곡이 넘으며 이 때문에{"\n"}교향곡의 아버지라 불린다.</Text>
+                <Text style={mainPageStyle.slideText2}>30년 넘게 에스테하지가의{"\n"}궁정음악가로 있으면서{"\n"}모든 교향곡의 틀을 정립하{"\n"}였다. 하이든의 교향곡은{"\n"}100곡이 넘으며 이 때문에{"\n"}교향곡의 아버지라 불린다.</Text>
             </View>
           </View>
 
@@ -192,7 +192,7 @@ export default function HomeScreen({navigation}) {
             />
             <View style={mainPageStyle.slideTextView}>
                 <Text style={mainPageStyle.slideText1}>헨델{"\n"}음악의 어머니</Text>
-                <Text style={mainPageStyle.slideText2}>성서적인 내용을{"\n"}토대로 다루는 오라토리오가{"\n"}대표적인 음악장르이며,{"\n"}그의 부드럽고 온유한{"\n"}어머니의 모습을 보이는{"\n"}음악적 스타일 때문에{"\n"}음악의 어머니라 불린다.</Text>
+                <Text style={mainPageStyle.slideText2}>성서적인 내용을 토대로{"\n"}다루는 오라토리오가{"\n"}대표적인 음악장르이며,{"\n"}그의 부드럽고 온유한{"\n"}어머니의 모습을 보이는{"\n"}음악적 스타일 때문에{"\n"}음악의 어머니라 불린다.</Text>
             </View>
           </View>
         </Swiper>
