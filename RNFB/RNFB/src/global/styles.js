@@ -140,7 +140,7 @@ export const testpageStyle = { //testpage에 들어가는 친구들 집합 Resul
     },
     text2:{
         color:'#0B1D5F',
-        fontSize:40,
+        fontSize:35,
         fontFamily: 'IBMPlexSansKR-Bold'
     },
 }
