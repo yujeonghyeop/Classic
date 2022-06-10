@@ -391,7 +391,7 @@ export const detailStyle={
         alignItems: 'center',
         padding:20,
         width: '95%',
-        height: '80%',
+        height: '95%',
 
     }
 

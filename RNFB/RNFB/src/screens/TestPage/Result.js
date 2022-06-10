@@ -220,13 +220,16 @@ export default function Result({navigation}){
                 const ininf = doc.data();
                 const name = ininf["musician"];
                 const sen = ininf["exp"];
+                const msen = ininf["more_exp"];
+                setMoreSen(msen)
                 setMusician(name)
                 setSentence(sen)
                 const userDocument =firestore().collection("회원").
                 doc(email)
                     .update({
                     '이름' : name,
-                    '설명' : sen
+                    '설명' : sen,
+                    'more_exp' : moreSen
                 })
             }
             else{
@@ -374,13 +377,16 @@ export default function Result({navigation}){
                 const ininf = doc.data();
                 const name = ininf["musician"];
                 const sen = ininf["exp"];
+                const msen = ininf["more_exp"];
+                setMoreSen(msen)
                 setMusician(name)
                 setSentence(sen)
                 const userDocument = firestore().collection("회원").
                 doc(email)
                     .update({
                     '이름' : name,
-                    '설명' : sen
+                    '설명' : sen,
+                    'more_exp' : moreSen
                 })
             }
             else{
@@ -443,7 +449,8 @@ export default function Result({navigation}){
                 doc(email)
                     .update({
                     '이름' : name,
-                    '설명' : sen
+                    '설명' : sen,
+                    'more_exp' : moreSen
                 })
             }
             else{
@@ -510,13 +517,16 @@ export default function Result({navigation}){
                 const ininf = doc.data();
                 const name = ininf["musician"];
                 const sen = ininf["exp"];
+                const msen = ininf["more_exp"];
+                setMoreSen(msen)
                 setMusician(name)
                 setSentence(sen)
                 const userDocument = firestore().collection("회원").
                 doc(email)
                     .update({
                     '이름' : name,
-                    '설명' : sen
+                    '설명' : sen,
+                    'more_exp' : moreSen
                 })
             }
             else{
@@ -623,13 +633,16 @@ export default function Result({navigation}){
                 const ininf = doc.data();
                 const name = ininf["musician"];
                 const sen = ininf["exp"];
+                const msen = ininf["more_exp"];
+                setMoreSen(msen)
                 setMusician(name)
                 setSentence(sen)
                 const userDocument = firestore().collection("회원").
                 doc(email)
                     .update({
                     '이름' : name,
-                    '설명' : sen
+                    '설명' : sen,
+                    'more_exp' : moreSen
                 })
             }
             else{
@@ -726,13 +739,16 @@ export default function Result({navigation}){
                 const ininf = doc.data();
                 const name = ininf["musician"];
                 const sen = ininf["exp"];
+                const msen = ininf["more_exp"];
+                setMoreSen(msen)
                 setMusician(name)
                 setSentence(sen)
                 const userDocument = firestore().collection("회원").
                 doc(email)
                     .update({
                     '이름' : name,
-                    '설명' : sen
+                    '설명' : sen,
+                    'more_exp' : moreSen
                 })
             }
             else{

@@ -35,11 +35,11 @@ export default function Detail({navigation}){
                 <Image source={Logo} style={logo}/>
                     <View style={detailStyle.styledBox}>
                     <ScrollView showsVerticalScrollIndicator={false}>
-                        <Text>
+                        <View>
                             <Text style={detail}>{more_exp[0]}{"\n\n"}</Text>
                             <Text style={detail}>{more_exp[1]}{"\n\n"}</Text>
                             <Text style={detail}>{more_exp[2]}</Text>
-                        </Text>
+                        </View>
                         </ScrollView>
                     </View>
             </ScrollView>
