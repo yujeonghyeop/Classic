@@ -21,6 +21,7 @@ export default function Result({navigation}){
     
     const [musician, setMusician] = useState('');
     const [sentence, setSentence] = useState('');
+    const [moreSen, setMoreSen] = useState([]);
     const [srate, setsrate] = useState(0);
     const [hrate, sethrate] = useState(0);
     const [drate, setdrate] = useState(0);
@@ -108,13 +109,16 @@ export default function Result({navigation}){
                 const ininf = doc.data();
                 const name = ininf["musician"];
                 const sen = ininf["exp"];
+                const msen = ininf["more_exp"];
                 setMusician(name)
                 setSentence(sen)
+                setMoreSen(msen)
                 const userDocument = firestore().collection("회원").
                 doc(email)
                     .update({
                     '이름' : name,
-                    '설명' : sen
+                    '설명' : sen,
+                    'more_exp' : moreSen
                 })
             }
             else{
@@ -284,13 +288,16 @@ export default function Result({navigation}){
                 const ininf = doc.data();
                 const name = ininf["musician"];
                 const sen = ininf["exp"];
+                const msen = ininf["more_exp"];
                 setMusician(name)
                 setSentence(sen)
+                setMoreSen(msen)
                 const userDocument = firestore().collection("회원").
                 doc(email)
                     .update({
                     '이름' : name,
-                    '설명' : sen
+                    '설명' : sen,
+                    'more_exp' : moreSen
                 })
             }
             else{

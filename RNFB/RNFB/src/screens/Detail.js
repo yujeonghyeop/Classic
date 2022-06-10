@@ -14,7 +14,7 @@ import { detail } from '../global/fontStyles';
 //import { SignInContext } from '../contexts/authContext';
 
 export default function Detail({navigation}){
-    const [more_exp, setMore_exp] = useState("");
+    const [more_exp, setMore_exp] = useState([]);
     const user = firebase.auth().currentUser;
     const email = user.email;
     useEffect(() => {
@@ -28,15 +28,20 @@ export default function Detail({navigation}){
         })
       },[]);
 
+    console.log(more_exp);
     return(
         <View style>
             <ScrollView showsVerticalScrollIndicator={false}>
                 <Image source={Logo} style={logo}/>
-                <View style={detailStyle.styledBox}>
-                    <Text style={detail}>
-                        {more_exp}
-                    </Text>
-                </View>
+                    <View style={detailStyle.styledBox}>
+                    <ScrollView showsVerticalScrollIndicator={false}>
+                        <Text>
+                            <Text style={detail}>{more_exp[0]}{"\n\n"}</Text>
+                            <Text style={detail}>{more_exp[1]}{"\n\n"}</Text>
+                            <Text style={detail}>{more_exp[2]}</Text>
+                        </Text>
+                        </ScrollView>
+                    </View>
             </ScrollView>
         </View>
         
